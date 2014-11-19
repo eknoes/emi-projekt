@@ -1,0 +1,92 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15.11.2014, 17:44:46
+    Author     : Konsi
+*/
+body {
+    margin-top: 0px;
+    //height:1500px;
+}
+#header {
+    border: 1px solid #666;
+    position: fixed;
+    width:100%;
+    min-width: 1100px;
+    height: 220px;
+    background-color:#afa;
+    z-index: 1;
+}
+#banner { 
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    top:20px;
+    background-color:#e467e3;
+}
+#navi {
+    position: absolute;
+    top: 170px;
+    width: 80%;
+    height: 50px;
+    left:50%;
+    margin-left: -40%;
+    background-color:#e52443;
+}
+ul#Navigation {
+    margin: 0; padding: 0;
+    text-align: center;
+    //border: 1px solid black;
+    //background-color: silver;
+    height: 50px;
+}
+ul#Navigation li {
+    list-style: none;
+    display: inline; 
+    margin: 0.4em; padding: 0px;
+    position: relative;
+    top: 16.5px;
+}
+ul#Navigation a {
+    padding: 0.2em 1em;
+    text-decoration: none; font-weight: bold;
+    border: 1px solid black;
+    border-left-color: white; border-top-color: white;
+    color: maroon; background-color: #ccc;
+}
+* html ul#Navigation a, * html ul#Navigation span {
+    width: 1em;    /* nur fuer IE 5.0x erforderlich */
+    width: auto;  /* sicherheitshalber fuer IE 6 zurueckgesetzt */
+}
+ul#Navigation a:hover, ul#Navigation span {
+    border-color: white;
+    border-left-color: black; border-top-color: black;
+    color: white; background-color: gray;
+}
+#inhalt {
+    position: absolute;
+    width: 70%;
+    min-width: 600px;
+    height: auto;
+    top: 250px;
+    left: 50%;
+    margin-left: -35%; /*5% Prozent Außenabstand nach links und rechts*/
+    background-color:#ddd;
+}
+#kalender {
+    height: 300px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+#infos {
+    height: 300px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+#impressum {
+    height: 50px;
+    border: 1px solid black;
+}
