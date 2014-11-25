@@ -13,7 +13,7 @@ function isInPeriod(checkDate, periodStart, periodEnd) {
     }
 }
 
-function getEvents(askDate) {
+function getEvents(askDate, callback) {
     var askDate = new Date(askDate);
     var result = new Array();
     $.getJSON(EVENTS_JSON, function(data) {
@@ -22,15 +22,17 @@ function getEvents(askDate) {
                 result.push(entry);
             }
         });
+        if(result.length === 0) {
+            result = false;
+        }
+        callback(result);
+
     });
-    if(result.length === 0) {
-        result = false;
-    }
-    return result;
 }
 
 function test_getEvents() {
-    var testOutput = getEvents($("input#date").val());
-    console.log(testOutput);
-    $("div#output").html(testOutput.toSource());
+    getEvents($("input#date").val(), function(result) {
+        console.log(result);
+        $("div#output").html(result.toSource());
+    });
 }
