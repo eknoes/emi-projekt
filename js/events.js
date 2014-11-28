@@ -13,13 +13,23 @@ function isInPeriod(checkDate, periodStart, periodEnd) {
     }
 }
 
-function getEvents(askDate, callback) {
+function getEvents(askDate, category, callback) {
     var askDate = new Date(askDate);
     var result = new Array();
     $.getJSON(EVENTS_JSON, function(data) {
         $.each(data.events, function(key, entry) {
             if(isInPeriod(askDate.setHours(0,0,0,0), new Date(entry.date[0]).setHours(0,0,0,0), new Date(entry.date[1]).setHours(0,0,0,0))) {
-                result.push(entry);
+                console.log("is in period");
+                if(category !== "all") {
+                    for (var i = entry.categories.length - 1; i >= 0; i--) {
+                        if(entry.categories[i] == category) {
+                            result.push(entry);
+                            break;
+                        }
+                    };
+                } else {
+                    result.push(entry);
+                }
             }
         });
         if(result.length === 0) {
@@ -31,8 +41,8 @@ function getEvents(askDate, callback) {
 }
 
 
-function getEvents() {
-    getEvents($("input#getEvents-input").val(), function(result) {
+function test_getEvents() {
+    getEvents($("input#getEvents-input-date").val(), $("input#getEvents-input-category").val(), function(result) {
         console.log(result);
         $("div#getEvents-output").html(result.toSource());
     });
