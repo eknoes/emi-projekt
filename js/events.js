@@ -30,9 +30,33 @@ function getEvents(askDate, callback) {
     });
 }
 
-function test_getEvents() {
-    getEvents($("input#date").val(), function(result) {
+
+function getEvents() {
+    getEvents($("input#getEvents-input").val(), function(result) {
         console.log(result);
-        $("div#output").html(result.toSource());
+        $("div#getEvents-output").html(result.toSource());
+    });
+}
+
+function getEventById(id, callback) {
+    var result = null;
+    $.getJSON(EVENTS_JSON, function(data) {
+        $.each(data.events, function(key, entry) {
+            if(entry.id == id) {
+                result = entry;
+                return false;
+            }
+        });
+        if(result === null) {
+            result = false;
+        }
+        callback(result);
+    });
+}
+
+function test_getEventByID() {
+    getEventById($("input#getEventById-input").val(), function(result) {
+        console.log(result);
+        $("div#getEventById-output").html(result.toSource());
     });
 }
