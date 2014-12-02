@@ -5,7 +5,20 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery.stickyPanel.min.js"></script>
         <script type="text/javascript" src="scripts/calendar.js"></script>
+        <script type="text/javascript">
+        $().ready(function () {
+            var stickyPanelOptions = {
+                topPadding: 0,
+                afterDetachCSSClass: "BoxGlow_Grey2",
+                savePanelSpace: true,
+                parentSelector: null
+            };
+            $("#navi").stickyPanel(stickyPanelOptions);
+        });
+        </script>
     </head>
     <body>
         <div id="header">
@@ -14,8 +27,8 @@
                 <ul id="Navigation">
                     <li><a href="#Beispiel">Kultur</a></li>
                     <li><a href="#Beispiel">Musik</a></li>
-                    <li><a href="#Beispiel">&Ouml;ffentliche&nbsp;Veranstaltungen</a></li>
-                    <li><a href="#Beispiel">Abendveranstaltungen</a></li>
+                    <li><a href="#Beispiel">&Ouml;ffentliches</a></li>
+                    <li><a href="#Beispiel">Abendveranstalt.</a></li>
                     <li><a href="#Beispiel">Bildung</a></li>
                     <li><a href="#Beispiel">Sonstige</a></li>
                 </ul>
