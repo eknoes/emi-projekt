@@ -13,63 +13,59 @@ body {
 }
 #header {
     border: 1px solid #666;
-    position: fixed;
     width:100%;
-    min-width: 1100px;
-    height: 220px;
-    background-color:#afa;
-    z-index: 1;
+    min-width: 1100px; 
+    height: 215px;
+    z-index: 255;
 }
 #banner { 
-    position: absolute;
     width: 100%;
-    height: 150px;
-    top:20px;
-    background-color:#e467e3;
+    height: 170px;
+    background-image: url(../resources/panorama-dresden.jpg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
 }
 #navi {
     position: absolute;
-    top: 170px;
     width: 80%;
-    height: 50px;
+    height: 45px;
     left:50%;
     margin-left: -40%;
     background-color:#e52443;
+    z-index: 9999;
 }
 ul#Navigation {
     margin: 0; padding: 0;
+    margin-left: -570px;
     text-align: center;
-    //border: 1px solid black;
-    //background-color: silver;
-    height: 50px;
+    height: 45px;
+    position: absolute;
+    left: 50%;
 }
 ul#Navigation li {
     list-style: none;
-    display: inline; 
-    margin: 0.4em; padding: 0px;
-    position: relative;
-    top: 16.5px;
+    float: left;
 }
 ul#Navigation a {
-    padding: 0.2em 1em;
-    text-decoration: none; font-weight: bold;
-    border: 1px solid black;
-    border-left-color: white; border-top-color: white;
-    color: maroon; background-color: #ccc;
+    padding: 13px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFFFFF; 
+    background-color: #98bf21;
+    display: block;
+    width: 150px;
+    text-transform: uppercase;
 }
-* html ul#Navigation a, * html ul#Navigation span {
-    width: 1em;    /* nur fuer IE 5.0x erforderlich */
-    width: auto;  /* sicherheitshalber fuer IE 6 zurueckgesetzt */
-}
-ul#Navigation a:hover, ul#Navigation span {
+
+ul#Navigation a:hover, a:active {
     border-color: white;
     border-left-color: black; border-top-color: black;
-    color: white; background-color: gray;
+    color: white; background-color: #7A991A;
 }
 #inhalt {
     position: absolute;
     width: 70%;
-    min-width: 600px;
+    /* min-width: 600px; optional, looking bad at resized browser window*/
     height: auto;
     top: 250px;
     left: 50%;
@@ -77,7 +73,7 @@ ul#Navigation a:hover, ul#Navigation span {
     background-color:#ddd;
 }
 #kalender {
-    height: 300px;
+    height: auto;
     border: 1px solid black;
     margin-bottom: 20px;
 }
@@ -89,4 +85,9 @@ ul#Navigation a:hover, ul#Navigation span {
 #impressum {
     height: 50px;
     border: 1px solid black;
+}
+.BoxGlow_Grey2{
+    box-shadow: 0 5px 15px rgba(176,176,176, 1);
+    -webkit-box-shadow: 0 5px 15px rgba(176,176,176, 1); 
+    -moz-box-shadow: 0 5px 15px rgba(176,176,176, 1);
 }
