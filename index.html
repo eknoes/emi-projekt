@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Dresdens Veranstaltungen</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <script type="text/javascript" src="scripts/calendar.js"></script>
     </head>
     <body>
         <div id="header">
@@ -18,7 +14,7 @@ and open the template in the editor.
                 <ul id="Navigation">
                     <li><a href="#Beispiel">Kultur</a></li>
                     <li><a href="#Beispiel">Musik</a></li>
-                    <li><a href="#Beispiel">Öffentliche&nbsp;Veranstaltungen</a></li>
+                    <li><a href="#Beispiel">&Ouml;ffentliche&nbsp;Veranstaltungen</a></li>
                     <li><a href="#Beispiel">Abendveranstaltungen</a></li>
                     <li><a href="#Beispiel">Bildung</a></li>
                     <li><a href="#Beispiel">Sonstige</a></li>
@@ -26,7 +22,11 @@ and open the template in the editor.
             </div>
         </div>
         <div id="inhalt">
-            <div id="kalender">Kalender</div>
+            <div id="kalender">
+                <script type="text/javascript">
+                    generateMonth(11, 2014);
+                </script>
+            </div>
             <div id="infos">Infos</div>
             <div id="impressum">Impressum</div>
         </div>
