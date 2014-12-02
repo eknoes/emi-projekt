@@ -73,7 +73,7 @@ ul#Navigation a:hover, a:active {
     background-color:#ddd;
 }
 #kalender {
-    height: 300px;
+    height: auto;
     border: 1px solid black;
     margin-bottom: 20px;
 }
