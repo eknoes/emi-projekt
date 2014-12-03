@@ -1,45 +1,73 @@
 <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
     <head>
         <title>Dresdens Veranstaltungen</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="styles/main.css">
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-        <script type="text/javascript" src="scripts/jquery.stickyPanel.min.js"></script>
-        <script type="text/javascript" src="scripts/calendar.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" href="css/jquery-ui-1.8.16.custom.css">
+        <script type="text/javascript" src="js/libs/jquery/jquery-1.4.4.min.js"></script>
+        <script type="text/javascript" src="js/libs/jqueryui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/libs/jqueryui/jquery.ui.datepicker-de.js"></script>
+        <script type="text/javascript" src="js/libs/jquery.stickyPanel.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+            $.datepicker.setDefaults($.extend($.datepicker.regional['de']));
+            $("#datepicker").datepicker({showAnim: "slideDown"});
+        });
+        </script>
         <script type="text/javascript">
         $().ready(function () {
             var stickyPanelOptions = {
                 topPadding: 0,
                 afterDetachCSSClass: "BoxGlow_Grey2",
                 savePanelSpace: true,
+                /*onDetached: function (detachedPanel, spacerPanel) {
+                    detachedPanel.html(detachedPanel.html() + " has been detached!");
+					//spacerPanel.css("background-color", "#1000ff");
+                },
+                onReAttached: function (detachedPanel) {
+                    detachedPanel.html(detachedPanel.html().replace(" has been detached!", ""));
+                },*/
                 parentSelector: null
             };
             $("#navi").stickyPanel(stickyPanelOptions);
         });
-        </script>
+        
+        
+        </script>  
     </head>
     <body>
         <div id="header">
-            <div id="banner">Dresdens Veranstaltungen<pre>Imageslider</pre></div>
+            <div id="banner">
+                <figure>
+                    <img src="resources/panorama-dresden_1.jpg" alt="slider" height="170">
+                    <img src="resources/panorama-dresden_2.jpg" alt="slider" height="170">
+                    <img src="resources/panorama-dresden_3.jpg" alt="slider" height="170">
+                    <img src="resources/panorama-dresden_4.jpg" alt="slider" height="170">
+                </figure>
+            </div>
             <div id="navi">
+                <label for="show-menu" class="show-menu">Navigation</label>
+                <input type="checkbox" id="show-menu" role="button">
                 <ul id="Navigation">
                     <li><a href="#Beispiel">Kultur</a></li>
                     <li><a href="#Beispiel">Musik</a></li>
-                    <li><a href="#Beispiel">&Ouml;ffentliches</a></li>
+                    <li><a href="#Beispiel">Öffentliches</a></li>
                     <li><a href="#Beispiel">Abendveranstalt.</a></li>
                     <li><a href="#Beispiel">Bildung</a></li>
                     <li><a href="#Beispiel">Sonstige</a></li>
                 </ul>
+                <p id="search"><input id="datepicker" type="text" size="10" placeholder="Datum"><input id="submit" type="submit" value="Suchen"></p>
             </div>
         </div>
         <div id="inhalt">
-            <div id="kalender">
-                <script type="text/javascript">
-                    generateMonth(11, 2014);
-                </script>
-            </div>
+            <div id="kalender">Kalender</div>
             <div id="infos">Infos</div>
             <div id="impressum">Impressum</div>
         </div>
