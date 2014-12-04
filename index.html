@@ -15,6 +15,7 @@ and open the template in the editor.
         <script type="text/javascript" src="js/libs/jqueryui/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/libs/jqueryui/jquery.ui.datepicker-de.js"></script>
         <script type="text/javascript" src="js/libs/jquery.stickyPanel.min.js"></script>
+        <script type="text/javascript" src="js/calendar.js"></script>
         <script type="text/javascript">
             $(function(){
             $.datepicker.setDefaults($.extend($.datepicker.regional['de']));
@@ -67,7 +68,11 @@ and open the template in the editor.
             </div>
         </div>
         <div id="inhalt">
-            <div id="kalender">Kalender</div>
+            <div id="kalender">
+                <script type="text/javascript">
+                generateMonth(11, 2014);
+                </script>
+            </div>
             <div id="infos">Infos</div>
             <div id="impressum">Impressum</div>
         </div>
