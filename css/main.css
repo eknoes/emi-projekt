@@ -8,7 +8,7 @@ and open the template in the editor.
     Author     : Konsi
 */
 body {
-    margin-top: 0px;
+    margin: 0px;
     height:1500px;
 }
 #header {
@@ -69,10 +69,10 @@ div#banner figure {
 }
 #navi {
     position: absolute;
-    width: 98%;
+    width: 100%;
     height: 45px;
-    left:50%;
-    margin-left: -49%;
+    left:0%;
+    margin-left: 0%;
     background-color:#e52443;
     z-index: 9999;
 }
@@ -167,7 +167,7 @@ label.show-menu:hover {
     height: auto;
     top: 250px;
     left: 50%;
-    margin-left: -35%; /*5% Prozent Außenabstand nach links und rechts*/
+    margin-left: -35%; /*5% Prozent AuÃŸenabstand nach links und rechts*/
     background-color:#ddd;
 }
 #kalender {
