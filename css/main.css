@@ -7,12 +7,14 @@ and open the template in the editor.
     Created on : 15.11.2014, 17:44:46
     Author     : Konsi
 */
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
 body {
     margin: 0px;
     height:1500px;
+    font-family: Lato;
 }
 #header {
-    border: 1px solid #666;
+    //border: 1px solid #666;
     width:100%;
     //min-width: 1100px; 
     height: 215px;
@@ -73,7 +75,7 @@ div#banner figure {
     height: 45px;
     left:0%;
     margin-left: 0%;
-    background-color:#e52443;
+    background-color:#ddd;
     z-index: 9999;
 }
 ul#Navigation {
@@ -100,13 +102,14 @@ ul#Navigation a {
     height: 45px;
     line-height: 45px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    
     text-transform: uppercase;
 }
 
 ul#Navigation a:hover, a:active {
     border-color: white;
     border-left-color: black; border-top-color: black;
-    color: white; background-color: #19c589;
+    color: #ccc;
 }
 /*Style 'show menu' label button and hide it by default*/
 .show-menu {
@@ -134,7 +137,7 @@ label.show-menu:hover {
 }
 /*Responsive Styles*/
 
-@media screen and (max-width : 1010px){
+@media screen and (max-width : 1016px){
 	/*Make dropdown links appear inline*/
 	ul#Navigation {
 		position: static;
@@ -154,11 +157,61 @@ label.show-menu:hover {
 		display:block;
 	}
 }
-#search {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    margin-top: -10px
+input[type="text"] {
+  height: 33px;
+  font-size: 20px;
+  display: inline-block;
+  font-family: "Lato";
+  border: none;
+  outline: none;
+  color: #555;
+  padding: 3px;
+  padding-right: 30px;
+  width: 0px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%); /*Zentrierung mit CSS3*/
+  right: 10px;
+  background: none;
+  z-index: 3;
+  transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+  cursor: pointer;
+}
+
+input[type="text"]:focus:hover {
+  border-bottom: 1px solid #BBB;
+}
+
+input[type="text"]:focus {
+  width: 120px;
+  z-index: 1;
+  border-bottom: 1px solid #BBB;
+  cursor: text;
+}
+
+input[type="submit"] {
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  float: right;
+  background: url(../resources/search-button.png) center center no-repeat;
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%); /*Zentrierung mit CSS3*/
+  right: 10px;
+  z-index: 2;
+  cursor: pointer;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity .4s ease;
+}
+
+input[type="submit"]:hover {
+  opacity: 0.8;
+}
+div.ui-datepicker{
+  font-size: 15px;
 }
 #inhalt {
     position: absolute;
@@ -167,7 +220,7 @@ label.show-menu:hover {
     height: auto;
     top: 250px;
     left: 50%;
-    margin-left: -35%; /*5% Prozent AuÃŸenabstand nach links und rechts*/
+    margin-left: -35%; /*5% Prozent Außenabstand nach links und rechts*/
     background-color:#ddd;
 }
 #kalender {

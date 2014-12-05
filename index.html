@@ -8,42 +8,16 @@ and open the template in the editor.
     <head>
         <title>Dresdens Veranstaltungen</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">       
         <link rel="stylesheet" href="css/jquery-ui-1.8.16.custom.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
         <script type="text/javascript" src="js/libs/jquery/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="js/libs/jqueryui/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/libs/jqueryui/jquery.ui.datepicker-de.js"></script>
         <script type="text/javascript" src="js/libs/jquery.stickyPanel.min.js"></script>
-        <script type="text/javascript" src="js/calendar.js"></script>
-        <script type="text/javascript">
-            $(function(){
-            $.datepicker.setDefaults($.extend($.datepicker.regional['de']));
-            $("#datepicker").datepicker({showAnim: "slideDown"});
-        });
-        </script>
-        <script type="text/javascript">
-        $().ready(function () {
-            var stickyPanelOptions = {
-                topPadding: 0,
-                afterDetachCSSClass: "BoxGlow_Grey2",
-                savePanelSpace: true,
-                /*onDetached: function (detachedPanel, spacerPanel) {
-                    detachedPanel.html(detachedPanel.html() + " has been detached!");
-					//spacerPanel.css("background-color", "#1000ff");
-                },
-                onReAttached: function (detachedPanel) {
-                    detachedPanel.html(detachedPanel.html().replace(" has been detached!", ""));
-                },*/
-                parentSelector: null
-            };
-            $("#navi").stickyPanel(stickyPanelOptions);
-        });
-        
-        
-        </script>  
+        <script type="text/javascript" src="js/calendar.js"></script>  
     </head>
-    <body>
+    <body onload="resizenavi()">
         <div id="header">
             <div id="banner">
                 <figure>
@@ -57,14 +31,17 @@ and open the template in the editor.
                 <label for="show-menu" class="show-menu">Navigation</label>
                 <input type="checkbox" id="show-menu" role="button">
                 <ul id="Navigation">
-                    <li><a href="#Beispiel">Kultur</a></li>
-                    <li><a href="#Beispiel">Musik</a></li>
-                    <li><a href="#Beispiel">Öffentliches</a></li>
-                    <li><a href="#Beispiel">Abendveranstalt.</a></li>
-                    <li><a href="#Beispiel">Bildung</a></li>
-                    <li><a href="#Beispiel">Sonstige</a></li>
+                    <li><a href="#">Kultur</a></li>
+                    <li><a href="#">Musik</a></li>
+                    <li><a href="#">Öffentliches</a></li>
+                    <li><a href="#">Soiree</a></li>
+                    <li><a href="#">Bildung</a></li>
+                    <li><a href="#">Sonstige</a></li>
                 </ul>
-                <p id="search"><input id="datepicker" type="text" size="10" placeholder="Datum"><input id="submit" type="submit" value="Suchen"></p>
+                <div>
+                    <input id="datepicker" type="text" placeholder="Datum">
+                    <input id="submit" type="submit" value="">
+                </div>
             </div>
         </div>
         <div id="inhalt">
@@ -76,5 +53,6 @@ and open the template in the editor.
             <div id="infos">Infos</div>
             <div id="impressum">Impressum</div>
         </div>
+    <script type="text/javascript" src="js/header.js"></script>
     </body>
 </html>
