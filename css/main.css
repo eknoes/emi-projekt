@@ -225,14 +225,14 @@ div.ui-datepicker{
     margin-right: -50%;
     transform: translate(-50%, 0%);
     background-color:#ddd;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    
 }
 #kalender {
     height: 300px;
     border: 1px solid black;
     margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 #infos {
     height: 300px;
