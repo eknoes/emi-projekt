@@ -31,12 +31,12 @@ and open the template in the editor.
                 <label for="show-menu" class="show-menu">Navigation</label>
                 <input type="checkbox" id="show-menu" role="button">
                 <ul id="Navigation">
-                    <li><a href="#">Kultur</a></li>
-                    <li><a href="#">Musik</a></li>
-                    <li><a href="#">Öffentliches</a></li>
-                    <li><a href="#">Soiree</a></li>
-                    <li><a href="#">Bildung</a></li>
-                    <li><a href="#">Sonstige</a></li>
+                    <li><a class="navbutton" href="#">Kultur</a></li>
+                    <li><a class="navbutton" href="#">Musik</a></li>
+                    <li><a class="navbutton" href="#">Öffentliches</a></li>
+                    <li><a class="navbutton" href="#">Soiree</a></li>
+                    <li><a class="navbutton" href="#">Bildung</a></li>
+                    <li><a class="navbutton" href="#">Sonstige</a></li>
                 </ul>
                 <div>
                     <input id="datepicker" type="text" placeholder="Datum">
@@ -50,8 +50,103 @@ and open the template in the editor.
                 generateMonth(11, 2014);
                 </script>
             </div>
-            <div id="infos">Infos</div>
-            <div id="impressum">Impressum</div>
+            <div id="infos">
+                <div class="infoBlock" id="infoBlock1">
+                    <div class="title" id="titleQuickInfo">
+                        <h3>Auf einen Blick </h3>
+                    </div>
+                    <table id="ContentsTable">
+                        <tr>
+                            <td class="TableHead">Was?</td> 
+                            <td>Party / Disco / Clubbing / Tanz</td>
+                        </tr>
+                        <tr>
+                            <td class="TableHead">Wann?</td> 
+                            <td>Freitag, 05.12.2014, 20:00 - 03:00 Uhr </td>
+                        </tr>
+                        <tr>
+                            <td class="TableHead">Wo?</td> 
+                            <td>My House - Bar/Club (Lage / Karte) </td>
+                        </tr>
+                        <tr>
+                            <td class="TableHead">Eintritt:</td> 
+                            <td>3,00 Euro</td>
+                        </tr>
+                        <tr>
+                            <td class="TableHead">Website:</td> 
+                            <td><a href="http://www.google.de"> TolleWebsite.de</a> </td>
+                        </tr>
+                </table>
+                    <div id ="infoPictures">
+                        <div id="infoPicturesBig">
+                            <img class="image" src="resources/contentSampleImages/party1.jpg">
+                        </div>
+                        <div class="infoPicturesSub" id="infoPicturesSub1">
+                            <img class="subImage" src="resources/contentSampleImages/party2.jpg">
+                        </div>
+                        <div class="infoPicturesSub" id="infoPicturesSub2">
+                            <img class="image subImage" src="resources/contentSampleImages/party3.jpg">
+                        </div>
+                        <div class="infoPicturesSub" id="infoPicturesSub3">
+                            <img class="image subImage" src="resources/contentSampleImages/party4.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="infoBlock">
+                    <div class="title">
+                        <h3>Details </h3>
+                    </div>
+                        <div id="infoBlockDetailsText">
+                            <h4>Irgendeine tolle Überschrift </h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+                                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+                                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </p>
+                        </div>
+                </div>
+                <div class="infoBlock">
+                    <div class="title">
+                        <h3>Anfahrt </h3>
+                    </div>
+                    <iframe width="600" height="300" src="http://maps.google.de/maps?hl=de&q=Pariser Platz, 10117 Berlin+(Brandenburger Tor)&ie=UTF8&t=&z=17&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div id="infoBlockAnfahrtText">
+                        <h4>Adresse:</h4>
+                        <p id ="anfahrtTextP">
+                            Suppertolle Straße 10 <br>
+                            01129 Dresden <br>
+                        </p>
+                        <h4>Erreichbar über:</h4>
+                        <p id ="anfahrtTextP">
+                            Linie 6, Haltestelle Musterhaltestelle<br>
+                            Linie 7, Haltestelle Musterhaltestelle<br>
+                            Bus 7, Haltestelle Marienhof
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="impressum">
+                <div class="infoBlock">
+                    <div class="title">
+                        <h3>Impressum</h3>
+                    </div>
+                    <div id="impbuttons">
+                        <a href="#impdetails" class="impbutton" onclick="details('team')">Team</a>                                
+                        <a href="#impdetails" class="impbutton" onclick="details('styleguide')">Styleguide</a>
+                        <a href="#impdetails" class="impbutton" onclick="details('mockups')">Mockups</a>
+                    </div>
+                    <div id="impdetails">
+                        <p>
+                            Diese Seite ist ein Projekt der Informatikstudenten <br>
+                            Alex <br>
+                            Karl <br>
+                            Konstantin <br>
+                            Maxim <br>
+                            Sönke <br>
+                            aus dem 1. WS 2014/2015. Alle Rechte vorbehalten.
+                        </p>
+                    </div>
+                </div>
         </div>
     <script type="text/javascript" src="js/header.js"></script>
     </body>
