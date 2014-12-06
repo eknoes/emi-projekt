@@ -24,9 +24,8 @@ $(function(){
 function resizenavi (){
     var breite = $(window).width(); /*Calculate window width*/
     if (breite>=1000) {
-        $("a").css("min-width", breite/10); /*adjust button size to window*/
-        var ul_breite = $("#Navigation").width();
-        $("#Navigation").css("margin-left", -ul_breite/2); /*center navigation*/
+        $("a").css("min-width", breite/8.617); /*adjust button size to window*/
+        $("#navi").css("width", "100%");
     }
     else {
         $("#Navigation").css("margin-left", "0");

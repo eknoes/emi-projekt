@@ -80,11 +80,13 @@ div#banner figure {
 }
 ul#Navigation {
     margin: 0; padding: 0;
-    margin-left: -483px;
+    //margin-left: -483px;
     text-align: center;
     height: 45px;
     position: absolute;
     left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
 }
 ul#Navigation li {
     list-style: none;
@@ -220,8 +222,12 @@ div.ui-datepicker{
     height: auto;
     top: 250px;
     left: 50%;
-    margin-left: -35%; /*5% Prozent Außenabstand nach links und rechts*/
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
     background-color:#ddd;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 #kalender {
     height: 300px;
