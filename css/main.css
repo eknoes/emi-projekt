@@ -98,7 +98,11 @@ ul#Navigation a {
     text-decoration: none;
     //font-weight: bold;
     color: #FFFFFF; 
-    background: #2f3036;
+    //background: #2f3036;
+    background: -webkit-linear-gradient(#58595e, #2F3036);
+    background: -o-linear-gradient(#58595e, #2F3036);
+    background: -moz-linear-gradient(#58595e, #2F3036);
+    background: linear-gradient(#58595e, #2F3036);
     display: block;
     min-width: 160px;
     height: 45px;
@@ -108,9 +112,27 @@ ul#Navigation a {
     text-transform: uppercase;
 }
 
-ul#Navigation a:hover, a:active {
+/*ul#Navigation a:hover, a:active {
     border-color: white;
     border-left-color: black; border-top-color: black;
+    color: #ccc;
+}*/
+#a_kultur:hover {
+    color: #d11141;
+}
+#a_musik:hover {
+    color: #00b159;
+}
+#a_oeffentliches:hover {
+    color: #00aedb;
+}
+#a_soiree:hover {
+    color: #f37735;
+}
+#a_bildung:hover {
+    color: #ffc425;
+}
+#a_sonstige:hover {
     color: #ccc;
 }
 /*Style 'show menu' label button and hide it by default*/
@@ -145,6 +167,7 @@ label.show-menu:hover {
 		position: static;
 		display: none;
                 margin: 0;
+                transform: translate(0%, 0%);
 	}
 	/*Create vertical spacing*/
 	li {
@@ -220,7 +243,7 @@ div.ui-datepicker{
     width: 70%;
     /* min-width: 600px; optional, looking bad at resized browser window*/
     height: auto;
-    top: 250px;
+    top: 230px;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, 0%);
@@ -228,13 +251,98 @@ div.ui-datepicker{
     overflow: hidden;
     
 }
-#kalender {
-    height: 300px;
+div#kalender {
+    height: 400px;
     border: 1px solid black;
     margin-bottom: 20px;
     overflow: hidden;
     text-overflow: ellipsis;
+    position: relative;
 }
+/*================*/
+/*Kalender*/
+#calendar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-spacing: 0px;
+    width: 98%;
+    height: 91%;
+
+
+}
+.calendar_head, .calendar_head_month {
+    text-align: center;
+    //background-color: #2F3036;
+    background: -webkit-linear-gradient(#58595e, #2F3036);
+    background: -o-linear-gradient(#58595e, #2F3036);
+    background: -moz-linear-gradient(#58595e, #2F3036);
+    background: linear-gradient(#58595e, #2F3036);
+    color: white;
+    border: none;
+}
+.calendar_head, .calendar_head_month {
+    font-size: 30px;
+}
+.calendar_day {
+    //background-color: #43444a;
+    text-align: center;
+    background: -webkit-linear-gradient(#828286, #58595e);
+    background: -o-linear-gradient(#828286, #58595e);
+    background: -moz-linear-gradient(#828286, #58595e);
+    background: linear-gradient(#828286, #58595e);
+    color: white;
+    border: none;
+    font-size: 14px;
+}
+.calendar_link {
+    color: white;
+    text-decoration: none;
+}
+.calendar_entry {
+    background-color: #ddd;
+    color: #696969;
+    text-align: center;
+    vertical-align: top;
+    position: relative;
+    border: 1px solid white;
+    width: 14%;
+    font-size: 20px;
+}
+#calendar_entry_4, #calendar_entry_1, #calendar_entry_2, #calendar_entry_3, #calendar_entry_5, #calendar_entry_6, #calendar_entry_7, #calendar_entry_39, #calendar_entry_40, #calendar_entry_41, #calendar_entry_42 {
+    background-color: #eee;
+}
+#calendar_entry_16 {
+    background-color: #838b8b;
+    color: white;
+}
+.event_circle {
+    border-radius: 50%;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+}
+#event_circle1 {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background: #f37735;
+}
+#event_circle2 {
+    position: absolute;
+    bottom: 5px;
+    left: 25px;
+    background: #d11141;
+}
+#event_circle3 {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background: #00aedb;
+}
+/*Kalender*/
+/*================*/
 #infos {
     height: auto;
     border: 1px solid black;
@@ -248,7 +356,11 @@ div.ui-datepicker{
 /*===================*/
 /*Alex' Code*/
 .title {
-    background-color: #2F3036;
+    //background-color: #2F3036;
+    background: -webkit-linear-gradient(#58595e, #2F3036);
+    background: -o-linear-gradient(#58595e, #2F3036);
+    background: -moz-linear-gradient(#58595e, #2F3036);
+    background: linear-gradient(#58595e, #2F3036);
     color: white;
     position: relative;
 }
@@ -336,7 +448,11 @@ h4 {
 
 #impressum a {
     color: #FFFFFF; 
-    background: #2f3036;
+    //background: #2f3036;
+    background: -webkit-linear-gradient(#58595e, #2F3036);
+    background: -o-linear-gradient(#58595e, #2F3036);
+    background: -moz-linear-gradient(#58595e, #2F3036);
+    background: linear-gradient(#58595e, #2F3036);
     display: block;
     float: left;
     text-align: center;

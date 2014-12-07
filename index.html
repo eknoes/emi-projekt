@@ -31,12 +31,12 @@ and open the template in the editor.
                 <label for="show-menu" class="show-menu">Navigation</label>
                 <input type="checkbox" id="show-menu" role="button">
                 <ul id="Navigation">
-                    <li><a class="navbutton" href="#">Kultur</a></li>
-                    <li><a class="navbutton" href="#">Musik</a></li>
-                    <li><a class="navbutton" href="#">Öffentliches</a></li>
-                    <li><a class="navbutton" href="#">Soiree</a></li>
-                    <li><a class="navbutton" href="#">Bildung</a></li>
-                    <li><a class="navbutton" href="#">Sonstige</a></li>
+                    <li><a class="navbutton" id ="a_kultur" href="#">Kultur</a></li>
+                    <li><a class="navbutton" id ="a_musik" href="#">Musik</a></li>
+                    <li><a class="navbutton" id ="a_oeffentliches" href="#">Öffentliches</a></li>
+                    <li><a class="navbutton" id ="a_soiree" href="#">Soiree</a></li>
+                    <li><a class="navbutton" id ="a_bildung" href="#">Bildung</a></li>
+                    <li><a class="navbutton" id ="a_sonstige" href="#">Sonstige</a></li>
                 </ul>
                 <div>
                     <input id="datepicker" type="text" placeholder="Datum">
@@ -46,9 +46,84 @@ and open the template in the editor.
         </div>
         <div id="inhalt">
             <div id="kalender">
-                <script type="text/javascript">
+                <!--<script type="text/javascript">
                 generateMonth(11, 2014);
-                </script>
+                </script>-->
+                <table id="calendar">
+                <tr >
+                    <td class="calendar_head"><a class="calendar_link" href="javascript:prevMonth()"> &laquo;</a></td>
+                    <td colspan=5 class='calendar_head_month' id='calendar_month'>Dezember 2014</td>
+                    <td class="calendar_head"><a class="calendar_link" href="javascript:nextMonth()"> &raquo;</a></td>
+                </tr>
+                <tr>
+                    <td class="calendar_day">Mo</td>
+                    <td class="calendar_day">Di</td>
+                    <td class="calendar_day">Mi</td>
+                    <td class="calendar_day">Do</td>
+                    <td class="calendar_day">Fr</td>
+                    <td class="calendar_day">Sa</td>
+                    <td class="calendar_day">So</td>
+                </tr>
+                <tr>
+                    <td class="calendar_entry" id="calendar_entry_1">24</td>
+                    <td class="calendar_entry" id="calendar_entry_2">25</td>
+                    <td class="calendar_entry" id="calendar_entry_3">26</td>
+                    <td class="calendar_entry" id="calendar_entry_4">27</td>
+                    <td class="calendar_entry" id="calendar_entry_5">28</td>
+                    <td class="calendar_entry" id="calendar_entry_6">29</td>
+                    <td class="calendar_entry" id="calendar_entry_7">30</td>
+                </tr>
+                <tr>
+                    <td class="calendar_entry" id="calendar_entry_8">1
+                        <div class="event_circle" id="event_circle1"></div>
+                        <div class="event_circle" id="event_circle2"></div>
+                    </td>
+                    <td class="calendar_entry" id="calendar_entry_9">2</td>
+                    <td class="calendar_entry" id="calendar_entry_10">3</td>
+                    <td class="calendar_entry" id="calendar_entry_11">4</td>
+                    <td class="calendar_entry" id="calendar_entry_12">5</td>
+                    <td class="calendar_entry" id="calendar_entry_13">6</td>
+                    <td class="calendar_entry" id="calendar_entry_14">7</td>
+                </tr>
+                <tr>
+                    <td class="calendar_entry" id="calendar_entry_15">8</td>
+                    <td class="calendar_entry" id="calendar_entry_16">9
+                        <div class="event_circle" id="event_circle3"></div>
+                    </td>
+                    <td class="calendar_entry" id="calendar_entry_17">10</td>
+                    <td class="calendar_entry" id="calendar_entry_18">11</td>
+                    <td class="calendar_entry" id="calendar_entry_19">12</td>
+                    <td class="calendar_entry" id="calendar_entry_20">13</td>
+                    <td class="calendar_entry" id="calendar_entry_21">14</td>
+                </tr>
+                <tr>
+                    <td class="calendar_entry" id="calendar_entry_22">15</td>
+                    <td class="calendar_entry" id="calendar_entry_23">16</td>
+                    <td class="calendar_entry" id="calendar_entry_24">17</td>
+                    <td class="calendar_entry" id="calendar_entry_25">18</td>
+                    <td class="calendar_entry" id="calendar_entry_26">19</td>
+                    <td class="calendar_entry" id="calendar_entry_27">20</td>
+                    <td class="calendar_entry" id="calendar_entry_28">21</td>
+                </tr>
+                <tr>
+                    <td class="calendar_entry" id="calendar_entry_29">22</td>
+                    <td class="calendar_entry" id="calendar_entry_30">23</td>
+                    <td class="calendar_entry" id="calendar_entry_31">24</td>
+                    <td class="calendar_entry" id="calendar_entry_32">25</td>
+                    <td class="calendar_entry" id="calendar_entry_33">26</td>
+                    <td class="calendar_entry" id="calendar_entry_34">27</td>
+                    <td class="calendar_entry" id="calendar_entry_35">28</td>
+                </tr>
+                <tr>
+                    <td class="calendar_entry" id="calendar_entry_36">29</td>
+                    <td class="calendar_entry" id="calendar_entry_37">30</td>
+                    <td class="calendar_entry" id="calendar_entry_38">31</td>
+                    <td class="calendar_entry" id="calendar_entry_39">1</td>
+                    <td class="calendar_entry" id="calendar_entry_40">2</td>
+                    <td class="calendar_entry" id="calendar_entry_41">3</td>
+                    <td class="calendar_entry" id="calendar_entry_42">4</td>
+                </tr>
+                </table>
             </div>
             <div id="infos">
                 <div class="infoBlock" id="infoBlock1">
