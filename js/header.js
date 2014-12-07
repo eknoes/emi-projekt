@@ -24,13 +24,13 @@ $(function(){
 function resizenavi (){
     var breite = $(window).width(); /*Calculate window width*/
     if (breite>=1000) {
-        $("a.navbutton").css("min-width", breite/8.617); /*adjust button size to window*/
-        $("a.impbutton").css("min-width", breite/12);
+        $("a.navbutton").css("min-width", breite/8.617); /*adjust button size to window*/    
         $("#navi").css("width", "100%");
     }
     else {
         $("#Navigation").css("margin-left", "0");
     }
+    $("a.impbutton").css("min-width", breite/12);
 }
 /*Activate responsiveness on resize of window*/
 $(window).resize(function (){
@@ -38,35 +38,37 @@ $(window).resize(function (){
 });
 function details(info){
     var text, aktiv;
+    function display(id) {
+        if ($(id).css('display') === 'none') {
+            $(id).css("display", "block"); 
+        }
+        else {     
+            $(id).css("display", "none");
+        }
+        switch (id) {
+            case '#team':
+                $('#styleguide').css("display", "none");
+                $('#mockups').css("display", "none");
+                break;
+            case '#styleguide':
+                $('#mockups').css("display", "none");
+                $('#team').css("display", "none");
+                break;
+            case '#mockups':
+                $('#styleguide').css("display", "none");
+                $('#team').css("display", "none");
+                break;
+        }
+    }
     switch (info) {
         case 'team':
-            text = "<b>Team</b>";
+            display('#team');
             break;
         case 'styleguide':
-            text = "styleguide";
+            display('#styleguide');
             break;
         case 'mockups':
-            text = "Mockups";
+            display('#mockups');
             break;
     }
-    aktiv = document.getElementById("impdetails").innerHTML;
-    document.getElementById("impdetails").innerHTML=text;
-    
-        if ($("#impdetails").css('display') === 'none') {
-            if (aktiv !== text) {
-                $("#impdetails").css("display", "block");
-            }
-            else {
-                $("#impdetails").css("display", "none");
-            }
-   
-        }
-        else {
-            if (aktiv === text) {
-                $("#impdetails").css("display", "none");
-            }
-            else {
-                $("#impdetails").css("display", "block");
-            }
-        }
 }

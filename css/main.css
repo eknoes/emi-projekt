@@ -278,29 +278,30 @@ table#ContentsTable {
     right: 0px;
     width: 39%;
     height: 250px;
-    //border: 1px solid black;
-    text-align: center; /*centers the small images*/
-    white-space: nowrap; /*keeps the last element from potentially dropping to the next line*/
+    text-align: justify; /*centers the small images with equal spacing*/
     overflow: hidden;
+}
+#infoPictures:after {
+    content: ''; /*centers the small images with equal spacing*/
+    width: 100%;
+    display: inline-block;
 }
 #infoPicturesBig {
     position: relative;
     width: 100%;
     height: 75%;
     border: 1px solid black;
-    overflow: hidden; 
-    
+    overflow: hidden;   
 }
 .infoPicturesSub {
     position: relative;
-    width: 32.9%;
+    width: 32%;
     height: 23%;
-    //border: 1px solid black;
     display: inline-block; /*subpictures in one line*/
-    margin-top: 3px;
+    margin-top: 2%;
     overflow: hidden; 
 }
-.image {
+#mainimage {
     position: absolute;
     top:50%;
     left:50%;
@@ -311,6 +312,8 @@ table#ContentsTable {
     top:50%;
     left:50%;
     transform: translate(-50%, -50%); /*Shows the center of the image*/
+    width: 100%;
+    height: 100%;
 }
 #infoBlockAnfahrtText {
     display: inline-block;
@@ -338,9 +341,9 @@ h4 {
     float: left;
     text-align: center;
     text-decoration: none;
-    min-width: 160px;
-    height: 25px;
-    line-height: 25px;
+    min-width: 100px;
+    height: 20px;
+    line-height: 20px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0px 5px 5px 0; 
 }
@@ -349,12 +352,15 @@ h4 {
 }
 #impdetails  {
     width: 98%;
-    min-height: 20px;
     overflow: hidden;
     position: relative;
-    left: 1%;
-    border: 1px solid black;
+    //border: 1px solid black;
     margin: 5px 0;
+    //display: none;
+}
+#team, #styleguide, #mockups {
+    min-height: 20px;
+    overflow: hidden;
     display: none;
 }
 .BoxGlow_Grey2{
