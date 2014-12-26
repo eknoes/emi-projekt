@@ -110,7 +110,6 @@ ul#Navigation a {
     height: 45px;
     line-height: 45px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    
     text-transform: uppercase;
 }
 
@@ -149,18 +148,10 @@ ul#Navigation a {
         line-height: 45px;
 }
 
-/*Hide checkbox*/
-input[type=checkbox]{
-    display: none;
-}
-
-/*Show menu when invisible checkbox is checked*/
-input[type=checkbox]:checked ~ #Navigation{
-    display: block;
-}
 label.show-menu:hover {
     cursor: pointer;
 }
+/*
 /*Responsive Styles*/
 
 @media screen and (max-width : 1016px){
@@ -188,7 +179,7 @@ label.show-menu:hover {
 }
 input[type="text"] {
     height: 33px;
-    font-size: 20px;
+    font-size: 18px;
     display: inline-block;
     font-family: "Lato";
     border: none;
@@ -214,7 +205,7 @@ input[type="text"]:focus:hover {
 }
 
 input[type="text"]:focus {
-    width: 120px;
+    width: 103px;
     z-index: 1;
     border-bottom: 1px solid #BBB;
     cursor: text;
@@ -249,7 +240,7 @@ div.ui-datepicker{
 #inhalt {
     position: absolute;
     width: 70%;
-    /* min-width: 600px; optional, looking bad at resized browser window*/
+    /*min-width: 450px; optional, looking bad at resized browser window*/
     height: auto;
     top: 230px;
     left: 50%;
@@ -330,25 +321,30 @@ div#kalender {
 .event_circle {
     border-radius: 50%;
     display: inline-block;
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
+}
+.circles {
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
 }
 #event_circle1 {
-    position: absolute;
-    bottom: 5px;
-    left: 5px;
     background: #f37735;
 }
 #event_circle2 {
-    position: absolute;
-    bottom: 5px;
-    left: 25px;
     background: #d11141;
 }
 #event_circle3 {
     position: absolute;
     bottom: 5px;
     left: 5px;
+    background: #00aedb;
+}
+#event_circle4 {
+    background: #00aedb;
+}
+#event_circle5 {
     background: #00aedb;
 }
 /*Kalender*/
@@ -358,6 +354,7 @@ div#kalender {
     border: 1px solid black;
     margin-bottom: 20px;
 }
+
 #impressum {
     min-height: 50px;
     border: 1px solid black;

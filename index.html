@@ -28,15 +28,14 @@ and open the template in the editor.
                 </figure>
             </div>
             <div id="navi">
-                <label for="show-menu" class="show-menu">Navigation</label>
-                <input type="checkbox" id="show-menu" role="button">
+                <label class="show-menu">Navigation</label>
                 <ul id="Navigation">
-                    <li><a class="navbutton" id ="a_kultur" href="#">Kultur</a></li>
-                    <li><a class="navbutton" id ="a_musik" href="#">Musik</a></li>
-                    <li><a class="navbutton" id ="a_oeffentliches" href="#">Öffentliches</a></li>
-                    <li><a class="navbutton" id ="a_soiree" href="#">Soiree</a></li>
-                    <li><a class="navbutton" id ="a_bildung" href="#">Bildung</a></li>
-                    <li><a class="navbutton" id ="a_sonstige" href="#">Sonstige</a></li>
+                    <li><a class="navbutton" id ="a_kultur" href="#infos">Kultur</a></li>
+                    <li><a class="navbutton" id ="a_musik" href="#infos">Musik</a></li>
+                    <li><a class="navbutton" id ="a_oeffentliches" href="#infos">Öffentliches</a></li>
+                    <li><a class="navbutton" id ="a_soiree" href="#infos">Soiree</a></li>
+                    <li><a class="navbutton" id ="a_bildung" href="#infos">Bildung</a></li>
+                    <li><a class="navbutton" id ="a_sonstige" href="#infos">Sonstige</a></li>
                 </ul>
                 <div>
                     <input id="datepicker" type="text" placeholder="Datum">
@@ -75,8 +74,12 @@ and open the template in the editor.
                 </tr>
                 <tr>
                     <td class="calendar_entry" id="calendar_entry_8">1
-                        <div class="event_circle" id="event_circle1"></div>
-                        <div class="event_circle" id="event_circle2"></div>
+                        <div class="circles">
+                            <div class="event_circle" id="event_circle1"></div>
+                            <div class="event_circle" id="event_circle2"></div>
+                            <div class="event_circle" id="event_circle4"></div>
+                            <div class="event_circle" id="event_circle5"></div>
+                        </div>
                     </td>
                     <td class="calendar_entry" id="calendar_entry_9">2</td>
                     <td class="calendar_entry" id="calendar_entry_10">3</td>
@@ -184,7 +187,7 @@ and open the template in the editor.
                     <div class="title">
                         <h3>Anfahrt </h3>
                     </div>
-                    <iframe width="600" height="300" src="http://maps.google.de/maps?hl=de&q=Pariser Platz, 10117 Berlin+(Brandenburger Tor)&ie=UTF8&t=&z=17&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <iframe id="maps" width="600" height="300" src="http://maps.google.de/maps?hl=de&q=Pariser Platz, 10117 Berlin+(Brandenburger Tor)&ie=UTF8&t=&z=17&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                     <div id="infoBlockAnfahrtText">
                         <h4>Adresse:</h4>
                         <p id ="anfahrtTextP">
