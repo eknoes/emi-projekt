@@ -459,7 +459,7 @@ h4 {
 /*Alex' Code*/
 /*===================*/
 
-#impressum a {
+#impressum a.impbutton {
     color: #FFFFFF; 
     //background: #2f3036;
     background: -webkit-linear-gradient(#58595e, #2F3036);
