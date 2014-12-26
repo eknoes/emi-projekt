@@ -20,6 +20,28 @@ $(function(){
         changeYear: true
     });
 });
+function searchdate() {
+    var input = document.getElementById("datepicker");
+    
+    /*scroll to infos if search button clicked*/
+    if ($(input).is(':visible'))  {
+        /*validate input*/
+        if ($(input).val() == "") {
+            alert("Fehler!");
+            return;
+        }
+        /*scroll to infos if search button clicked*/
+        (function($) {
+            $(document).ready(function() {
+                 $('html, body').animate({
+                    'scrollTop':   $('#infos').offset().top
+                 }, 900);
+            });
+        })(jQuery);
+    }
+    /*toggle search field*/
+    $(input).toggle("fast");
+}
 /*Responsive Navigation Bar*/
 function resizenavi (){
     var breite = $(window).width(); /*Calculate window width*/

@@ -198,18 +198,17 @@ input[type="text"] {
     z-index: 3;
     transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
     cursor: pointer;
+    width: 103px;
+    z-index: 1;
+    border-bottom: 1px solid #BBB;
+    cursor: text;
+    display: none;
 }
 
 input[type="text"]:focus:hover {
     border-bottom: 1px solid #BBB;
 }
 
-input[type="text"]:focus {
-    width: 103px;
-    z-index: 1;
-    border-bottom: 1px solid #BBB;
-    cursor: text;
-}
 
 input[type="submit"] {
     height: 40px;
