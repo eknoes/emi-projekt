@@ -57,6 +57,9 @@ function resizenavi (){
         $("#infoPictures").css("position", "absolute");
         $("#infoBlock1").css("height", "250px");
         $("#infoPictures").css("width", "39%");
+        
+        $("#infoPictures").css("height", "250px");
+        $(".slider").css("height", "170px");
         $("#titleQuickInfo").css("width", "59%");
         /*Make content div smaller*/
         $("#inhalt").css("width", "70%");
@@ -76,6 +79,12 @@ function resizenavi (){
         $("#infoPictures").css("position", "static");
         $("#infoBlock1").css("height", "auto");
         $("#infoPictures").css("width", "100%");
+        
+        $("#infoPictures").css("height", breite/2);
+        $(".slider").css("height", breite/6); /*keeps slider aspect ratio*/
+        $(".BoxGlow_Grey2").css("width", "100%"); /*fixes error in resizing sticky panel when scrolled down*/
+        
+        
         $("#titleQuickInfo").css("width", "100%");
         /*Make content div wider*/
         $("#inhalt").css("width", "98%");
