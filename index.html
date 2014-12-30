@@ -11,13 +11,16 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">       
         <link rel="stylesheet" href="css/jquery-ui-1.8.16.custom.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+        <link rel="stylesheet" type="text/css" href="css/themes/tooltipster-light.css" />
         <script type="text/javascript" src="js/libs/jquery/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="js/libs/jqueryui/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/libs/jqueryui/jquery.ui.datepicker-de.js"></script>
         <script type="text/javascript" src="js/libs/jquery.stickyPanel.min.js"></script>
+        <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
         <script type="text/javascript" src="js/calendar.js"></script>  
     </head>
-    <body onload="resizenavi()">
+    <body>
         <div id="header">
             <div id="banner">
                 <figure>
@@ -40,7 +43,7 @@ and open the template in the editor.
                 </ul>
                 <div>
                     <input id="datepicker" type="text" placeholder="Datum">
-                    <input id="submit" type="submit" value="" onclick="searchdate()">
+                    <input id="submit" type="submit" value="">
                 </div>
             </div>
         </div>
@@ -76,10 +79,12 @@ and open the template in the editor.
                 <tr>
                     <td class="calendar_entry" id="calendar_entry_8">1
                         <div class="circles">
-                            <div class="event_circle" id="event_circle1"></div>
-                            <div class="event_circle" id="event_circle2"></div>
-                            <div class="event_circle" id="event_circle4"></div>
-                            <div class="event_circle" id="event_circle5"></div>
+                            <div class="event_circle kultur"></div>
+                            <div class="event_circle musik"></div>
+                            <div class="event_circle oeffentliches"></div>
+                            <div class="event_circle soiree"></div>
+                            <div class="event_circle bildung"></div>
+                            <div class="event_circle sonstige"></div>
                         </div>
                     </td>
                     <td class="calendar_entry" id="calendar_entry_9">2</td>
@@ -91,9 +96,7 @@ and open the template in the editor.
                 </tr>
                 <tr>
                     <td class="calendar_entry" id="calendar_entry_15">8</td>
-                    <td class="calendar_entry" id="calendar_entry_16">9
-                        <div class="event_circle" id="event_circle3"></div>
-                    </td>
+                    <td class="calendar_entry" id="calendar_entry_16">9</td>
                     <td class="calendar_entry" id="calendar_entry_17">10</td>
                     <td class="calendar_entry" id="calendar_entry_18">11</td>
                     <td class="calendar_entry" id="calendar_entry_19">12</td>

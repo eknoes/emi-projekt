@@ -17,12 +17,24 @@ $(function(){
         selectOtherMonths: true,
         showButtonPanel: true,
         changeMonth: true,
-        changeYear: true
+        changeYear: true,
+        onClose: function() {
+            $("#datepicker").hide("fast");
+        }
     });
+});
+
+/*Search button Click event*/
+$("#submit").click(function () {
+    searchdate();    
+});
+/*smooth scroll to infos on table cell click*/
+$(".calendar_entry").click(function () {
+    infoscroll();
 });
 function searchdate() {
     var input = document.getElementById("datepicker");
-    
+    var button = document.getElementById("submit");
     /*scroll to infos if search button clicked*/
     if ($(input).is(':visible'))  {
         /*validate input*/
@@ -30,18 +42,19 @@ function searchdate() {
             alert("Fehler!");
             return;
         }
-        /*scroll to infos if search button clicked*/
-        (function($) {
-            $(document).ready(function() {
-                 $('html, body').animate({
-                    'scrollTop':   $('#infos').offset().top
-                 }, 900);
-            });
-        })(jQuery);
+        /*scroll to infos if search button clicked*/        
+        infoscroll();
     }
     /*toggle search field*/
-    $(input).toggle("fast");
+    $(input).toggle("fast");    
 }
+/*smooth scroll to infos*/        
+function infoscroll() {
+     $('html, body').animate({
+        'scrollTop':   $('#infos').offset().top
+     }, 900);
+}(jQuery);            
+        
 /*Responsive Navigation Bar*/
 function resizenavi (){
     var breite = $(window).width(); /*Calculate window width*/
@@ -58,8 +71,8 @@ function resizenavi (){
         $("#infoBlock1").css("height", "250px");
         $("#infoPictures").css("width", "39%");
         
-        $("#infoPictures").css("height", "250px");
-        $(".slider").css("height", "170px");
+        $("#infoPictures").css("height", "250px"); /*Set initial height*/
+        $(".slider").css("height", "170px"); /*Set initial height*/
         $("#titleQuickInfo").css("width", "59%");
         /*Make content div smaller*/
         $("#inhalt").css("width", "70%");
@@ -80,7 +93,7 @@ function resizenavi (){
         $("#infoBlock1").css("height", "auto");
         $("#infoPictures").css("width", "100%");
         
-        $("#infoPictures").css("height", breite/2);
+        $("#infoPictures").css("height", breite/2); /*better aspect ratio on mobile devices*/
         $(".slider").css("height", breite/6); /*keeps slider aspect ratio*/
         $(".BoxGlow_Grey2").css("width", "100%"); /*fixes error in resizing sticky panel when scrolled down*/
         
@@ -99,8 +112,16 @@ function resizenavi (){
 }
 /*Activate responsiveness on resize of window*/
 $(window).resize(function (){
-    resizenavi();
+    ini();
 });
+/*initial resize of all objects to look good*/
+function ini() {
+    resizenavi();
+    circlewrap();
+}
+/*Load ini on document load*/
+window.onload = ini();
+
 /*Impressum tab hide/show*/
 function details(info){
     switch (info) {
@@ -121,8 +142,9 @@ function details(info){
             break;
     }    
 }
-/*Smooth scrolling*/
+
 $(document).ready(function(){
+        /*Smooth scrolling*/
 	$('a[href^="#"]').on('click',function (e) {
 	    e.preventDefault();
 	    var target = this.hash;
@@ -138,6 +160,85 @@ $(document).ready(function(){
             }
             
 	});
+        /*Tooltips in calendar*/        
+        $('.calendar_entry').tooltipster({
+                content: 'L&auml;dt...',
+                theme: 'tooltipster-light',
+                animation: 'grow',
+                position: 'right',                
+                maxWidth: 200,
+                /*autoClose: false,*/ /*Good for analyzing html and css of tooltip*/
+                contentAsHTML: true,
+                functionBefore: function (origin, continueTooltip) {
+                    continueTooltip();		                    
+                    $.getJSON('resources/events.json', function(data) {
+                        var infos = "";   /*Stores the loaded tooltip content*/
+                        var kategorie=[]; /*booleans checking for categories*/
+                        var kategorien = ["Kultur", "Musik", "&Ouml;ffentliches", "Soiree", "Bildung", "Sonstige"]; /*Names of Categories for content and comparison with json*/
+                        var classes = ["kultur", "musik", "oeffentliches", "soiree", "bildung", "sonstige"]; /*class names for tags*/
+                        /*iterate through whole json to find all available categories*/
+                        for (var i = 0; i < data.events.length; i++)
+                        {
+                            switch (data.events[i].categories) {
+                                case "Kultur": kategorie[0]=true; break;
+                                case "Musik": kategorie[1]=true; break;                                
+                                case "&Ouml;ffentliches": kategorie[2]=true; break;
+                                case "Soiree": kategorie[4]=true; break;
+                                case "Bildung": kategorie[3]=true; break;                                
+                                case "Sonstige": kategorie[5]=true; break;
+                            }                            
+                        }
+                        /*iterate through categories boolean array*/
+                        for (var i = 0; i < 6; i++) {
+                            if (kategorie[i]){
+                                /*Adds category title to content*/
+                                infos = infos + "<h3 class='tooltip-title " + classes[i] + "'>" + kategorien[i] + "</h3>";
+                                /*iterates through all events with the actual category...*/
+                                for (var n = 0; n < data.events.length; n++)
+                                {
+                                    if (data.events[n].categories == kategorien[i]) {
+                                        /*...and adds them to content*/
+                                        infos = infos  + "<div class='tooltip-event'>" + data.events[n].name + "</div>";
+                                    }                        
+                                }                                   
+                            }
+                        }
+                        /*Set infos as new content*/
+                        origin.tooltipster("content", infos);
+                        //origin.tooltipster('content', jd.events[0].name + jd.events[0].date[1]);				
+                    });
+                }
+            });        
+});
+
+$(".event_circle").tooltipster({
+    content: 'Loading...',
+    theme: 'tooltipster-light',
+    animation: 'grow',
+    position: 'left',
+    //onlyOne: true,
+    maxWidth: 200,
+    contentAsHTML: true,
+    functionBefore: function (origin, continueTooltip) {
+        continueTooltip();		
+	var kategorie;
+	if ($(this).hasClass("musik")) {kategorie="Musik";}
+	if ($(this).hasClass("kultur")) {kategorie="Kultur";}
+        if ($(this).hasClass("oeffentliches")) {kategorie="&Ouml;ffentliches";}
+        if ($(this).hasClass("bildung")) {kategorie="Bildung";}
+        if ($(this).hasClass("soiree")) {kategorie="Soiree";}
+        if ($(this).hasClass("sonstige")) {kategorie="Sonstige";}
+	$.getJSON('resources/events.json', function(data) {
+            var infos = ""; 
+            $.each(data.events, function (key, val) {
+                if (val.categories == kategorie) {
+                    infos = infos + " " + val.name + "<br>" + val.date[0] + "<br>";						
+                }
+            });
+            origin.tooltipster("content", infos);
+            //origin.tooltipster('content', jd.events[0].name + jd.events[0].date[1]);				
+	});
+    }
 });
 /*toggle mobile navigation*/
 $(function(){
@@ -145,4 +246,43 @@ $(function(){
         $("#Navigation").toggle("fast");
     });
 });
+/*detect wrap of event circles*/
+function circlewrap () {
+    var y1=$(".circles div:first-child").offset();
+    var y2=$(".circles div:last-child").offset();
+    var breite = $(".event_circle").css("width");
+    var circleswidth = $("div.circles").width();
+    var cellwidth = $("#calendar_entry_8").outerWidth();
+    /*make circles smaller*/
+    if (y1.top!==y2.top) {
+        /*alert("Wrap!!!");*/       
+        switch (breite) {
+            case '12px':
+                $(".event_circle").css("height", "10px");
+                $(".event_circle").css("width", "10px");
+                break;
+            case '10px':
+                $(".event_circle").css("height", "8px");
+                $(".event_circle").css("width", "8px");
+                $(".calendar_head, .calendar_head_month").css("font-size", "20px");
+                break;
+        }
+    }
 
+    /*Make circles bigger*/
+    switch (breite) {
+            case '10px':
+                if (cellwidth>circleswidth+20) {
+                    $(".event_circle").css("height", "12px");
+                    $(".event_circle").css("width", "12px");
+                }
+                break;
+            case '8px':
+                if (cellwidth>circleswidth+20) {
+                    $(".event_circle").css("height", "10px");
+                    $(".event_circle").css("width", "10px");
+                    $(".calendar_head, .calendar_head_month").css("font-size", "30px");
+                }                
+                break;
+        }
+};

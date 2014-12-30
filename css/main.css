@@ -225,7 +225,6 @@ input[type="submit"] {
     transform: translate(0, -50%); /*Zentrierung mit CSS3*/
     right: 10px;
     z-index: 2;
-    cursor: pointer;
     opacity: 0.4;
     cursor: pointer;
     transition: opacity .4s ease;
@@ -247,7 +246,7 @@ div.ui-datepicker{
     margin-top: 60px;
     transform: translate(-50%, 0%);
     -webkit-transform: translate(-50%, 0%);/* Chrome, Safari, Opera */
-    -ms-transform: rotate(7deg); /* IE 9 */
+    -ms-transform: translate(-50%, 0%); /* IE 9 */
     background-color:#F5F5F5;
     overflow: hidden;
     
@@ -328,26 +327,31 @@ div#kalender {
     position: absolute;
     bottom: 0px;
     left: 5px;
+    line-height: 0px;
+    margin-bottom: 2px;
 }
-#event_circle1 {
+.event_circle.kultur {
+    background: #d11141;;
+}
+.event_circle.musik {
+    background: #00b159;
+}
+.event_circle.oeffentliches {
+    background: #00aedb;
+}
+.event_circle.soiree {
     background: #f37735;
 }
-#event_circle2 {
-    background: #d11141;
+.event_circle.bildung {
+    background: #ffc425;
 }
-#event_circle3 {
-    position: absolute;
-    bottom: 5px;
-    left: 5px;
-    background: #00aedb;
+.event_circle.sonstige {
+    background: #ccc;
 }
-#event_circle4 {
-    background: #00aedb;
+td {
+    cursor: pointer;
 }
-#event_circle5 {
-    background: #00aedb;
-}
-/*Kalender*/
+/*Kalender Ende*/
 /*================*/
 #infos {
     height: auto;
@@ -371,7 +375,7 @@ div#kalender {
     color: white;
     position: relative;
 }
-h3 {
+.title h3 {
     color: white;
     font-weight: normal;
     padding-left: 5px;
@@ -458,7 +462,33 @@ h4 {
 
 /*Alex' Code*/
 /*===================*/
-
+/*Tooltips*/
+.tooltip-title {
+    margin: 0;
+    padding: 0;
+}
+.tooltip-title.kultur {
+    color: #d11141;
+}
+.tooltip-title.musik {
+    color: #00b159;
+}
+.tooltip-title.oeffentliches {
+    color: #00aedb;
+}
+.tooltip-title.soiree {
+    color: #f37735;
+}
+.tooltip-title.bildung {
+    color: #ffc425;
+}
+.tooltip-title.sonstige {
+    color: #ccc;
+}
+.tooltip-event {
+    margin-bottom: 5px;
+}
+/*Tooltips end*/
 #impressum a.impbutton {
     color: #FFFFFF; 
     //background: #2f3036;
