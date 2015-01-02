@@ -243,6 +243,7 @@ $(".event_circle").tooltipster({
         },
     functionAfter: function (origin) {
             $(".calendar_entry").tooltipster("enable");
+            $(".calendar_entry").tooltipster("reposition");
         }
 });
 /*toggle mobile navigation*/
