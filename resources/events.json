@@ -14,11 +14,7 @@
                 "beispiel",
                 "Example"
             ],
-<<<<<<< HEAD
             "categories": ["Musik"]
-=======
-            "categories": "Musik"
->>>>>>> d5797ef449af4274a7fb12086918b5f6a54bc91a
         },
 		{
             "name": "Beispiel Event2",
@@ -34,11 +30,7 @@
                 "beispiel",
                 "Example"
             ],
-<<<<<<< HEAD
             "categories": ["Musik"]
-=======
-            "categories": "Musik"
->>>>>>> d5797ef449af4274a7fb12086918b5f6a54bc91a
         },
 		{
             "name": "Beispiel Event3",
@@ -54,11 +46,7 @@
                 "beispiel",
                 "Example"
             ],
-<<<<<<< HEAD
             "categories": ["Musik"]
-=======
-            "categories": "Musik"
->>>>>>> d5797ef449af4274a7fb12086918b5f6a54bc91a
         },
 	{
             "name": "Beispiel Event4",
@@ -74,11 +62,7 @@
                 "beispiel",
                 "Example"
             ],
-<<<<<<< HEAD
             "categories": ["Kultur"]
-=======
-            "categories": "Kultur"
->>>>>>> d5797ef449af4274a7fb12086918b5f6a54bc91a
         },
 		{
             "name": "Beispiel Event5",
@@ -94,11 +78,7 @@
                 "beispiel",
                 "Example"
             ],
-<<<<<<< HEAD
             "categories": ["Kultur"]
-=======
-            "categories": "Kultur"
->>>>>>> d5797ef449af4274a7fb12086918b5f6a54bc91a
         },
         {
             "name": "Beispiel Event6",
@@ -130,11 +110,7 @@
                 "beispiel",
                 "Example"
             ],
-<<<<<<< HEAD
             "categories": ["Bildung"]
-=======
-            "categories": "Bildung"
->>>>>>> d5797ef449af4274a7fb12086918b5f6a54bc91a
         },
         {
             "name": "Beispiel Event8",
@@ -150,11 +126,7 @@
                 "beispiel",
                 "Example"
             ],
-<<<<<<< HEAD
             "categories": ["Soiree"]
-=======
-            "categories": "Soiree"
->>>>>>> d5797ef449af4274a7fb12086918b5f6a54bc91a
         },
         {
             "name": "Beispiel Event9",
@@ -170,11 +142,7 @@
                 "beispiel",
                 "Example"
             ],
-<<<<<<< HEAD
             "categories": ["Sonstige"]
-=======
-            "categories": "Sonstige"
->>>>>>> d5797ef449af4274a7fb12086918b5f6a54bc91a
         }
     ]
 }
