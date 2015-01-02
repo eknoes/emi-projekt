@@ -94,7 +94,7 @@
                 "beispiel",
                 "Example"
             ],
-            "categories": "&Ouml;ffentliches"
+            "categories": ["&Ouml;ffentliches"]
         },
         {
             "name": "Beispiel Event7",

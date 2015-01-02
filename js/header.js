@@ -222,7 +222,7 @@ $(".event_circle").tooltipster({
     contentAsHTML: true,
     functionBefore: function (origin, continueTooltip) {
             continueTooltip();		
-            $(".calendar_entry").tooltipster("disable");
+            $(".calendar_entry").tooltipster("hide");
         	var kategorie;
         	if ($(this).hasClass("musik")) {kategorie="Musik";}
         	if ($(this).hasClass("kultur")) {kategorie="Kultur";}
