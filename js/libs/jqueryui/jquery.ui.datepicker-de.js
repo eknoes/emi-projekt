@@ -10,7 +10,7 @@ factory( jQuery.datepicker );
 }
 }(function( datepicker ) {
 datepicker.regional['de'] = {
-closeText: 'Schlieﬂen',
+closeText: 'Schlie&szlig;en',
 prevText: '&#x3C;Zur&uuml;ck',
 nextText: 'Vor&#x3E;',
 currentText: 'Heute',

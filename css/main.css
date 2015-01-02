@@ -7,15 +7,17 @@ and open the template in the editor.
     Created on : 15.11.2014, 17:44:46
     Author     : Konsi
 */
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
 body {
     margin: 0px;
-    height:1500px;
+    //height:1500px;
+    font-family: Lato;
 }
 #header {
-    border: 1px solid #666;
+    //border: 1px solid #666;
     width:100%;
     //min-width: 1100px; 
-    height: 215px;
+    height: auto;
     z-index: 255;
 }
 
@@ -49,11 +51,12 @@ figure {
 div#banner {
     overflow: hidden;
     width: 100%;
-    height: 170px;
+    height: auto;
 }
 div#banner figure img {
     width: 20%;
     float: left;
+    height: 170px; /*initial, responsive with jquery*/
 }
 div#banner figure { 
   position: relative;
@@ -73,16 +76,20 @@ div#banner figure {
     height: 45px;
     left:0%;
     margin-left: 0%;
-    background-color:#e52443;
+    background-color:#ddd;
     z-index: 9999;
 }
 ul#Navigation {
     margin: 0; padding: 0;
-    margin-left: -483px;
+    //margin-left: -483px;
     text-align: center;
     height: 45px;
     position: absolute;
     left: 50%;
+    margin-right: -50%;
+    -ms-transform: translate(-50%, 0%); /* IE 9 */
+    -webkit-transform: translate(-50%, 0%); /* Chrome, Safari, Opera */
+    transform: translate(-50%, 0%);
 }
 ul#Navigation li {
     list-style: none;
@@ -94,7 +101,11 @@ ul#Navigation a {
     text-decoration: none;
     //font-weight: bold;
     color: #FFFFFF; 
-    background: #2f3036;
+    //background: #2f3036;
+    background: -webkit-linear-gradient(#58595e, #2F3036);
+    background: -o-linear-gradient(#58595e, #2F3036);
+    background: -moz-linear-gradient(#58595e, #2F3036);
+    background: linear-gradient(#58595e, #2F3036);
     display: block;
     min-width: 160px;
     height: 45px;
@@ -103,10 +114,28 @@ ul#Navigation a {
     text-transform: uppercase;
 }
 
-ul#Navigation a:hover, a:active {
+/*ul#Navigation a:hover, a:active {
     border-color: white;
     border-left-color: black; border-top-color: black;
-    color: white; background-color: #19c589;
+    color: #ccc;
+}*/
+#a_kultur:hover {
+    color: #d11141;
+}
+#a_musik:hover {
+    color: #00b159;
+}
+#a_oeffentliches:hover {
+    color: #00aedb;
+}
+#a_soiree:hover {
+    color: #f37735;
+}
+#a_bildung:hover {
+    color: #ffc425;
+}
+#a_sonstige:hover {
+    color: #ccc;
 }
 /*Style 'show menu' label button and hide it by default*/
 .show-menu {
@@ -120,26 +149,21 @@ ul#Navigation a:hover, a:active {
         line-height: 45px;
 }
 
-/*Hide checkbox*/
-input[type=checkbox]{
-    display: none;
-}
-
-/*Show menu when invisible checkbox is checked*/
-input[type=checkbox]:checked ~ #Navigation{
-    display: block;
-}
 label.show-menu:hover {
     cursor: pointer;
 }
+/*
 /*Responsive Styles*/
 
-@media screen and (max-width : 1010px){
+@media screen and (max-width : 1016px){
 	/*Make dropdown links appear inline*/
 	ul#Navigation {
 		position: static;
 		display: none;
                 margin: 0;
+                -ms-transform: translate(0%, 0%); /* IE 9 */
+                -webkit-transform: translate(0%, 0%); /* Chrome, Safari, Opera */
+                transform: translate(0%, 0%);
 	}
 	/*Create vertical spacing*/
 	li {
@@ -154,35 +178,349 @@ label.show-menu:hover {
 		display:block;
 	}
 }
-#search {
+input[type="text"] {
+    height: 33px;
+    font-size: 18px;
+    display: inline-block;
+    font-family: "Lato";
+    border: none;
+    outline: none;
+    color: #555;
+    padding: 3px;
+    padding-right: 30px;
+    width: 0px;
     position: absolute;
     top: 50%;
+    -ms-transform: translate(0, -50%); /* IE 9 */
+    -webkit-transform: translate(0, -50%); /* Chrome, Safari, Opera */
+    transform: translate(0, -50%); /*Zentrierung mit CSS3*/
     right: 10px;
-    margin-top: -10px
+    background: none;
+    z-index: 3;
+    transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+    cursor: pointer;
+    width: 103px;
+    z-index: 1;
+    border-bottom: 1px solid #BBB;
+    cursor: text;
+    display: none;
+}
+
+input[type="text"]:focus:hover {
+    border-bottom: 1px solid #BBB;
+}
+
+
+input[type="submit"] {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    float: right;
+    background: url(../resources/search-button.png) center center no-repeat;
+    border: none;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translate(0, -50%); /* IE 9 */
+    -webkit-transform: translate(0, -50%); /* Chrome, Safari, Opera */
+    transform: translate(0, -50%); /*Zentrierung mit CSS3*/
+    right: 10px;
+    z-index: 2;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: opacity .4s ease;
+}
+
+input[type="submit"]:hover {
+    opacity: 0.8;
+}
+div.ui-datepicker{
+    font-size: 15px;
 }
 #inhalt {
     position: absolute;
     width: 70%;
-    /* min-width: 600px; optional, looking bad at resized browser window*/
+    /*min-width: 450px; optional, looking bad at resized browser window*/
     height: auto;
-    top: 250px;
     left: 50%;
-    margin-left: -35%; /*5% Prozent AuÃŸenabstand nach links und rechts*/
-    background-color:#ddd;
+    margin-right: -50%;
+    margin-top: 60px;
+    transform: translate(-50%, 0%);
+    -webkit-transform: translate(-50%, 0%);/* Chrome, Safari, Opera */
+    -ms-transform: translate(-50%, 0%); /* IE 9 */
+    background-color:#F5F5F5;
+    overflow: hidden;
+    
 }
-#kalender {
-    height: 300px;
+div#kalender {
+    height: 400px;
     border: 1px solid black;
     margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
 }
+/*================*/
+/*Kalender*/
+#calendar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%); /* IE 9 */
+    -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
+    transform: translate(-50%, -50%);
+    border-spacing: 0px;
+    width: 98%;
+    height: 91%;
+}
+.calendar_head, .calendar_head_month {
+    text-align: center;
+    //background-color: #2F3036;
+    background: -webkit-linear-gradient(#58595e, #2F3036);
+    background: -o-linear-gradient(#58595e, #2F3036);
+    background: -moz-linear-gradient(#58595e, #2F3036);
+    background: linear-gradient(#58595e, #2F3036);
+    color: white;
+    border: none;
+}
+.calendar_head, .calendar_head_month {
+    font-size: 30px;
+}
+.calendar_day {
+    //background-color: #43444a;
+    text-align: center;
+    background: -webkit-linear-gradient(#828286, #58595e);
+    background: -o-linear-gradient(#828286, #58595e);
+    background: -moz-linear-gradient(#828286, #58595e);
+    background: linear-gradient(#828286, #58595e);
+    color: white;
+    border: none;
+    font-size: 14px;
+}
+.calendar_link {
+    color: white;
+    text-decoration: none;
+}
+.calendar_entry {
+    background-color: #ddd;
+    color: #696969;
+    text-align: center;
+    vertical-align: top;
+    position: relative;
+    border: 1px solid white;
+    width: 14%;
+    font-size: 20px;
+}
+#calendar_entry_4, #calendar_entry_1, #calendar_entry_2, #calendar_entry_3, #calendar_entry_5, #calendar_entry_6, #calendar_entry_7, #calendar_entry_39, #calendar_entry_40, #calendar_entry_41, #calendar_entry_42 {
+    background-color: #eee;
+}
+#calendar_entry_16 {
+    background-color: #838b8b;
+    color: white;
+}
+.event_circle {
+    border-radius: 50%;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+}
+.circles {
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
+    line-height: 0px;
+    margin-bottom: 2px;
+}
+.event_circle.kultur {
+    background: #d11141;;
+}
+.event_circle.musik {
+    background: #00b159;
+}
+.event_circle.oeffentliches {
+    background: #00aedb;
+}
+.event_circle.soiree {
+    background: #f37735;
+}
+.event_circle.bildung {
+    background: #ffc425;
+}
+.event_circle.sonstige {
+    background: #ccc;
+}
+td {
+    cursor: pointer;
+}
+/*Kalender Ende*/
+/*================*/
 #infos {
-    height: 300px;
+    height: auto;
     border: 1px solid black;
     margin-bottom: 20px;
 }
+
 #impressum {
-    height: 50px;
+    min-height: 50px;
     border: 1px solid black;
+    overflow: hidden;
+}
+/*===================*/
+/*Alex' Code*/
+.title {
+    //background-color: #2F3036;
+    background: -webkit-linear-gradient(#58595e, #2F3036);
+    background: -o-linear-gradient(#58595e, #2F3036);
+    background: -moz-linear-gradient(#58595e, #2F3036);
+    background: linear-gradient(#58595e, #2F3036);
+    color: white;
+    position: relative;
+}
+.title h3 {
+    color: white;
+    font-weight: normal;
+    padding-left: 5px;
+}
+
+.infoBlock {
+    padding-left: 1%;
+    width: 98%;
+    position: relative;
+}
+#infoBlock1 {
+    height: 250px;
+}
+#titleQuickInfo {
+    width: 59%;
+}
+table#ContentsTable {
+    width: 50%;
+}
+#infoPictures {
+    position: absolute; 
+    top: 0px;
+    right: 0px;
+    width: 39%;
+    height: 250px;
+    text-align: justify; /*centers the small images with equal spacing*/
+    overflow: hidden;
+}
+#infoPictures:after {
+    content: ''; /*centers the small images with equal spacing*/
+    width: 100%;
+    display: inline-block;
+}
+#infoPicturesBig {
+    position: relative;
+    width: 100%;
+    height: 75%;
+    border: 1px solid black;
+    overflow: hidden;   
+}
+.infoPicturesSub {
+    position: relative;
+    width: 32%;
+    height: 23%;
+    display: inline-block; /*subpictures in one line*/
+    margin-top: 2%;
+    overflow: hidden; 
+}
+#mainimage {
+    position: absolute;
+    top:50%;
+    left:50%;
+    -ms-transform: translate(-50%, -50%); /* IE 9 */
+    -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
+    transform: translate(-50%, -50%); /*Shows the center of the image*/
+}
+.subImage {
+    position: absolute;
+    top:50%;
+    left:50%;
+    -ms-transform: translate(-50%, -50%); /* IE 9 */
+    -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
+    transform: translate(-50%, -50%); /*Shows the center of the image*/
+    width: 100%;
+    height: 100%;
+}
+#infoBlockAnfahrtText {
+    display: inline-block;
+    margin-left: 10px;
+    position: absolute;
+    top: 50%;     
+    -ms-transform: translate(0, -50%); /* IE 9 */
+    -webkit-transform: translate(0, -50%); /* Chrome, Safari, Opera */
+    transform: translate(0, -50%);
+}
+
+p#anfahrtTextP {
+    position:relative;
+    margin-top: 0;
+}
+h4 {
+    margin-bottom: 6px;
+}
+
+/*Alex' Code*/
+/*===================*/
+/*Tooltips*/
+.tooltip-title {
+    margin: 0;
+    padding: 0;
+}
+.tooltip-title.kultur {
+    color: #d11141;
+}
+.tooltip-title.musik {
+    color: #00b159;
+}
+.tooltip-title.oeffentliches {
+    color: #00aedb;
+}
+.tooltip-title.soiree {
+    color: #f37735;
+}
+.tooltip-title.bildung {
+    color: #ffc425;
+}
+.tooltip-title.sonstige {
+    color: #ccc;
+}
+.tooltip-event {
+    margin-bottom: 5px;
+}
+/*Tooltips end*/
+#impressum a.impbutton {
+    color: #FFFFFF; 
+    //background: #2f3036;
+    background: -webkit-linear-gradient(#58595e, #2F3036);
+    background: -o-linear-gradient(#58595e, #2F3036);
+    background: -moz-linear-gradient(#58595e, #2F3036);
+    background: linear-gradient(#58595e, #2F3036);
+    display: block;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    min-width: 100px;
+    height: 20px;
+    line-height: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0px 5px 5px 0; 
+}
+#impressum a:hover {
+    color: #ccc;
+}
+#impdetails  {
+    width: 98%;
+    overflow: hidden;
+    position: relative;
+    //border: 1px solid black;
+    margin: 5px 0;
+    //display: none;
+}
+#team, #styleguide, #mockups {
+    min-height: 20px;
+    overflow: hidden;
+    display: none;
 }
 .BoxGlow_Grey2{
     box-shadow: 0 5px 15px rgba(176,176,176, 1);
