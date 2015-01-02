@@ -165,12 +165,8 @@ $(document).ready(function(){
                 content: 'L&auml;dt...',
                 theme: 'tooltipster-light',
                 animation: 'grow',
-<<<<<<< HEAD
                 position: 'right',
                 //onlyOne: true,                
-=======
-                position: 'right',                
->>>>>>> d5797ef449af4274a7fb12086918b5f6a54bc91a
                 maxWidth: 200,
                 /*autoClose: false,*/ /*Good for analyzing html and css of tooltip*/
                 contentAsHTML: true,
@@ -184,11 +180,7 @@ $(document).ready(function(){
                         /*iterate through whole json to find all available categories*/
                         for (var i = 0; i < data.events.length; i++)
                         {
-<<<<<<< HEAD
                             switch (data.events[i].categories[0]) {
-=======
-                            switch (data.events[i].categories) {
->>>>>>> d5797ef449af4274a7fb12086918b5f6a54bc91a
                                 case "Kultur": kategorie[0]=true; break;
                                 case "Musik": kategorie[1]=true; break;                                
                                 case "&Ouml;ffentliches": kategorie[2]=true; break;
@@ -229,7 +221,6 @@ $(".event_circle").tooltipster({
     maxWidth: 200,
     contentAsHTML: true,
     functionBefore: function (origin, continueTooltip) {
-<<<<<<< HEAD
             continueTooltip();		
             $(".calendar_entry").tooltipster("disable");
         	var kategorie;
@@ -253,27 +244,6 @@ $(".event_circle").tooltipster({
     functionAfter: function (origin) {
             $(".calendar_entry").tooltipster("enable");
         }
-=======
-        continueTooltip();		
-	var kategorie;
-	if ($(this).hasClass("musik")) {kategorie="Musik";}
-	if ($(this).hasClass("kultur")) {kategorie="Kultur";}
-        if ($(this).hasClass("oeffentliches")) {kategorie="&Ouml;ffentliches";}
-        if ($(this).hasClass("bildung")) {kategorie="Bildung";}
-        if ($(this).hasClass("soiree")) {kategorie="Soiree";}
-        if ($(this).hasClass("sonstige")) {kategorie="Sonstige";}
-	$.getJSON('resources/events.json', function(data) {
-            var infos = ""; 
-            $.each(data.events, function (key, val) {
-                if (val.categories == kategorie) {
-                    infos = infos + " " + val.name + "<br>" + val.date[0] + "<br>";						
-                }
-            });
-            origin.tooltipster("content", infos);
-            //origin.tooltipster('content', jd.events[0].name + jd.events[0].date[1]);				
-	});
-    }
->>>>>>> d5797ef449af4274a7fb12086918b5f6a54bc91a
 });
 /*toggle mobile navigation*/
 $(function(){
