@@ -1,9 +1,13 @@
 var eventsHandler = function (path) {
+    /* 
+    path: Pfad zum JSON File
+    Eine Klasse, die die events.json Datei verarbeitet, und ihre Daten dann zur Verfuegung stellt. */
 
     this.path = path;
 
     this.init = function(callback) {
-        var self = this;
+        /* Initialisierungsfunktion, die einmalig aufgerufen werden muss. Wenn die Events aus dem JSON File fertig verarbeitet wurden, wird die callback Funktion aufgerufen. */
+        var self = this; //this ist in getJSON nicht mehr verfuegbar, also wird es auf self gelegt.
         $.getJSON(this.path, function(data) {
             self.data = data.events;
             callback();
@@ -11,7 +15,8 @@ var eventsHandler = function (path) {
     }
 
     this.isInPeriod = function(checkDate, periodStart, periodEnd) {
-        // Checks wether a given Date is in a given period.
+        /* Checkt ob ein Zeitpunkt (checkDate) in einer Zeitperiode (periodStart -> periodEnd) liegt. checkDate kann z.B. ein Tag sein, periodStart und periodEnd Anfang und Ende eines Events. Die Eingaben werden in Javascript-Date Objekte umgewandelt, sodass viele Datumsformatierungen unterstuetzt werden */
+
         checkDate = new Date(checkDate);
         periodStart = new Date(periodStart);
         periodEnd = new Date(periodEnd);
@@ -24,12 +29,13 @@ var eventsHandler = function (path) {
     }
 
     this.onDay = function(day) { 
-        var result, eventStart, eventEnd, tempObject, i;
+        /* Gibt ein Array zurueck, dass alle Events enthält, welche an einem bestimmten Zeitpunkt stattfinden. day wird in ein JS-Date Objekt umgewandelt, sodass viele Datumsformatierungen unterstuetzt werden. */
 
+        var result, eventStart, eventEnd, tempObject, i;
         result = [];
 
         day = new Date(day);
-        day = day.setHours(0,0,0,0);
+        day = day.setHours(0,0,0,0); // Damit alle Datumsobjekte zum selben Zeitpunkt stattfinden, werden alle Uhrzeiten auf 0:00:00 gesetzt.
 
         for (i = this.data.length - 1; i >= 0; i--) {
             eventStart = new Date(this.data[i].date[0])
@@ -38,9 +44,9 @@ var eventsHandler = function (path) {
             eventEnd = new Date(this.data[i].date[1])
             eventEnd.setHours(0,0,0,0);
 
-            if(this.isInPeriod(day, eventStart, eventEnd)) {
+            if(this.isInPeriod(day, eventStart, eventEnd)) { //Wenn der Tag zwischen dem Start und Ende liegt, wird das Event zum result-Array hinzugefuegt.
                 tempObject = this.data[i];
-                tempObject.id = i;
+                tempObject.id = i; //Die ID ist der Index, welcher sich bei diesem resultArray veraendert wird, also wird sie als seperater Wert hinzugefuegt.
                 result.push(tempObject)
             }
         }
@@ -49,6 +55,7 @@ var eventsHandler = function (path) {
     }
 
     this.getSingle = function(id) { 
+        /* Gibt ein Event mit einer bestimmten id zurueck */
         if(this.data[id]) {
             return this.data[id]; 
         } else {
@@ -56,39 +63,37 @@ var eventsHandler = function (path) {
         }
     }
 
-    this.search = function(value) {
+    this.search = function(keyword) {
+        /* Durchsucht alle Events (Name, Description, Tags und Categories) nach den Keywords im Keywordstring. Dieser wird an den Leerzeichen getrennt, nach allen Keywords wird einzeln gesucht, es werden nur Events zurueckgegeben, die alle Keywords enthalten. Ausserdem wird ein kurzer Ausschnitt zurueckgegeben, in dem die Keywords vorkommen. */
         var items = [],
             foundItems = [],
-            keyword = value,
             keywords,
             i,
             contentpart,
-            results;
+            results = []; 
 
         if (keyword.length >= 1) {
-            foundItems = this.searchEvents(keyword);
+            foundItems = this.searchEvents(keyword); //Die eigentliche Suche ist in eine rekursive Funktion ausgelagert. Diese gibt ein Array mit den gefundenen Events zurueck
             if (foundItems.length > 0) {
                 for (i = foundItems.length - 1; i >= 0; i--) {
-                    if (foundItems[i]) {
-                        if (foundItems[i].desc) {
-                            contentpart = foundItems[i].desc;
-                            keywords = keyword.split(" ");
-                            for (var j = 0; j < keywords.length; j++) {
-                                contentpart = getExcerpt(contentpart, keywords[j], j * 7);
-                            }
-                            if(contentpart.length > 3) {
-                                contentpart = '<p>[...]' + contentpart + '[...]</p>';
-                            } else {
-                                contentpart = "";
-                            }
+                    if (foundItems[i].desc) { //Wenn eine Beschreibung existiert, wird ein Ausschnitt generiert
+                        contentpart = foundItems[i].desc;
+                        keywords = keyword.split(" ");
+                        for (var j = 0; j < keywords.length; j++) {
+                            contentpart = getExcerpt(contentpart, keywords[j], j * 7);  //Jedes Keyword wird markiert, da pro gefundenem Keyword 7 neue Zeichen hinzugefuegt werden (<b></b>), wird es pro Keyword um 7 Zeichen verlaengert
+                        }
+                        if(contentpart.length > 8) { //Falls kein Keyword in der desc. auftaucht.
+                            contentpart = '<p>[...]' + contentpart + '[...]</p>';
                         } else {
                             contentpart = "";
                         }
-                        items.push({
-                            'event': foundItems[i],
-                            'excerpt': contentpart
-                        });
+                    } else {
+                        contentpart = "";
                     }
+                    items.push({
+                        'event': foundItems[i],
+                        'excerpt': contentpart
+                    });
                 }
                 results = [];
                 i = 0;
@@ -104,21 +109,23 @@ var eventsHandler = function (path) {
     }
 
     this.searchEvents = function(keyword) {
+        /* rekursive Funktion, die "keyword" solange an den Leerzeichen aufsplittet, bis es nur noch ein Wort ist und danach dann alle Datensaetze durchsucht. Die "hoehere" Instanz durchsucht dann nur noch die Ergebnisse der ersten Suche usw. */
         var result,
             newData = [],
             found = false,
             position = null,
             newKeyword,
+            lowestSearch = false,
             i;
-        if (keyword.search(" ") !== -1) {
+        if (keyword.search(" ") !== -1) { //Keyword Aufsplitten
             keyword = keyword.split(" ");
             newKeyword = keyword[1];
             for (i = 0; i < keyword.length; i++) {
-                if (i > 1) {
+                if (i > 1) { //Alle bis auf das "Nullte" werden weitergegeben, das Nullte wird in dieser Funktion bearbeitet
                     newKeyword = newKeyword + ' ' + keyword[i];
                 }
             }
-            result = this.searchEvents(newKeyword);
+            result = this.searchEvents(newKeyword); //Rekursion gibt zu durchsuchenden Datensatz zurueck
             if (result.length === 0) {
                 return false;
             } else {
@@ -126,11 +133,15 @@ var eventsHandler = function (path) {
             }
         } else {
             result = this.data;
+            lowestSearch = true; //Die "niedrigste" der rekursiven Funktion
         }
-
-        for (i = result.length - 1; i >= 0; i--) {
-            console.log(result[i]);
-            console.log(i);
+ 
+        for (i = result.length - 1; i >= 0; i--) { 
+            /*  Hier beginnt die eigentliche Suche. Suchbegriff sowie zu durchsuchendes wird in Kleinbuchstaben verwandelt,
+                da die Suche nicht case-sensitive sein soll: MuSiK == Musik == musik
+                Es wird jeweils gesucht, ob das zu durchsuchende Objekt ueberhaupt eine Beschreibung, Namen, usw. hat.
+                Falls ja, wird nach der position des Suchwortes gesucht. -1 bedeutet, sie wurde nicht gefunden.
+            */
             found = false;
             if (result[i].desc) {
                 position = result[i].desc.toLowerCase().search(keyword.toLowerCase());
@@ -161,6 +172,9 @@ var eventsHandler = function (path) {
                 }
             }
             if (found === true) {
+                if(lowestSearch === true) {
+                    result[i].id = i; //Wenn der originale Datensatz bearbeitet wird, soll die id hinzugefuegt werden.
+                }
                 newData.push(result[i]);
             }
         }
@@ -168,18 +182,19 @@ var eventsHandler = function (path) {
     }
 
     function getExcerpt(text, keyword, makeLonger) {
+        /* Erzeugt einen Ausschnitt aus einem Text (text), in dem das keyword im Zentrum steht und fett markiert wird. Standardmaesig betraegt der Ausschnitt +/- 40 Zeichen um das Wort herum, es kann mit makeLonger verlaengert werden */
         var result = "",
             newPosition,
             textBefore,
             textAfter,
             position;
-        textBefore = 40 + makeLonger; // characters before keyword
-        textAfter = 40 + makeLonger; // characters after keyword
+        textBefore = 40 + makeLonger; // zeichen vor dem keyword
+        textAfter = 40 + makeLonger; // zeichen nach dem keyword
         position = text.toLowerCase().search(keyword.toLowerCase());
         if(position != -1) {
             result = text.slice(0, position) + '<b>' + text.slice(position, position + keyword.length) + '</b>' + text.slice(position + keyword.length, text.length);
-
             newPosition = position;
+
             if (textBefore < position) {
                 result = result.slice(position - textBefore, text.length);
                 newPosition = textBefore;
