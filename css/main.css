@@ -310,10 +310,12 @@ div#kalender {
     width: 14%;
     font-size: 20px;
 }
-#calendar_entry_4, #calendar_entry_1, #calendar_entry_2, #calendar_entry_3, #calendar_entry_5, #calendar_entry_6, #calendar_entry_7, #calendar_entry_39, #calendar_entry_40, #calendar_entry_41, #calendar_entry_42 {
+
+.out_of_this_month {
     background-color: #eee;
 }
-#calendar_entry_16 {
+
+.current_day {
     background-color: #838b8b;
     color: white;
 }

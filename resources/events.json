@@ -3,8 +3,8 @@
         {
             "name": "Beispiel Event1",
             "date": [
-                "2014/11/25 07:30:00",
-                "2014/11/25 09:00:00"
+                "2014/12/25 07:30:00",
+                "2014/12/25 09:00:00"
             ],
             "desc": "Lorem Ipsum sim dolor lala",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
@@ -19,8 +19,8 @@
 		{
             "name": "Beispiel Event2",
             "date": [
-                "2014/12/25 07:30:00",
-                "2014/12/25 09:00:00"
+                "2014/12/26 07:30:00",
+                "2014/12/27 09:00:00"
             ],
             "desc": "Lorem Ipsum sim dolor",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
@@ -35,8 +35,8 @@
 		{
             "name": "Beispiel Event3",
             "date": [
-                "2014/12/25 07:30:00",
-                "2015/12/25 09:00:00"
+                "2014/12/23 07:30:00",
+                "2014/12/24 09:00:00"
             ],
             "desc": "Lorem Ipsum sim dolor",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
@@ -51,8 +51,8 @@
 	{
             "name": "Beispiel Event4",
             "date": [
-                "2014/12/25 07:30:00",
-                "2015/12/25 09:00:00"
+                "2014/12/1 07:30:00",
+                "2014/12/25 09:00:00"
             ],
             "desc": "Lorem Ipsum sim dolor",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
@@ -67,8 +67,8 @@
 		{
             "name": "Beispiel Event5",
             "date": [
-                "2014/12/25 07:30:00",
-                "2015/12/25 09:00:00"
+                "2014/12/27 07:30:00",
+                "2014/12/29 09:00:00"
             ],
             "desc": "Lorem Ipsum sim dolor",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
@@ -83,8 +83,8 @@
         {
             "name": "Beispiel Event6",
             "date": [
-                "2014/12/25 07:30:00",
-                "2015/12/25 09:00:00"
+                "2014/12/24 07:30:00",
+                "2014/12/28 09:00:00"
             ],
             "desc": "Lorem Ipsum sim dolor",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
@@ -100,7 +100,7 @@
             "name": "Beispiel Event7",
             "date": [
                 "2014/12/25 07:30:00",
-                "2015/12/25 09:00:00"
+                "2014/12/25 09:00:00"
             ],
             "desc": "Lorem Ipsum sim dolor",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
@@ -116,7 +116,7 @@
             "name": "Beispiel Event8",
             "date": [
                 "2014/12/25 07:30:00",
-                "2015/12/25 09:00:00"
+                "2014/12/25 09:00:00"
             ],
             "desc": "Lorem Ipsum sim dolor",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
@@ -132,7 +132,7 @@
             "name": "Beispiel Event9",
             "date": [
                 "2014/12/25 07:30:00",
-                "2015/12/25 09:00:00"
+                "2014/12/25 09:00:00"
             ],
             "desc": "Lorem Ipsum sim dolor",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
