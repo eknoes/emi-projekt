@@ -4,9 +4,9 @@
             "name": "Beispiel Event1",
             "date": [
                 "2014/11/25 07:30:00",
-                "2015/11/25 09:00:00"
+                "2014/11/25 09:00:00"
             ],
-            "desc": "Lorem Ipsum sim dolor",
+            "desc": "Lorem Ipsum sim dolor lala",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Fritz F&ouml;rster Platz 12",
             "youtube": "https://www.youtube.com/watch?v=_5DqL5-izAY",
@@ -20,7 +20,7 @@
             "name": "Beispiel Event2",
             "date": [
                 "2014/12/25 07:30:00",
-                "2015/12/25 09:00:00"
+                "2014/12/25 09:00:00"
             ],
             "desc": "Lorem Ipsum sim dolor",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",

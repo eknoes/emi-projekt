@@ -1,120 +1,199 @@
-var EVENTS_JSON = "data/events.json";
+var eventsHandler = function (path) {
 
-var EVENT_DATES = Array();
+    this.path = path;
 
-
-function preloadDates() {
-    $.getJSON(EVENTS_JSON, function(data) {
-        var tempEventDates = Array();
-        $.each(data.events, function(key, entry) { // quasi eine "jQuery"-Schleife durch alle Elemente (= Events) aus der JSON Datei
-            var start = new Date(entry.date[0]);
-            var end = new Date(entry.date[1]);
-            console.log(entry);
-            start.setHours(0,0,0,0);
-            end.setHours(0,0,0,0);
-
-            if(start == end) { // Events finden am selben Tag statt.
-                if(tempEventDates[start.valueOf()]) {
-                    tempEventDates[start.valueOf()].push(key);
-                } else {
-                    tempEventDates[start.valueOf()] = Array();
-                    tempEventDates[start.valueOf()].push(key);
-                }
-            } else {
-                var dateDifference = ((end.valueOf() - start.valueOf()) / 24*60*60*1000);
-                for (var i = dateDifference; i >= 0; i--) { // Die Differenz von End- und Starttag
-                    if(tempEventDates[start.valueOf() + i*24*60*60*1000]) { //Start + i * 1 Tag
-                        tempEventDates[start.valueOf() + i*24*60*60*1000].push(key);
-                    } else {
-                        tempEventDates[start.valueOf() + i*24*60*60*1000] = Array();
-                        tempEventDates[start.valueOf() + i*24*60*60*1000].push(key);
-                    }
-                };
-            }
+    this.init = function(callback) {
+        var self = this;
+        $.getJSON(this.path, function(data) {
+            self.data = data.events;
+            callback();
         });
-        EVENT_DATES = tempEventDates;
-    });
-}
-
-preloadDates();
-
-function isInPeriod(checkDate, periodStart, periodEnd) {
-    // Checks wether a given Date is in a given period.
-    checkDate = new Date(checkDate);
-    periodStart = new Date(periodStart);
-    periodEnd = new Date(periodEnd);
-
-    if((periodStart.valueOf() <= checkDate.valueOf()) && (checkDate.valueOf() <= periodEnd.valueOf())) {
-        return true;
-    } else {
-        return false;
     }
-}
 
-function dateHasEvent(askDate) {
-    var askDate = new Date(askDate);
-    askDate.setHours(0,0,0,0);
-    if(EVENT_DATES) {
-        if(EVENT_DATES[askDate]) {
-            return EVENT_DATES[askDate];
+    this.isInPeriod = function(checkDate, periodStart, periodEnd) {
+        // Checks wether a given Date is in a given period.
+        checkDate = new Date(checkDate);
+        periodStart = new Date(periodStart);
+        periodEnd = new Date(periodEnd);
+
+        if((periodStart.valueOf() <= checkDate.valueOf()) && (checkDate.valueOf() <= periodEnd.valueOf())) {
+            return true;
         } else {
             return false;
         }
-    } else {
-        return false;
     }
-}
 
-function getEvents(askDate, category, callback) {
-    // Funktion sucht alle Events am askDate aus der jeweiligen category und übergibt ein Array mit allen JS Objekten an die callback Funktion
-    var askDate = new Date(askDate);
-    var result = new Array();
-    askDate.setHours(0,0,0,0);
-    $.getJSON(EVENTS_JSON, function(data) { //jQuery: öffnet JSON Datei.
-        $.each(data.events, function(key, entry) { // quasi eine "jQuery"-Schleife durch alle Elemente (= Events) aus der JSON Datei
-            if(isInPeriod(askDate, new Date(entry.date[0]).setHours(0,0,0,0), new Date(entry.date[1]).setHours(0,0,0,0))) { //Da es mir nur um den Tag gibt, setze ich die Uhrzeit auf 0:00 Uhr.
-                if(category !== "all") {
-                    for (var i = entry.categories.length - 1; i >= 0; i--) { //Alle Kategorien werden durchgegangen, falls eine übereinstimmt wird abgebrochen.
-                        if(entry.categories[i] == category) {
-                            result.push(entry);
-                            break;
+    this.onDay = function(day) { 
+        var result, eventStart, eventEnd, tempObject, i;
+
+        result = [];
+
+        day = new Date(day);
+        day = day.setHours(0,0,0,0);
+
+        for (i = this.data.length - 1; i >= 0; i--) {
+            eventStart = new Date(this.data[i].date[0])
+            eventStart.setHours(0,0,0,0);
+
+            eventEnd = new Date(this.data[i].date[1])
+            eventEnd.setHours(0,0,0,0);
+
+            if(this.isInPeriod(day, eventStart, eventEnd)) {
+                tempObject = this.data[i];
+                tempObject.id = i;
+                result.push(tempObject)
+            }
+        }
+
+        return result;
+    }
+
+    this.getSingle = function(id) { 
+        if(this.data[id]) {
+            return this.data[id]; 
+        } else {
+            return false;
+        }
+    }
+
+    this.search = function(value) {
+        var items = [],
+            foundItems = [],
+            keyword = value,
+            keywords,
+            i,
+            contentpart,
+            results;
+
+        if (keyword.length >= 1) {
+            foundItems = this.searchEvents(keyword);
+            if (foundItems.length > 0) {
+                for (i = foundItems.length - 1; i >= 0; i--) {
+                    if (foundItems[i]) {
+                        if (foundItems[i].desc) {
+                            contentpart = foundItems[i].desc;
+                            keywords = keyword.split(" ");
+                            for (var j = 0; j < keywords.length; j++) {
+                                contentpart = getExcerpt(contentpart, keywords[j], j * 7);
+                            }
+                            if(contentpart.length > 3) {
+                                contentpart = '<p>[...]' + contentpart + '[...]</p>';
+                            } else {
+                                contentpart = "";
+                            }
+                        } else {
+                            contentpart = "";
                         }
-                    };
-                } else {
-                    result.push(entry);
+                        items.push({
+                            'event': foundItems[i],
+                            'excerpt': contentpart
+                        });
+                    }
+                }
+                results = [];
+                i = 0;
+                for (i; i < items.length; i = i + 1) {
+                    results.push(items[i]);
+                }
+                console.log(results);
+                return results;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    this.searchEvents = function(keyword) {
+        var result,
+            newData = [],
+            found = false,
+            position = null,
+            newKeyword,
+            i;
+        if (keyword.search(" ") !== -1) {
+            keyword = keyword.split(" ");
+            newKeyword = keyword[1];
+            for (i = 0; i < keyword.length; i++) {
+                if (i > 1) {
+                    newKeyword = newKeyword + ' ' + keyword[i];
                 }
             }
-        });
-        if(result.length === 0) {
-            result = false;
-        }
-        callback(result); //Resultate werden wg. Asynchronitaet an die callback-Funktion übergeben
-    });
-}
-
-
-function test_getEvents() { //Immer der jeweilige Test für die gerade geschriebene Funktion.
-    getEvents($("input#getEvents-input-date").val(), $("input#getEvents-input-category").val(), function(result) {
-        console.log(result);
-        $("div#getEvents-output").html(result.toSource());
-    });
-}
-
-function getEventById(id, callback) {
-    //Gibt ein Event mit der id an die callback Funktion
-    var result = null;
-    $.getJSON(EVENTS_JSON, function(data) {
-        if(data.events[id]) {
-            callback(data.events[id]);
+            result = this.searchEvents(newKeyword);
+            if (result.length === 0) {
+                return false;
+            } else {
+                keyword = keyword[0];
+            }
         } else {
-            callback(false);
+            result = this.data;
         }
-    });
-}
 
-function test_getEventByID() {
-    getEventById($("input#getEventById-input").val(), function(result) {
-        console.log(result);
-        $("div#getEventById-output").html(result.toSource());
-    });
+        for (i = result.length - 1; i >= 0; i--) {
+            console.log(result[i]);
+            console.log(i);
+            found = false;
+            if (result[i].desc) {
+                position = result[i].desc.toLowerCase().search(keyword.toLowerCase());
+                if (position !== -1) {
+                    found = true;
+                }
+            }
+            if (result[i].name) {
+                position = result[i].name.toLowerCase().search(keyword.toLowerCase());
+                if (position !== -1) {
+                    found = true;
+                }
+            }
+            if (result[i].tags) {
+                for (var j = result[i].tags.length - 1; j >= 0; j--) {
+                    position = result[i].tags[j].toLowerCase().search(keyword.toLowerCase());
+                    if (position !== -1) {
+                        found = true;
+                    }
+                }
+            }
+            if (result[i].categories) {
+                for (var j = result[i].categories.length - 1; j >= 0; j--) {
+                    position = result[i].categories[j].toLowerCase().search(keyword.toLowerCase());
+                    if (position !== -1) {
+                        found = true;
+                    }
+                }
+            }
+            if (found === true) {
+                newData.push(result[i]);
+            }
+        }
+        return newData;
+    }
+
+    function getExcerpt(text, keyword, makeLonger) {
+        var result = "",
+            newPosition,
+            textBefore,
+            textAfter,
+            position;
+        textBefore = 40 + makeLonger; // characters before keyword
+        textAfter = 40 + makeLonger; // characters after keyword
+        position = text.toLowerCase().search(keyword.toLowerCase());
+        if(position != -1) {
+            result = text.slice(0, position) + '<b>' + text.slice(position, position + keyword.length) + '</b>' + text.slice(position + keyword.length, text.length);
+
+            newPosition = position;
+            if (textBefore < position) {
+                result = result.slice(position - textBefore, text.length);
+                newPosition = textBefore;
+            }
+
+            if (position + textAfter < text.length) {
+                result = result.slice(0, newPosition + keyword.length + textAfter);
+            }
+
+            result = result.slice(result.indexOf(' '), result.lastIndexOf(' '));
+            return result;
+        } else {
+            return false;
+        }
+    }
+
 }
