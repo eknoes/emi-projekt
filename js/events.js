@@ -45,9 +45,17 @@ var eventsHandler = function (path) {
             eventEnd.setHours(0,0,0,0);
 
             if(this.isInPeriod(day, eventStart, eventEnd)) { //Wenn der Tag zwischen dem Start und Ende liegt, wird das Event zum result-Array hinzugefuegt.
-                tempObject = this.data[i];
-                tempObject.id = i; //Die ID ist der Index, welcher sich bei diesem resultArray veraendert wird, also wird sie als seperater Wert hinzugefuegt.
-                result.push(tempObject)
+                if(this.category) {
+                    if(this.data[i].categories[0].toLowerCase() == this.category && this.category != 'all') {
+                        tempObject = this.data[i];
+                        tempObject.id = i; //Die ID ist der Index, welcher sich bei diesem resultArray veraendert wird, also wird sie als seperater Wert hinzugefuegt.
+                        result.push(tempObject)
+                    }
+                } else {
+                    tempObject = this.data[i];
+                    tempObject.id = i; //Die ID ist der Index, welcher sich bei diesem resultArray veraendert wird, also wird sie als seperater Wert hinzugefuegt.
+                    result.push(tempObject)
+                }
             }
         }
 
@@ -185,6 +193,13 @@ var eventsHandler = function (path) {
         $('div#infos').html('EVENT ' + id + ' Informationen');
     }
 
+    this.setCategory= function(category) {
+        if(category == "oeffentliches") {
+            category = '&ouml;ffentliches';
+        }
+        this.category = category;
+        write();
+    }
 
     function getExcerpt(text, keyword, makeLonger) {
         /* Erzeugt einen Ausschnitt aus einem Text (text), in dem das keyword im Zentrum steht und fett markiert wird. Standardmaesig betraegt der Ausschnitt +/- 40 Zeichen um das Wort herum, es kann mit makeLonger verlaengert werden */

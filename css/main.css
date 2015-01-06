@@ -247,7 +247,6 @@ div.ui-datepicker{
     transform: translate(-50%, 0%);
     -webkit-transform: translate(-50%, 0%);/* Chrome, Safari, Opera */
     -ms-transform: translate(-50%, 0%); /* IE 9 */
-    background-color:#F5F5F5;
     overflow: hidden;
     
 }
@@ -257,6 +256,7 @@ div#kalender {
     margin-bottom: 20px;
     overflow: hidden;
     text-overflow: ellipsis;
+    background-color:#F5F5F5;
     position: relative;
 }
 /*================*/
@@ -359,11 +359,13 @@ td {
     height: auto;
     border: 1px solid black;
     margin-bottom: 20px;
+    background-color:#F5F5F5;
 }
 
 #impressum {
     min-height: 50px;
     border: 1px solid black;
+    background-color:#F5F5F5;
     overflow: hidden;
 }
 /*===================*/

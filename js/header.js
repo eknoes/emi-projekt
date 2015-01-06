@@ -150,8 +150,8 @@ function details(info){
     }    
 }
 
-$(document).ready(function(){
-        /*Smooth scrolling*/
+/*$(document).ready(function(){
+        //Smooth scrolling
 	$('a[href^="#"]').on('click',function (e) {
 	    e.preventDefault();
 	    var target = this.hash;
@@ -159,15 +159,15 @@ $(document).ready(function(){
 	    $('html, body').stop().animate({
 	        'scrollTop': $target.offset().top
 	    }, 900, 'swing', function () {
-                /*window.location.hash = target; shows anchor in URL*/
+                //window.location.hash = target; shows anchor in URL
 	    });
-            /*hide mobile Navigation onclick*/
+            //hide mobile Navigation onclick
             if($('#Navigation li').find('a.navbuttonmobile').length !== 0){
                 $("#Navigation").hide();
             }
             
 	});
-});
+});*/
 /*toggle mobile navigation*/
 $(function(){
     $(".show-menu").click(function(){
