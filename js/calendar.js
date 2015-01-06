@@ -10,9 +10,11 @@ var MONTH_NAME = new Array("Januar", "Februar", "M&auml;rz", "April", "Mai", "Ju
 
 var date;
 
-var cal_sheet = new Array(35);
+var cal_sheet = new Array(42);
 
 var text = "";
+
+var rows = 5;
 
 /*
  * Diese Funktion generiert alle Tage eines Monats bzw. einer Kalenderseite und gibt diese als Array zurueck
@@ -21,7 +23,6 @@ function generateMonth(month, year) {
 
     //Initialisieren des 1. gewuenschten Monats month im Jahr year
     var dt = new Date(year, month, 1);
-    var m = dt.getMonth();
     var ct = 0;
 
     //Ist der 1. eines Monats ein Montag, ansonsten gehe zum letzten Montag vor dem 1.
@@ -29,10 +30,14 @@ function generateMonth(month, year) {
         dt = new Date(year, month, ct);
         ct--;
     }
-
+	
+	if((dt.getDay() === 0) ||  (dt.getDay() === 5) || (dt.getDay() === 6)){
+		rows = 6;
+	}
+	
     //laufe ueber den Monat und speichere die einzelnen Daten in ein Array
-    for (var i = 0; i < 35; i++) {
-        cal_sheet[i] = dt.getDate();
+    for (var i = 0; i < 42; i++) {
+        cal_sheet[i] = dt;
         if (dt.getDate() === 25) {
             date = dt;
         }
@@ -53,17 +58,22 @@ function prevMonth() {
 
 function write() {
     var count = 0;
-
-    text = text + ' <table id="calendar"><tr><td class="calendar_head"><a class="calendar_link" href="javascript:prevMonth()"> &laquo;</a></td><td colspan=5 class="calendar_head_month" id="calendar_month">'
+    text = ' <table id="calendar"><tr><td class="calendar_head"><a class="calendar_link" href="javascript:prevMonth()"> &laquo;</a></td><td colspan=5 class="calendar_head_month" id="calendar_month">'
             + MONTH_NAME[date.getMonth()] + ' ' + date.getFullYear()
             + '</td><td class="calendar_head"><a class="calendar_link" href="javascript:nextMonth()"> &raquo;</a></td>'
             + '</tr><tr><td class="calendar_day">Mo</td><td class="calendar_day">Di</td><td class="calendar_day">Mi</td>'
             + '<td class="calendar_day">Do</td><td class="calendar_day">Fr</td><td class="calendar_day">Sa</td><td class="calendar_day">So</td></tr>';
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 6; i++) {
         text = text + '<tr>';
         for (var j = 0; j < 7; j++) {
-            text = text + '<td class="calendar_entry" id="calendar_entry_1">' + cal_sheet[count] +
+			if(cal_sheet[count].getMonth() !== date.getMonth()){
+				text = text + '<td class="calendar_entry_out_of_this_month" id="out_of_this_month">' + cal_sheet[count].getDate() +
                     ' </div></td>';
+			}else{
+				text = text + '<td class="calendar_entry" id="' + date.getFullYear() + '-' + cal_sheet[count].getMonth() + 1 + '-' + cal_sheet[count].getDate() + '">' + cal_sheet[count].getDate() +
+                    ' </div></td>';
+			}
+            
             count++;
         }
         text = text + '</tr>';

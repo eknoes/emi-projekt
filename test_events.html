@@ -1,23 +1,79 @@
-<script src="scripts/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="scripts/events.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/events.js"></script>
+</head>
+<body>
+    <h1>eventsHandler.init(callback) initialization test</h1>
 
-<h1>getEvent(date, category, callback) test</h1>
+    <script type="text/javascript">
+    var events = new eventsHandler("resources/events.json");
 
-Datum <input type="date" id="getEvents-input-date" oninput="test_getEvents()"/>
-Kategorie <input type="value" id="getEvents-input-category" oninput="test_getEvents()" value="all" />
+    events.init(function() {
+            if(typeof events.data == "object") {
+                $("#init-output").html("Initialisierung erfolgreich. Erstes Event: " + events.data[0].name);
+            } else {
+                $("#init-output").html("Initialisierung nicht erfolgreich");
+            }
+        });
+    </script>
 
-<div id="getEvents-output">
-Example output will be here.
-</div>
+    <div id="init-output">
+        Initialisierung noch nicht erfolgreich beendet.
+    </div>
 
-<i>the function calls the callback function, when its finished with the results, as argument.</i>
+    <i>Bei der Initialisierung werden alle Kalenderdaten geladen, um danach schneller darauf zugreifen zu koennen. </i>
 
-<h1>getEventById(id, callback) test</h1>
 
-<input type="number" id="getEventByID-input" oninput="test_getEventByID()"/>
+    <h1>eventsHandler.onDay(date) test</h1>
+        <script type="text/javascript">
+            var onDayTest = function() {
+                $("#onDay-output").html(JSON.stringify(events.onDay($('#onDay-input').val())[0]));
+            }
+        </script>
 
-<div id="getEventByID-output">
-Example output will be here.
-</div>
+        <input id="onDay-input" type="date" value="2014-11-25" oninput="onDayTest()" />
+        <div id="onDay-output"></div>
 
-<i>the function calls the callback function, when its finished with the results, as argument.</i>
+    <i>onDay gibt ein Array mit allen Events an dem gegebenen Tag zur&ouml;ck. Die Testfunktion gibt das erste davon aus.</i>
+
+    <h1>eventsHandler.getSingle(id) test</h1>
+        <script type="text/javascript">
+            var getSingleTest = function() {
+                $("#getSingle-output").html(JSON.stringify(events.getSingle($('#getSingle-input').val())));
+            }
+        </script>
+
+        <input id="getSingle-input" type="number" value="1" oninput="getSingleTest()" />
+        <div id="getSingle-output"></div>
+
+    <i>getSingle gibt das Event-Objekt zur&uuml;ck, welches die id-> id hat.</i>
+
+    <h1>eventsHandler.search(value) test</h1>
+        <script type="text/javascript">
+            var searchTest = function() {
+                $("#search-output").html(JSON.stringify(events.search($('#search-input').val())));
+            }
+        </script>
+
+        <input id="search-input" type="text" value="lorem" oninput="searchTest()" />
+        <div id="search-output"></div>
+
+    <i>search gibt ein Array zur&uuml;ck, welches alle Suchergebnisse beinhaltet, sowie einen kurzen Auszug des Inhalts mit dem gefundenen Suchwort.</i>
+    <br /><b>Bsp.:</b><br/>
+    <code>
+        [{<br/>
+            'event': EVENT_JSON,<br/>
+            'summary': '[...] ipsum <span id="search-keyword" style="font-weight: bold;">sim</span> dolor [...]'<br/>
+        }, <br/>
+        {<br/>
+            'event': EVENT2_JSON,<br/>
+            'summary': '[...] ipsum <span id="search-keyword" style="font-weight: bold;">sim</span> dolor [...]'<br/>
+        }
+    </code>
+
+</body>
+</html>
+
+

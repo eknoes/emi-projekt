@@ -17,7 +17,7 @@ body {
     //border: 1px solid #666;
     width:100%;
     //min-width: 1100px; 
-    height: 215px;
+    height: auto;
     z-index: 255;
 }
 
@@ -51,11 +51,12 @@ figure {
 div#banner {
     overflow: hidden;
     width: 100%;
-    height: 170px;
+    height: auto;
 }
 div#banner figure img {
     width: 20%;
     float: left;
+    height: 170px; /*initial, responsive with jquery*/
 }
 div#banner figure { 
   position: relative;
@@ -110,7 +111,6 @@ ul#Navigation a {
     height: 45px;
     line-height: 45px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    
     text-transform: uppercase;
 }
 
@@ -149,18 +149,10 @@ ul#Navigation a {
         line-height: 45px;
 }
 
-/*Hide checkbox*/
-input[type=checkbox]{
-    display: none;
-}
-
-/*Show menu when invisible checkbox is checked*/
-input[type=checkbox]:checked ~ #Navigation{
-    display: block;
-}
 label.show-menu:hover {
     cursor: pointer;
 }
+/*
 /*Responsive Styles*/
 
 @media screen and (max-width : 1016px){
@@ -188,7 +180,7 @@ label.show-menu:hover {
 }
 input[type="text"] {
     height: 33px;
-    font-size: 20px;
+    font-size: 18px;
     display: inline-block;
     font-family: "Lato";
     border: none;
@@ -207,18 +199,17 @@ input[type="text"] {
     z-index: 3;
     transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
     cursor: pointer;
+    width: 103px;
+    z-index: 1;
+    border-bottom: 1px solid #BBB;
+    cursor: text;
+    display: none;
 }
 
 input[type="text"]:focus:hover {
     border-bottom: 1px solid #BBB;
 }
 
-input[type="text"]:focus {
-    width: 120px;
-    z-index: 1;
-    border-bottom: 1px solid #BBB;
-    cursor: text;
-}
 
 input[type="submit"] {
     height: 40px;
@@ -234,7 +225,6 @@ input[type="submit"] {
     transform: translate(0, -50%); /*Zentrierung mit CSS3*/
     right: 10px;
     z-index: 2;
-    cursor: pointer;
     opacity: 0.4;
     cursor: pointer;
     transition: opacity .4s ease;
@@ -249,14 +239,14 @@ div.ui-datepicker{
 #inhalt {
     position: absolute;
     width: 70%;
-    /* min-width: 600px; optional, looking bad at resized browser window*/
+    /*min-width: 450px; optional, looking bad at resized browser window*/
     height: auto;
-    top: 230px;
     left: 50%;
     margin-right: -50%;
+    margin-top: 60px;
     transform: translate(-50%, 0%);
     -webkit-transform: translate(-50%, 0%);/* Chrome, Safari, Opera */
-    -ms-transform: rotate(7deg); /* IE 9 */
+    -ms-transform: translate(-50%, 0%); /* IE 9 */
     background-color:#F5F5F5;
     overflow: hidden;
     
@@ -320,44 +310,57 @@ div#kalender {
     width: 14%;
     font-size: 20px;
 }
-#calendar_entry_4, #calendar_entry_1, #calendar_entry_2, #calendar_entry_3, #calendar_entry_5, #calendar_entry_6, #calendar_entry_7, #calendar_entry_39, #calendar_entry_40, #calendar_entry_41, #calendar_entry_42 {
+
+.out_of_this_month {
     background-color: #eee;
 }
-#calendar_entry_16 {
+
+.current_day {
     background-color: #838b8b;
     color: white;
 }
 .event_circle {
     border-radius: 50%;
     display: inline-block;
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
 }
-#event_circle1 {
+.circles {
     position: absolute;
-    bottom: 5px;
+    bottom: 0px;
     left: 5px;
-    background: #f37735;
+    line-height: 0px;
+    margin-bottom: 2px;
 }
-#event_circle2 {
-    position: absolute;
-    bottom: 5px;
-    left: 25px;
-    background: #d11141;
+.event_circle.kultur {
+    background: #d11141;;
 }
-#event_circle3 {
-    position: absolute;
-    bottom: 5px;
-    left: 5px;
+.event_circle.musik {
+    background: #00b159;
+}
+.event_circle.oeffentliches {
     background: #00aedb;
 }
-/*Kalender*/
+.event_circle.soiree {
+    background: #f37735;
+}
+.event_circle.bildung {
+    background: #ffc425;
+}
+.event_circle.sonstige {
+    background: #ccc;
+}
+td {
+    cursor: pointer;
+}
+/*Kalender Ende*/
 /*================*/
 #infos {
     height: auto;
     border: 1px solid black;
     margin-bottom: 20px;
 }
+
 #impressum {
     min-height: 50px;
     border: 1px solid black;
@@ -374,7 +377,7 @@ div#kalender {
     color: white;
     position: relative;
 }
-h3 {
+.title h3 {
     color: white;
     font-weight: normal;
     padding-left: 5px;
@@ -461,8 +464,34 @@ h4 {
 
 /*Alex' Code*/
 /*===================*/
-
-#impressum a {
+/*Tooltips*/
+.tooltip-title {
+    margin: 0;
+    padding: 0;
+}
+.tooltip-title.kultur {
+    color: #d11141;
+}
+.tooltip-title.musik {
+    color: #00b159;
+}
+.tooltip-title.oeffentliches {
+    color: #00aedb;
+}
+.tooltip-title.soiree {
+    color: #f37735;
+}
+.tooltip-title.bildung {
+    color: #ffc425;
+}
+.tooltip-title.sonstige {
+    color: #ccc;
+}
+.tooltip-event {
+    margin-bottom: 5px;
+}
+/*Tooltips end*/
+#impressum a.impbutton {
     color: #FFFFFF; 
     //background: #2f3036;
     background: -webkit-linear-gradient(#58595e, #2F3036);
