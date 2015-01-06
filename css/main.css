@@ -360,6 +360,7 @@ td {
     border: 1px solid black;
     margin-bottom: 20px;
     background-color:#F5F5F5;
+    padding: 5px;
 }
 
 #impressum {
@@ -530,4 +531,18 @@ h4 {
     box-shadow: 0 5px 15px rgba(176,176,176, 1);
     -webkit-box-shadow: 0 5px 15px rgba(176,176,176, 1); 
     -moz-box-shadow: 0 5px 15px rgba(176,176,176, 1);
+}
+
+/* accordion */
+.ui-accordion-header {
+    padding-left: 30px;
+}
+
+h3.ui-accordion-header {
+    margin-bottom: 0px;
+    color: #FFF;
+}
+
+.ui-state-default {
+    background: linear-gradient(#58595E, #2F3036) repeat scroll 0% 0% transparent;
 }

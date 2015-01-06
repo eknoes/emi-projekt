@@ -191,6 +191,7 @@ var eventsHandler = function (path) {
 
     this.loadEvents = function(id) {
         $('div#infos').html('EVENT ' + id[0] + ' Informationen');
+
     }
 
     this.setCategory= function(category) {
@@ -243,4 +244,7 @@ EVENTS.init(function() {
     script.type = "text/javascript";
     script.src = "js/header.js";
     $("head").append(script);
+    $(".accordion").accordion({
+        collapsible: true
+    });
 });
