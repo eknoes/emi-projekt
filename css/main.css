@@ -119,6 +119,35 @@ ul#Navigation a {
     border-left-color: black; border-top-color: black;
     color: #ccc;
 }*/
+/* Effect 5: same word slide in */
+#home-slide a {
+	overflow: hidden;
+}
+
+#home-slide a span {
+	position: relative;
+	display: inline-block;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+#home-slide a span::before {
+	position: absolute;
+	top: 100%;
+	content: attr(data-hover);
+	font-weight: 700;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+#home-slide a:hover span,
+#home-slide a:focus span {
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
 #a_kultur:hover {
     color: #d11141;
 }

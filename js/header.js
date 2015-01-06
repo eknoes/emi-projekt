@@ -65,8 +65,15 @@ function infoscroll() {
 /*Responsive Navigation Bar*/
 function resizenavi (){
     var breite = $(window).width(); /*Calculate window width*/
+    /*"Oeffentliches" doesnt get smaller than 122 px with initial font-size. This reduces font-size*/
+    if (breite<=1300) {
+        $("a.navbutton").css("font-size", 13);
+    }
+    else {
+        $("a.navbutton").css("font-size", "initial");
+    }
     if (breite>=1000) {
-        $("a.navbutton").css("min-width", breite/8.617); /*adjust button size to window*/    
+        $("a.navbutton").css("min-width", 0.7*breite/7-1); /*adjust button size to window*/   
         $("#navi").css("width", "100%");
         $(".navbuttonmobile").switchClass("navbuttonmobile", "navbutton");
         /*show navigation bar in case it was hidden */
@@ -93,6 +100,7 @@ function resizenavi (){
     else {
         $("#Navigation").css("margin-left", "0");
         $(".navbutton").switchClass("navbutton", "navbuttonmobile");
+        $(".navbuttonmobile").css("font-size", "initial");
         /*Quickinfo Table full sized*/
         $("#ContentsTable").css("width", "100%");
         /*Puts preview pictures below quick info text*/
