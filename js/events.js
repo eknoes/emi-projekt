@@ -181,6 +181,11 @@ var eventsHandler = function (path) {
         return newData;
     }
 
+    this.loadEvent = function(id) {
+        $('div#infos').html('EVENT ' + id + ' Informationen');
+    }
+
+
     function getExcerpt(text, keyword, makeLonger) {
         /* Erzeugt einen Ausschnitt aus einem Text (text), in dem das keyword im Zentrum steht und fett markiert wird. Standardmaesig betraegt der Ausschnitt +/- 40 Zeichen um das Wort herum, es kann mit makeLonger verlaengert werden */
         var result = "",
@@ -212,3 +217,14 @@ var eventsHandler = function (path) {
     }
 
 }
+
+var EVENTS = new eventsHandler("resources/events.json");
+
+EVENTS.init(function() {
+    generateMonth(0, 2015);
+    write();
+    var script = document.createElement( "script" );
+    script.type = "text/javascript";
+    script.src = "js/header.js";
+    $("head").append(script);
+});

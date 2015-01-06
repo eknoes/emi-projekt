@@ -1,7 +1,7 @@
 /**
- * Autor: Carl-Lukas Pokoj
- * Dieses Script enthaelt Funktionen zur Erstellung und Manipulation des Kalenders
- */
+* Autor: Carl-Lukas Pokoj
+* Dieses Script enthaelt Funktionen zur Erstellung und Manipulation des Kalenders
+*/
 
 var MONTH_NAME = new Array("Januar", "Februar", "M&auml;rz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember");
 
@@ -58,29 +58,42 @@ function prevMonth() {
 function write() {
 
     var count = 0;
-	
+    
     text = ' <table id="calendar"><tr><td class="calendar_head"><a class="calendar_link" href="javascript:prevMonth()"> &laquo;</a></td><td colspan=5 class="calendar_head_month" id="calendar_month">'
             + MONTH_NAME[date.getMonth()] + ' ' + date.getFullYear()
             + '</td><td class="calendar_head"><a class="calendar_link" href="javascript:nextMonth()"> &raquo;</a></td>'
             + '</tr><tr><td class="calendar_day">Mo</td><td class="calendar_day">Di</td><td class="calendar_day">Mi</td>'
             + '<td class="calendar_day">Do</td><td class="calendar_day">Fr</td><td class="calendar_day">Sa</td><td class="calendar_day">So</td></tr>';
-			
+            
     for (var i = 0; i < 6; i++) {
         text = text + '<tr>';
         for (var j = 0; j < 7; j++) {
 
+            var circles = '<div class="circles">';
+            var onDayEvents = EVENTS.onDay(cal_sheet[count]);
+            if(onDayEvents) {
+                for (var k = onDayEvents.length - 1; k >= 0; k--) {
+                    if (onDayEvents[k].categories[0].toLowerCase() != "&ouml;ffentliches") {
+                        circles = circles + '<div class="event_circle ' + onDayEvents[k].categories[0].toLowerCase() + '"  id="eventid-' + onDayEvents[k].id + '"></div>';
+                    } else {
+                        circles = circles + '<div class="event_circle oeffentliches"  id="eventid-' + onDayEvents[k].id + '"></div>';
+                    }
+                }
+            }
+            circles = circles + '</div>';
+
+            var cssID = cal_sheet[count].getFullYear() + '-'
+                        + ("0" + (cal_sheet[count].getMonth() + 1)).slice(-2) + '-' + ("0" + cal_sheet[count].getDate()).slice(-2);
+
             if (cal_sheet[count].getMonth() !== date.getMonth()) {
-                text = text + '<td class="calendar_entry out_of_this_month" id="' + date.getFullYear() + '-'
-                        + cal_sheet[count].getMonth() + 1 + '-' + cal_sheet[count].getDate() + '">' + cal_sheet[count].getDate() +
+                text = text + '<td class="calendar_entry out_of_this_month" id="' + cssID + '">' + cal_sheet[count].getDate() + circles +
                         '</div></td>';
             } else {
                 if (cal_sheet[count].getDate() === new Date().getDate() && cal_sheet[count].getMonth() === new Date().getMonth() && cal_sheet[count].getFullYear() === new Date().getFullYear()) {
-                    text = text + '<td class="calendar_entry current_day" id="' + date.getFullYear() + '-' + cal_sheet[count].getMonth() + 1
-                            + '-' + cal_sheet[count].getDate() + '">' + cal_sheet[count].getDate() +
+                    text = text + '<td class="calendar_entry current_day" id="' + cssID + '">' + cal_sheet[count].getDate() +circles +
                             ' </div></td>';
                 } else {
-                    text = text + '<td class="calendar_entry" id="' + date.getFullYear() + '-' + cal_sheet[count].getMonth() + 1
-                            + '-' + cal_sheet[count].getDate() + '">' + cal_sheet[count].getDate() +
+                    text = text + '<td class="calendar_entry" id="' + cssID + '">' + cal_sheet[count].getDate() +circles +
                             '</div></td>';
                 }
             }
@@ -90,5 +103,12 @@ function write() {
         text = text + '</tr>';
     }
     text = text + '</table>';
-    document.getElementById("kalender").innerHTML = text;
+    $("div#kalender").html(text);
+    reTooltipster();
+    if(typeof reloadStuff == 'function') {
+        reloadStuff();
+    }
 }
+
+
+

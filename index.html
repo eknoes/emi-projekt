@@ -15,6 +15,7 @@
         <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
         <script type="text/javascript" src="js/events.js"></script>  
         <script type="text/javascript" src="js/calendar.js"></script>  
+        <script type="text/javascript" src="js/tooltips.js"></script>  
     </head>
     <body>
         <div id="header">
@@ -44,125 +45,7 @@
             </div>
         </div>
         <div id="inhalt">
-            <div id="kalender"> 
-                <script type="text/javascript">
-                    generateMonth(0, 2015);
-                    write();
-                </script>
-<!--                    <td class="calendar_day">Mo</td>
-                    <td class="calendar_day">Di</td>
-                    <td class="calendar_day">Mi</td>
-                    <td class="calendar_day">Do</td>
-                    <td class="calendar_day">Fr</td>
-                    <td class="calendar_day">Sa</td>
-                    <td class="calendar_day">So</td>
-                </tr>
-                <tr>
-                    <td class="calendar_entry out_of_this_month" id="2014-11-24">24</td>
-                    <td class="calendar_entry out_of_this_month" id="2014-11-25">25</td>
-                    <td class="calendar_entry out_of_this_month" id="2014-11-26">26</td>
-                    <td class="calendar_entry out_of_this_month" id="2014-11-27">27</td>
-                    <td class="calendar_entry out_of_this_month" id="2014-11-28">28</td>
-                    <td class="calendar_entry out_of_this_month" id="2014-11-29">29</td>
-                    <td class="calendar_entry out_of_this_month" id="2014-11-30">30</td>
-                </tr>
-                <tr>
-                    <td class="calendar_entry" id="2014-12-1">1
-                        <div class="circles">
-                            <div class="event_circle kultur" id="eventid-4"></div>
-                            <div class="event_circle musik" id="eventid-2"></div>
-                            <div class="event_circle oeffentliches" id="eventid-5"></div>
-                            <div class="event_circle soiree" id="eventid-7"></div>
-                            <div class="event_circle bildung" id="eventid-6"></div>
-                            <div class="event_circle sonstige" id="eventid-8"></div>
-                        </div>
-                    </td>
-                    <td class="calendar_entry" id="2014-12-2">2</td>
-                    <td class="calendar_entry" id="2014-12-3">3</td>
-                    <td class="calendar_entry" id="2014-12-4">4</td>
-                    <td class="calendar_entry" id="2014-12-5">5</td>
-                    <td class="calendar_entry" id="2014-12-6">6</td>
-                    <td class="calendar_entry" id="2014-12-7">7</td>
-                </tr>
-                <tr>
-                    <td class="calendar_entry" id="2014-12-8">8</td>
-                    <td class="calendar_entry" id="2014-12-9">9</td>
-                    <td class="calendar_entry" id="2014-12-10">10</td>
-                    <td class="calendar_entry" id="2014-12-11">11</td>
-                    <td class="calendar_entry" id="2014-12-12">12</td>
-                    <td class="calendar_entry" id="2014-12-13">13</td>
-                    <td class="calendar_entry" id="2014-12-14">14</td>
-                </tr>
-                <tr>
-                    <td class="calendar_entry" id="2014-12-15">15</td>
-                    <td class="calendar_entry current_day" id="2014-12-16">16</td>
-                    <td class="calendar_entry" id="2014-12-17">17</td>
-                    <td class="calendar_entry" id="2014-12-18">18</td>
-                    <td class="calendar_entry" id="2014-12-19">19</td>
-                    <td class="calendar_entry" id="2014-12-20">20</td>
-                    <td class="calendar_entry" id="2014-12-21">21</td>
-                </tr>
-                <tr>
-                    <td class="calendar_entry" id="2014-12-22">22</td>
-                    <td class="calendar_entry" id="2014-12-23">23
-                        <div class="circles">
-                            <div class="event_circle musik" id="eventid-2"></div>
-                            <div class="event_circle kultur" id="eventid-3"></div>
-                        </div>
-</td>
-                    <td class="calendar_entry" id="2014-12-24">24
-                        <div class="circles">
-                            <div class="event_circle musik" id="eventid-2"></div>
-                            <div class="event_circle kultur" id="eventid-3"></div>
-                            <div class="event_circle oeffentliches" id="eventid-5"></div>
-                        </div>
-</td>
-                    <td class="calendar_entry" id="2014-12-25">25
-                        <div class="circles">
-                            <div class="event_circle musik" id="eventid-0"></div>
-                            <div class="event_circle kultur" id="eventid-3"></div>
-                            <div class="event_circle oeffentliches" id="eventid-5"></div>
-                            <div class="event_circle soiree" id="eventid-7"></div>
-                            <div class="event_circle bildung" id="eventid-6"></div>
-                            <div class="event_circle sonstige" id="eventid-8"></div>
-                        </div>
-</td>
-                    <td class="calendar_entry" id="2014-12-26">26
-                        <div class="circles">
-                            <div class="event_circle musik" id="eventid-1"></div>
-                            <div class="event_circle oeffentliches" id="eventid-5"></div>
-                        </div>
-</td>
-                    <td class="calendar_entry" id="2014-12-27">27                        
-                        <div class="circles">
-                            <div class="event_circle musik" id="eventid-1"></div>
-
-                            <div class="event_circle kultur" id="eventid-4"></div>
-                            <div class="event_circle oeffentliches" id="eventid-5"></div>
-                        </div>
-</td>
-                    <td class="calendar_entry" id="2014-12-28">28
-                        <div class="circles">
-                            <div class="event_circle kultur" id="eventid-4"></div>
-                            <div class="event_circle oeffentliches" id="eventid-5"></div>
-                        </div>
-</td>
-                </tr>
-                <tr>
-                    <td class="calendar_entry" id="2014-12-29">29
-                        <div class="circles">
-                            <div class="event_circle kultur" id="eventid-4"></div>
-                        </div>
-</td>
-                    <td class="calendar_entry" id="2014-12-30">30</td>
-                    <td class="calendar_entry" id="2014-12-31">31</td>
-                    <td class="calendar_entry out_of_this_month" id="2015-1-1">1</td>
-                    <td class="calendar_entry out_of_this_month" id="2015-1-2">2</td>
-                    <td class="calendar_entry out_of_this_month" id="2015-1-3">3</td>
-                    <td class="calendar_entry out_of_this_month" id="2015-1-4">4</td>
-                </tr>
-                </table>
->>>>>>> origin/master-->
+            <div id="kalender">
             </div>
             <div id="infos">
                 <div class="infoBlock" id="infoBlock1">
@@ -274,6 +157,5 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="js/header.js"></script>
     </body>
 </html>
