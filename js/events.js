@@ -45,8 +45,8 @@ var eventsHandler = function (path) {
             eventEnd.setHours(0,0,0,0);
 
             if(this.isInPeriod(day, eventStart, eventEnd)) { //Wenn der Tag zwischen dem Start und Ende liegt, wird das Event zum result-Array hinzugefuegt.
-                if(this.category) {
-                    if(this.data[i].categories[0].toLowerCase() == this.category && this.category != 'all') {
+                if(this.category && this.category != 'all') {
+                    if(this.data[i].categories[0].toLowerCase() == this.category) {
                         tempObject = this.data[i];
                         tempObject.id = i; //Die ID ist der Index, welcher sich bei diesem resultArray veraendert wird, also wird sie als seperater Wert hinzugefuegt.
                         result.push(tempObject)
@@ -194,6 +194,9 @@ var eventsHandler = function (path) {
     }
 
     this.setCategory= function(category) {
+        $('a.current_cat').removeClass('current_cat');
+        $('a#a_'+category).addClass('current_cat');
+
         if(category == "oeffentliches") {
             category = '&ouml;ffentliches';
         }
