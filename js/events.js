@@ -190,7 +190,86 @@ var eventsHandler = function (path) {
     }
 
     this.loadEvents = function(id) {
-        $('div#infos').html('EVENT ' + id[0] + ' Informationen');
+        var output = '';
+        for (var i = id.length - 1; i >= 0; i--) {
+            output = this.eventInfo(id[i]) + output;
+        };
+
+        $('#infos .accordion').html(output);
+        $(".accordion").accordion({
+            collapsible: true
+        });
+
+
+    }
+
+    this.eventInfo = function(id) {
+        var tempResult = Array(),
+            when,
+            current = this.data[id],
+            start = new Date(this.data[id].date[0]),
+            end = new Date(this.data[id].date[1]),
+            result = '',
+            wochentag = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+
+
+        tempResult.push('<h3>' + current.name + '</h3>');
+        tempResult.push('<div><div class="infoBlock" id="infoBlock1"><div class="title" id="titleQuickInfo"><h3>Auf einen Blick </h3></div>');
+        tempResult.push('<table id="ContentsTable">');
+
+        if(current.tags) {
+            tempResult.push('<tr><td class="TableHead">Was?</td><td>');
+            for (var i = current.tags.length - 1; i >= 0; i--) {
+                tempResult.push(current.tags[i] + ' ');
+            };
+            tempResult.push('</td></tr>')
+        }
+
+
+
+
+        when = wochentag[start.getDay()] + ', ' + ("0" + start.getDate()).slice(-2) + '.' + ("0" + (start.getMonth() + 1)).slice(-2) + '.' + start.getFullYear() + ', ' + start.getHours() + ':' + ("0" + start.getMinutes()).slice(-2) + ' - ' + ("0" + end.getDate()).slice(-2) + '.' + ("0" + (end.getMonth() + 1)).slice(-2) + '.' + end.getFullYear() + ', ' + end.getHours() + ':' + ("0" + end.getMinutes()).slice(-2);
+
+        tempResult.push('<tr><td class="TableHead">Wann?</td><td>' + when + '</td></tr>');
+        tempResult.push('<tr><td class="TableHead">Wo?</td><td>' + current.adress + '</td></tr>');
+
+        if(current.admission) {
+            if(current.admission == 0) {
+                tempResult.push('<tr><td class="TableHead">Eintritt:</td><td>frei</td></tr>');
+            } else {
+                tempResult.push('<tr><td class="TableHead">Eintritt:</td><td>' + current.admission + '</td></tr>');
+            }
+        } else {
+            tempResult.push('<tr><td class="TableHead">Eintritt:</td><td>unbekannt</td></tr>');
+        }        
+
+        if(current.link) {
+            tempResult.push('<tr><td class="TableHead">Website:</td><td><a href="' + current.link + '">' + current.link + '</a></td></tr></table>');
+        }
+
+        if(current.image) {
+            tempResult.push('<div id ="infoPictures"><div id="infoPicturesBig"><img id="mainimage" src="' + current.image[0] + '"></div></div>');
+        }
+        tempResult.push('</div>');
+
+        tempResult.push('<div class="infoBlock"><div class="title"><h3>Details </h3></div>');
+        tempResult.push('<div id="infoBlockDetailsText"><p>' + current.desc + '</p></div></div>');
+
+        tempResult.push('<div class="infoBlock"><div class="title"><h3>Anfahrt </h3></div>');
+        tempResult.push('<iframe id="maps" width="600" height="300" src="http://maps.google.de/maps?hl=de&q=' + current.adress + '&ie=UTF8&t=&z=17&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>');
+
+        current.adress.split(",");
+        tempResult.push('<div id="infoBlockAnfahrtText"><h4>Adresse:</h4><p id ="anfahrtTextP">' + current.adress[0] + '<br>' + current.adress[1] + '<br></p>');
+        tempResult.push('<h4>Erreichbar über:</h4><p id ="anfahrtTextP">Linie 6, Haltestelle Musterhaltestelle<br>Linie 7, Haltestelle Musterhaltestelle<br>Bus 7, Haltestelle Marienhof</p>');
+
+        tempResult.push('</div></div></div>');
+
+        for (var i = 0; tempResult.length - 1 >= i; i++) {
+            result = result + tempResult[i]
+        };
+
+        return result;
+
     }
 
     this.setCategory= function(category) {

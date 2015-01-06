@@ -104,6 +104,7 @@ function write() {
     }
     text = text + '</table>';
     $("div#kalender").html(text);
+    
     reTooltipster();
     if(typeof reloadStuff == 'function') {
         reloadStuff();
