@@ -3,9 +3,6 @@
  * Dieses Script enthaelt Funktionen zur Erstellung und Manipulation des Kalenders
  */
 
-
-var DAY_NAME = new Array("Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag");
-
 var MONTH_NAME = new Array("Januar", "Februar", "M&auml;rz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember");
 
 var date;
@@ -38,9 +35,11 @@ function generateMonth(month, year) {
     //laufe ueber den Monat und speichere die einzelnen Daten in ein Array
     for (var i = 0; i < 42; i++) {
         cal_sheet[i] = dt;
-        if (dt.getDate() === 25) {
+        
+		if (dt.getDate() === 15) {
             date = dt;
         }
+		
         dt = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + 1);
     }
 
@@ -66,12 +65,23 @@ function write() {
     for (var i = 0; i < 6; i++) {
         text = text + '<tr>';
         for (var j = 0; j < 7; j++) {
+		
 			if(cal_sheet[count].getMonth() !== date.getMonth()){
-				text = text + '<td class="calendar_entry_out_of_this_month" id="out_of_this_month">' + cal_sheet[count].getDate() +
+				text = text + '<td class="calendar_entry out_of_this_month" id="' + date.getFullYear() + '-'
+				+ cal_sheet[count].getMonth() + 1 + '-' + cal_sheet[count].getDate() + '">' + cal_sheet[count].getDate() +
                     ' </div></td>';
 			}else{
-				text = text + '<td class="calendar_entry" id="' + date.getFullYear() + '-' + cal_sheet[count].getMonth() + 1 + '-' + cal_sheet[count].getDate() + '">' + cal_sheet[count].getDate() +
-                    ' </div></td>';
+			
+				
+				if(cal_sheet[count].getDate() === new Date().getDate() && cal_sheet[count].getMonth() === new Date().getMonth()){
+					text = text + '<td class="calendar_entry current_day" id="' + date.getFullYear() + '-' + cal_sheet[count].getMonth() + 1 
+					+ '-' + cal_sheet[count].getDate() + '">' + cal_sheet[count].getDate() +
+                                ' </div></td>';
+				}else{
+                                    text = text + '<td class="calendar_entry" id="' + date.getFullYear() + '-' + cal_sheet[count].getMonth() + 1 
+                                    + '-' + cal_sheet[count].getDate() + '">' + cal_sheet[count].getDate() +
+                                    ' </div></td>';
+                                }		
 			}
             
             count++;
