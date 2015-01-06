@@ -189,8 +189,8 @@ var eventsHandler = function (path) {
         return newData;
     }
 
-    this.loadEvent = function(id) {
-        $('div#infos').html('EVENT ' + id + ' Informationen');
+    this.loadEvents = function(id) {
+        $('div#infos').html('EVENT ' + id[0] + ' Informationen');
     }
 
     this.setCategory= function(category) {
@@ -236,7 +236,8 @@ var eventsHandler = function (path) {
 var EVENTS = new eventsHandler("resources/events.json");
 
 EVENTS.init(function() {
-    generateMonth(0, 2015);
+    var today = new Date();
+    generateMonth(today.getMonth(), today.getFullYear());
     write();
     var script = document.createElement( "script" );
     script.type = "text/javascript";
