@@ -7,12 +7,13 @@
                 "2015/01/16 09:30:00"
             ],
             "desc": "In einem hochkarätigen Programm werden von Seiten der Industrie und Wissenschaft Vorträge über die neuesten Entwicklungen und Innovationen der Hochleistungskeramik gehalten.",
-            "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Winterbergstraße 28",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "image": ["http://upload.wikimedia.org/wikipedia/commons/c/cb/Logo_Fraunhofer_Gesellschaft.svg", "http://commons.wikimedia.org/wiki/File:Logo_Fraunhofer_Gesellschaft.svg"],
+            "adress": "Fraunhofer-Institut für Keramische Technologien und Systeme IKTS, Winterbergstraße 28, 01277 Dresden",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "admission": 120,
             "tags": [
-                "beispiel",
-                "Example"
+                "Konferenz",
+                "Fraunhofer-Institut"
             ],
             "categories": ["Bildung"]
         },

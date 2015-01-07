@@ -462,10 +462,13 @@ table#ContentsTable {
     position: absolute;
     top:50%;
     left:50%;
+    width: 100%;
     -ms-transform: translate(-50%, -50%); /* IE 9 */
     -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
     transform: translate(-50%, -50%); /*Shows the center of the image*/
 }
+
+
 .subImage {
     position: absolute;
     top:50%;

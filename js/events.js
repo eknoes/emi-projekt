@@ -246,14 +246,14 @@ var eventsHandler = function (path) {
             if(current.admission == 0) {
                 tempResult.push('<tr><td class="TableHead">Eintritt:</td><td>frei</td></tr>');
             } else {
-                tempResult.push('<tr><td class="TableHead">Eintritt:</td><td>' + current.admission + '</td></tr>');
+                tempResult.push('<tr><td class="TableHead">Eintritt:</td><td>' + current.admission + ' &euro;</td></tr>');
             }
         } else {
             tempResult.push('<tr><td class="TableHead">Eintritt:</td><td>unbekannt</td></tr>');
         }        
 
         if(current.link) {
-            tempResult.push('<tr><td class="TableHead">Website:</td><td><a href="' + current.link + '">' + current.link + '</a></td></tr></table>');
+            tempResult.push('<tr><td class="TableHead">Website:</td><td><a href="' + current.link[1] + '">' + current.link[0] + '</a></td></tr></table>');
         }
 
         if(current.image) {
