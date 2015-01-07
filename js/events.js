@@ -195,7 +195,7 @@ var eventsHandler = function (path) {
         return newData;
     }
 
-    this.loadEvents = function(id) {
+    this.loadEvents = function(id, headline) {
         var output = '';
         for (var i = id.length - 1; i >= 0; i--) {
             output = this.eventInfo(id[i]) + output;
@@ -204,7 +204,14 @@ var eventsHandler = function (path) {
         $('#infos .accordion').html(output);
         this.appendHelp();
         $(".accordion").accordion("refresh");
-        $('h1.detailInfo').html("Event&uuml;bersicht");
+        console.log(id.length);
+        if(id.length > 1) {
+            $(".accordion").accordion("option", "active", false);
+        } else {
+            $(".accordion").accordion("option", "active", 0);
+        }
+        headline = (typeof headline === "undefined") ? "Event&uuml;bersicht" : headline;
+        $('h1.detailInfo').html(headline);
 
     }
 
@@ -248,7 +255,7 @@ var eventsHandler = function (path) {
             if(current.admission == 0) {
                 tempResult.push('<tr><td class="TableHead">Eintritt:</td><td>frei</td></tr>');
             } else {
-                tempResult.push('<tr><td class="TableHead">Eintritt:</td><td>' + current.admission + ' &euro;</td></tr>');
+                tempResult.push('<tr><td class="TableHead">Eintritt:</td><td>ab ' + current.admission + ' &euro;</td></tr>');
             }
         } else {
             tempResult.push('<tr><td class="TableHead">Eintritt:</td><td>unbekannt</td></tr>');
@@ -258,7 +265,7 @@ var eventsHandler = function (path) {
             tempResult.push('<tr><td class="TableHead">Website:</td><td><a href="' + current.link[1] + '">' + current.link[0] + '</a></td></tr></table>');
         }
 
-        if(current.image) {
+        if(current.image && current.image[0] != '') {
             tempResult.push('<div id ="infoPictures"><div id="infoPicturesBig"><img id="mainimage" src="' + current.image[0] + '"></div></div>');
         }
         tempResult.push('</div>');
