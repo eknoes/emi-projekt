@@ -575,3 +575,9 @@ h3.ui-accordion-header {
 .ui-state-default {
     background: linear-gradient(#58595E, #2F3036) repeat scroll 0% 0% transparent;
 }
+
+/* detailInfo */
+
+h1.detailInfo {
+    /*color: #FFF;*/
+}

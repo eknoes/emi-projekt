@@ -6,6 +6,7 @@ var eventsHandler = function (path) {
     this.path = path;
 
     this.init = function(callback) {
+        console.log("Init");
         /* Initialisierungsfunktion, die einmalig aufgerufen werden muss. Wenn die Events aus dem JSON File fertig verarbeitet wurden, wird die callback Funktion aufgerufen. */
         var self = this; //this ist in getJSON nicht mehr verfuegbar, also wird es auf self gelegt.
         $.getJSON(this.path, function(data) {
@@ -193,12 +194,11 @@ var eventsHandler = function (path) {
         var output = '';
         for (var i = id.length - 1; i >= 0; i--) {
             output = this.eventInfo(id[i]) + output;
-        };
+        }
 
+        //$('#infos .accordion').attr( "class", "accordion" ); //Alle anderenKlassen entfernen
         $('#infos .accordion').html(output);
-        $(".accordion").accordion({
-            collapsible: true
-        });
+        $(".accordion").accordion("refresh");
 
 
     }
@@ -221,14 +221,20 @@ var eventsHandler = function (path) {
             tempResult.push('<tr><td class="TableHead">Was?</td><td>');
             for (var i = current.tags.length - 1; i >= 0; i--) {
                 tempResult.push(current.tags[i] + ' ');
-            };
+            }
             tempResult.push('</td></tr>')
         }
 
 
 
 
-        when = wochentag[start.getDay()] + ', ' + ("0" + start.getDate()).slice(-2) + '.' + ("0" + (start.getMonth() + 1)).slice(-2) + '.' + start.getFullYear() + ', ' + start.getHours() + ':' + ("0" + start.getMinutes()).slice(-2) + ' - ' + ("0" + end.getDate()).slice(-2) + '.' + ("0" + (end.getMonth() + 1)).slice(-2) + '.' + end.getFullYear() + ', ' + end.getHours() + ':' + ("0" + end.getMinutes()).slice(-2);
+        when = wochentag[start.getDay()] + ', ' + ("0" + start.getDate()).slice(-2) + '.' + ("0" + (start.getMonth() + 1)).slice(-2) + '.' + start.getFullYear() + ', ' + start.getHours() + ':' + ("0" + start.getMinutes()).slice(-2);
+
+        if(start.getDay() === end.getDay() && start.getMonth() === end.getMonth() && start.getFullYear() === end.getFullYear()) {
+            when = when + ' - ' + end.getHours() + ':' + ("0" + end.getMinutes()).slice(-2);
+        } else {
+            when = when + ' - ' + ("0" + end.getDate()).slice(-2) + '.' + ("0" + (end.getMonth() + 1)).slice(-2) + '.' + end.getFullYear() + ', ' + end.getHours() + ':' + ("0" + end.getMinutes()).slice(-2);
+        }
 
         tempResult.push('<tr><td class="TableHead">Wann?</td><td>' + when + '</td></tr>');
         tempResult.push('<tr><td class="TableHead">Wo?</td><td>' + current.adress + '</td></tr>');
@@ -256,17 +262,16 @@ var eventsHandler = function (path) {
         tempResult.push('<div id="infoBlockDetailsText"><p>' + current.desc + '</p></div></div>');
 
         tempResult.push('<div class="infoBlock"><div class="title"><h3>Anfahrt </h3></div>');
-        tempResult.push('<iframe id="maps" width="600" height="300" src="http://maps.google.de/maps?hl=de&q=' + current.adress + '&ie=UTF8&t=&z=17&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>');
+        tempResult.push('<iframe id="maps" width="600" height="300" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAVGVXDpzXDcLyZiPUDKdMliYsKFq55kxg&q=' + current.adress + '&language=de-DE" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>');
 
-        current.adress.split(",");
-        tempResult.push('<div id="infoBlockAnfahrtText"><h4>Adresse:</h4><p id ="anfahrtTextP">' + current.adress[0] + '<br>' + current.adress[1] + '<br></p>');
+        tempResult.push('<div id="infoBlockAnfahrtText"><h4>Adresse:</h4><p id ="anfahrtTextP">' + current.adress.replace(',', '<br />') + '<br></p>');
         tempResult.push('<h4>Erreichbar über:</h4><p id ="anfahrtTextP">Linie 6, Haltestelle Musterhaltestelle<br>Linie 7, Haltestelle Musterhaltestelle<br>Bus 7, Haltestelle Marienhof</p>');
 
         tempResult.push('</div></div></div>');
 
         for (var i = 0; tempResult.length - 1 >= i; i++) {
-            result = result + tempResult[i]
-        };
+            result = result + tempResult[i];
+        }
 
         return result;
 
@@ -325,4 +330,7 @@ EVENTS.init(function() {
     script.type = "text/javascript";
     script.src = "js/header.js";
     $("head").append(script);
+    $(".accordion").accordion({
+        collapsible: true
+    });
 });
