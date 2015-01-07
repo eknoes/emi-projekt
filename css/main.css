@@ -379,7 +379,7 @@ div#kalender {
 .event_circle.sonstige {
     background: #ccc;
 }
-td {
+td.calendar_entry {
     cursor: pointer;
 }
 /*Kalender Ende*/
