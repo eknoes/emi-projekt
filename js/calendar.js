@@ -69,18 +69,29 @@ function write() {
         text = text + '<tr>';
         for (var j = 0; j < 7; j++) {
 
-            var circles = '<div class="circles">';
-            var onDayEvents = EVENTS.onDay(cal_sheet[count]);
-            if(onDayEvents) {
-                for (var k = onDayEvents.length - 1; k >= 0; k--) {
-                    if (onDayEvents[k].categories[0].toLowerCase() != "&ouml;ffentliches") {
-                        circles = circles + '<div class="event_circle ' + onDayEvents[k].categories[0].toLowerCase() + '"  id="eventid-' + onDayEvents[k].id + '"></div>';
-                    } else {
-                        circles = circles + '<div class="event_circle oeffentliches"  id="eventid-' + onDayEvents[k].id + '"></div>';
+            /* Circles werden generiert */
+            var categories = ["kultur", "musik", "oeffentliches", "soiree", "bildung", "sonstige"];
+            var onDayEvents = EVENTS.onDay(cal_sheet[count]); 
+            if(onDayEvents) { // Falls es Events an diesem Tag gibt, wird ein circles DIV gestartet und gefuellt
+                var circles = '<div class="circles">';
+                for (var k = categories.length - 1; k >= 0; k--) { //Da pro Kategorie nur ein Circle enstehen soll, und nicht pro event
+                    var categoryEvents = EVENTS.onDay(cal_sheet[count], categories[k]);
+                    for (var l = categoryEvents.length - 1; l >= 0; l--) { //Danach werden alle Events, die an diesem Tag in der Kategorie stattfinden, in einen circle gepackt
+                        if (l == 0 && l == categoryEvents.length - 1) {
+                            circles = circles + '<div class="event_circle ' + categories[k] + '" id="eventids-' + categoryEvents[l].id + '"></div>';
+                        } else if(l == categoryEvents.length - 1) {
+                            circles = circles + '<div class="event_circle ' + categories[k] + '" id="eventids-' + categoryEvents[l].id;
+                        } else if (l == 0) {
+                            circles = circles + '-' + categoryEvents[l].id + '"></div>';
+                        } else if (l != 0 && l != categoryEvents.length - 1) {
+                            circles = circles + '-' + categoryEvents[l].id;
+                        }
                     }
+
                 }
+                circles = circles + '</div>';
             }
-            circles = circles + '</div>';
+
 
             var cssID = cal_sheet[count].getFullYear() + '-'
                         + ("0" + (cal_sheet[count].getMonth() + 1)).slice(-2) + '-' + ("0" + cal_sheet[count].getDate()).slice(-2);

@@ -64,31 +64,21 @@ function reTooltipster()  {
                 continueTooltip();      
 
                 $(".calendar_entry").tooltipster("hide");
-                var kategorie;
-                if ($(this).hasClass("musik")) {kategorie="Musik";}
-                if ($(this).hasClass("kultur")) {kategorie="Kultur";}
-                if ($(this).hasClass("oeffentliches")) {kategorie="&Ouml;ffentliches";}
-                if ($(this).hasClass("bildung")) {kategorie="Bildung";}
-                if ($(this).hasClass("soiree")) {kategorie="Soiree";}
-                if ($(this).hasClass("sonstige")) {kategorie="Sonstige";}
+                var kategorie, cssClass;
+                if ($(this).hasClass("musik")) {kategorie="Musik"; cssClass="musik";}
+                if ($(this).hasClass("kultur")) {kategorie="Kultur"; cssClass="kultur";}
+                if ($(this).hasClass("oeffentliches")) {kategorie="&Ouml;ffentliches"; cssClass="oeffentliches";}
+                if ($(this).hasClass("bildung")) {kategorie="Bildung"; cssClass="bildung";}
+                if ($(this).hasClass("soiree")) {kategorie="Soiree"; cssClass="soiree";}
+                if ($(this).hasClass("sonstige")) {kategorie="Sonstige"; cssClass="sonstige";}
 
-                var currentEvent = EVENTS.getSingle(origin.prop("id").split("-")[1]); //Holt wieder die CSS-id und splittet sie am Bindestrich, um die Nummer des Events rauszubekommen. Funktion gibt dann alle Daten zurueck
-                infos = currentEvent.name + "<br>" + currentEvent.date[0] + "<br>";                      
+                var infos = '<h3 class="tooltip-title ' + cssClass + '"">' + kategorie + '</h3>';
+                for (var i = origin.prop("id").split("-").length - 1; i > 0; i--) {
+                    var currentEvent = EVENTS.getSingle(origin.prop("id").split("-")[i]);
+                    infos = infos + '<p>' + currentEvent.name + '</p>';
+                };
+
                 origin.tooltipster("content", infos);
-
-                /* Hier unten deine alte Version */
-                // $.getJSON('resources/events.json', function(data) {
-             //            var infos = ""; 
-             //            $.each(data.events, function (key, val) {
-             //                if (val.categories == kategorie) {
-             //                    infos = infos + " " + val.name + "<br>" + val.date[0] + "<br>";                      
-             //                }
-             //            });
-             //            origin.tooltipster("content", infos);
-             //            //origin.tooltipster('content', jd.events[0].name + jd.events[0].date[1]);               
-                // });
-
-
             },
         functionAfter: function (origin) {
                 $(".calendar_entry").tooltipster("enable");

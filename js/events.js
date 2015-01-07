@@ -4,6 +4,7 @@ var eventsHandler = function (path) {
     Eine Klasse, die die events.json Datei verarbeitet, und ihre Daten dann zur Verfuegung stellt. */
 
     this.path = path;
+    this.category = 'all';
 
     this.init = function(callback) {
         console.log("Init");
@@ -29,9 +30,10 @@ var eventsHandler = function (path) {
         }
     }
 
-    this.onDay = function(day) { 
+    this.onDay = function(day, category) { 
         /* Gibt ein Array zurueck, dass alle Events enthält, welche an einem bestimmten Zeitpunkt stattfinden. day wird in ein JS-Date Objekt umgewandelt, sodass viele Datumsformatierungen unterstuetzt werden. */
-
+        category = (typeof category === "undefined") ? this.category : category;
+        category = (category === "oeffentliches") ? "&ouml;ffentliches" : category;
         var result, eventStart, eventEnd, tempObject, i;
         result = [];
 
@@ -46,8 +48,8 @@ var eventsHandler = function (path) {
             eventEnd.setHours(0,0,0,0);
 
             if(this.isInPeriod(day, eventStart, eventEnd)) { //Wenn der Tag zwischen dem Start und Ende liegt, wird das Event zum result-Array hinzugefuegt.
-                if(this.category && this.category != 'all') {
-                    if(this.data[i].categories[0].toLowerCase() == this.category) {
+                if(category != 'all') {
+                    if(this.data[i].categories[0].toLowerCase() == category) {
                         tempObject = this.data[i];
                         tempObject.id = i; //Die ID ist der Index, welcher sich bei diesem resultArray veraendert wird, also wird sie als seperater Wert hinzugefuegt.
                         result.push(tempObject)
