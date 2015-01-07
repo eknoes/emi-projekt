@@ -50,17 +50,18 @@ function reloadStuff () {
     $(".calendar_entry").click(function (event) {
         if($(event.target).is(this)){
             var eventIDs = [];
-            console.log(event.target.id);
             var date = new Date(event.target.id);
-            console.log(date);
             var allEvents = EVENTS.onDay(event.target.id);
 
             for (var i = allEvents.length - 1; i >= 0; i--) {
                 eventIDs.push(allEvents[i].id);
             }
-            console.log(allEvents);
-            EVENTS.loadEvents(eventIDs, "Events am " + date.getDate() + "." + (date.getMonth()+1) + "." + date.getFullYear());
-            infoscroll();
+            if(eventIDs.length == 0) {
+                return false;
+            } else {
+                EVENTS.loadEvents(eventIDs, "Events am " + date.getDate() + "." + (date.getMonth()+1) + "." + date.getFullYear());
+                infoscroll();
+            }
         }
     });
 }
