@@ -361,6 +361,7 @@ EVENTS.init(function() {
 
     EVENTS.appendHelp();
     $(".accordion").accordion({
-        collapsible: true
+        collapsible: true,
+        heightStyle: "content"
     });
 });
