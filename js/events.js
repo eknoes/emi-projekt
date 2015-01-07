@@ -204,12 +204,12 @@ var eventsHandler = function (path) {
         $('#infos .accordion').html(output);
         this.appendHelp();
         $(".accordion").accordion("refresh");
-        console.log(id.length);
         if(id.length > 1) {
             $(".accordion").accordion("option", "active", false);
         } else {
             $(".accordion").accordion("option", "active", 0);
         }
+        console.log(headline);
         headline = (typeof headline === "undefined") ? "Event&uuml;bersicht" : headline;
         $('h1.detailInfo').html(headline);
 

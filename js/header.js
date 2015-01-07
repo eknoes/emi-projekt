@@ -33,12 +33,35 @@ $("#submit").click(function () {
 function reloadStuff () {
     /*smooth scroll to infos on table cell click*/
     $(".event_circle").click(function (event) {
-        var eventIDs = [];
+        var eventIDs = [],
+            headline;
         for (var i = event.target.id.split('-').length - 1; i > 0; i--) {
             eventIDs.push(event.target.id.split('-')[i])
         };
-        EVENTS.loadEvents(eventIDs);
+        if ($(this).hasClass("musik")) {kategorie="Musik"; cssClass="musik";}
+        if ($(this).hasClass("kultur")) {kategorie="Kultur"; cssClass="kultur";}
+        if ($(this).hasClass("oeffentliches")) {kategorie="&Ouml;ffentliches"; cssClass="oeffentliches";}
+        if ($(this).hasClass("bildung")) {kategorie="Bildung"; cssClass="bildung";}
+        if ($(this).hasClass("soiree")) {kategorie="Soiree"; cssClass="soiree";}
+        if ($(this).hasClass("sonstige")) {kategorie="Sonstige"; cssClass="sonstige";}
+        EVENTS.loadEvents(eventIDs, kategorie + " Events am " + date.getDate() + "." + (date.getMonth()+1) + "." + date.getFullYear());
         infoscroll();
+    });
+    $(".calendar_entry").click(function (event) {
+        if($(event.target).is(this)){
+            var eventIDs = [];
+            console.log(event.target.id);
+            var date = new Date(event.target.id);
+            console.log(date);
+            var allEvents = EVENTS.onDay(event.target.id);
+
+            for (var i = allEvents.length - 1; i >= 0; i--) {
+                eventIDs.push(allEvents[i].id);
+            }
+            console.log(allEvents);
+            EVENTS.loadEvents(eventIDs, "Events am " + date.getDate() + "." + (date.getMonth()+1) + "." + date.getFullYear());
+            infoscroll();
+        }
     });
 }
 
