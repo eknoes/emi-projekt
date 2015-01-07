@@ -25,11 +25,12 @@
             ],
             "desc": "Nicht für Leute, welche denken, dass unsere Welt ganz normal sei. Auf dieser Ausstellung haben etliche Karikaturisten ganze Arbeit getan, um den Wahnsinn unserer Welt humorvoll darzustellen.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Ostra-Allee 20",
-            "link": ["TEST TEST", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "adress": "Haus der Presse, Ostra-Allee 20, 01067 Dresden",
+            "link": ["Zur Seite des Veranstalters", "http://www.deutscherkarikaturenpreis.de/"],
+			"admission": 1,
             "tags": [
-                "beispiel",
-                "Example"
+                "Ausstellung",
+                "Haus der Presse"
             ],
             "categories": ["Kultur"]
         },
@@ -41,11 +42,12 @@
             ],
             "desc": "Kirsten Fuchs liest aus ihrem neuesten Buch (Kaum macht man mal was falsch, ist das auch wieder nicht richtig) und erklärt darin viele sinnlose und gleichzeitig praktische Tipps zum Alltag.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Königsbrücker Straße 39",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "adress": "HOLE OF FAME, Königsbrücker Straße 39, 01099 Dresden",
+            "link": ["Etwas mehr Informationen gibt es hier:", "http://holeoffame.blogspot.de/2014/12/v-literatursalon-mit-maik.html?view=flipcard"],
+			"admission": 4,
             "tags": [
-                "beispiel",
-                "Example"
+                "Lesung",
+                "Voland & Quist Literatursalon"
             ],
             "categories": ["Bildung"]
         },
@@ -56,12 +58,13 @@
                 "2015/01/25 19:00:00"
             ],
             "desc": "Kaum ein Comic aus der DDR dürfte so bekannt sein wie die Digedag-Reihe. Im Verkehrsmuseum Dresden wird nun die Entstehungsgeschichte sowie eine Art Make-Off dieser Reihe in einer Führung vorgestellt. Die Ausstellung selbst läuft noch bis zum 1. März.",
-            "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Augustusstraße 1",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "image": ["http://upload.wikimedia.org/wikipedia/commons/8/8e/Dresden_Johanneum_01.jpg", "http://commons.wikimedia.org/wiki/File:Dresden_Johanneum_01.jpg"],
+            "adress": "Verkehrsmuseum Dresden, Augustusstraße 1, 01067 Dresden",
+            "link": ["Zur Seite des Museums", "http://www.verkehrsmuseum-dresden.de/de/fuehrungen.html"],
+			"admission": 1,
             "tags": [
-                "beispiel",
-                "Example"
+                "Museumsführung",
+                "Verkehrsmuseum Dresden"
             ],
             "categories": ["Kultur"]
         },
@@ -73,11 +76,12 @@
             ],
             "desc": "Dresden, zu Unrecht bombardiert. Eine Stadt, die sich danach als Friedenszeichen offenbarte und nun gegen geschichtsrevisionistische Nazis vorgeht. Die Texte liefern dabei hauptsächlich Kritik an der deutschen Erinnerungspolitik.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Louisenstraße 47",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "adress": "Projekttheater Dresden, Louisenstraße 47, 01099 Dresden",
+            "link": ["Hier geht es zur Theaterseite", "http://www.projekttheater.de/Spielplan/2015/Februar/GEDENKEN+ABSCHAFFEN.+-+Aktionswoche+Forum+13.+Februar_125.html"],
+			"admission": 5,
             "tags": [
-                "beispiel",
-                "Example"
+                "Lesung",
+                "Projekttheater Dresden"
             ],
             "categories": ["Sonstige"]
         },
@@ -88,12 +92,13 @@
                 "2014/02/17 22:00:00"
             ],
             "desc": "Kuba hat sich in den letzten Jahrzehnten sehr verändert. Was ist aus dem Land geworden? Tobias Hauser, seit 13 Jahren mit dem Land vertraut, erzählt im Globetrotter vom Wandel.",
-            "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Prager Straße 10",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "image": ["http://upload.wikimedia.org/wikipedia/commons/d/d6/Trinidad_%28Kuba%29_04.jpg", "http://commons.wikimedia.org/wiki/File:Trinidad_%28Kuba%29_04.jpg"],
+            "adress": "Globetrotter Ausrüstung GmbH, Prager Straße 10, 01069 Dresden",
+            "link": ["Wer Interesse hat, kann hier Tickets kaufen", "http://www.outdoor-ticket.net/tickets/details/highway-junkie-dirk-rohrbach-globetrotter-ausruestung-filiale-dresden-2014-11-12_20-30/"],
+			"admission": 12,
             "tags": [
-                "beispiel",
-                "Example"
+                "Vortrag",
+                "Globetrotter"
             ],
             "categories": ["&Ouml;ffentliches"]
         },
@@ -104,12 +109,13 @@
                 "2015/02/28 20:00:00"
             ],
             "desc": "Bei dieser Ausstellung werden mehr als 50 verschiedene Saurier vorgestellt.",
-            "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Palaisplatz 11",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "image": ["http://upload.wikimedia.org/wikipedia/commons/1/1e/Field_fg05.jpg", "http://de.wikipedia.org/wiki/Sue_%28Dinosaurier%29"],
+            "adress": "Japanisches Palais, Palaisplatz 11, 01097 Dresden",
+            "link": ["Hier gibt es mehr Informationen", "http://mobil.dresden.de/museen/detail/Kultur_146_18.2.2006"],
+			"admission": 3,
             "tags": [
-                "beispiel",
-                "Example"
+                "Ausstellung",
+                "Japanisches Palais"
             ],
             "categories": ["&Ouml;ffentliches"]
         },
@@ -121,11 +127,11 @@
             ],
             "desc": "Ausstellung der Prüfungsarbeiten der IHK-Floristenabschlußprüfung Winter 2015 in der JohannStadthalle",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Holbeinstrasse 68",
+            "adress": "JohannStadthalle, Holbeinstrasse 68, 01307 Dresden",
             "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
-                "beispiel",
-                "Example"
+                "Ausstellung",
+                "JohannStadthalle"
             ],
             "categories": ["Sonstige"]
         },
