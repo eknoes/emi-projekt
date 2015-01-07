@@ -18,6 +18,7 @@ $(function(){
         showButtonPanel: true,
         changeMonth: true,
         changeYear: true,
+		constrainInput:false,
         onClose: function() {
             $("#datepicker").hide("fast");
         }
