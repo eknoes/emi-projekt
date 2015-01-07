@@ -26,7 +26,7 @@
             "desc": "Nicht für Leute, welche denken, dass unsere Welt ganz normal sei. Auf dieser Ausstellung haben etliche Karikaturisten ganze Arbeit getan, um den Wahnsinn unserer Welt humorvoll darzustellen.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Ostra-Allee 20",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["TEST TEST", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -42,7 +42,7 @@
             "desc": "Kirsten Fuchs liest aus ihrem neuesten Buch (Kaum macht man mal was falsch, ist das auch wieder nicht richtig) und erklärt darin viele sinnlose und gleichzeitig praktische Tipps zum Alltag.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Königsbrücker Straße 39",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -58,7 +58,7 @@
             "desc": "Kaum ein Comic aus der DDR dürfte so bekannt sein wie die Digedag-Reihe. Im Verkehrsmuseum Dresden wird nun die Entstehungsgeschichte sowie eine Art Make-Off dieser Reihe in einer Führung vorgestellt. Die Ausstellung selbst läuft noch bis zum 1. März.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Augustusstraße 1",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -74,7 +74,7 @@
             "desc": "Dresden, zu Unrecht bombardiert. Eine Stadt, die sich danach als Friedenszeichen offenbarte und nun gegen geschichtsrevisionistische Nazis vorgeht. Die Texte liefern dabei hauptsächlich Kritik an der deutschen Erinnerungspolitik.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Louisenstraße 47",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -90,7 +90,7 @@
             "desc": "Kuba hat sich in den letzten Jahrzehnten sehr verändert. Was ist aus dem Land geworden? Tobias Hauser, seit 13 Jahren mit dem Land vertraut, erzählt im Globetrotter vom Wandel.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Prager Straße 10",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -106,7 +106,7 @@
             "desc": "Bei dieser Ausstellung werden mehr als 50 verschiedene Saurier vorgestellt.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Palaisplatz 11",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -122,7 +122,7 @@
             "desc": "Ausstellung der Prüfungsarbeiten der IHK-Floristenabschlußprüfung Winter 2015 in der JohannStadthalle",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Holbeinstrasse 68",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -138,7 +138,7 @@
             "desc": "Auf der Freizeit- und Outdoormesse können sich Bewegungsfreudigen und Naturliebhaber über alle möglichn Arten des Outdoor-Erlebnisses informieren.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Messering 6",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -154,7 +154,7 @@
             "desc": "Der Frühling- vorgestellt in 15 Sprachen von 15 Künstlern.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Obergraben 10",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -170,7 +170,7 @@
             "desc": "Anja Bogott zeigt die weibliche Person, wie man sie bisher noch nicht erlebt hat. Kaum Farben, nur Ausdruck, schwarz-weiß fast gänzlich.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Elisabeth-Boer-Straße 1",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -186,7 +186,7 @@
             "desc": "Traditionell kurz vor Ostern lädt die Dresdner Ostern auf das Messegelände. Der Frühjahrsmarkt sowie ein vielfältiges Angebot bringen den Frühling ins Rollen.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Messering 6",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -202,7 +202,7 @@
             "desc": "Ein Abend mit lebender Musik, die HipHop und Reggae mit handgemachten Elementen vermischt. Erwähnenswert: Die Einnahmen werden an Dresden Nazifrei weitergegeben.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Brühlscher Garten 1",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -218,7 +218,7 @@
             "desc": "Jede Menge Tanz, Musik und natürlich Konfetti- diesmal begleitet von der Band Hochanständig.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Wettiner Platz 7",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -234,7 +234,7 @@
             "desc": "Peter Kube erzählt, wie man dem Alltags-Stress am leichtesten entgehen könne, das natürlich mit viel Witz.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Hauptstraße 35",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -250,7 +250,7 @@
             "desc": "Ausbilder Schmidt erklärt, warum man einfach auch mal politisch unkorrekt agieren müsse. Schadenfreude und schwarzer Humor sind garantiert!",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Alaunstraße 36-40",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -266,7 +266,7 @@
             "desc": "Maxi Schafroth und Markus Schalk klären über das Allgäu auf- Allgäu-Versteher und Nicht-Versteher sind herzlich eingeladen.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Görlitzer Straße 6",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -282,7 +282,7 @@
             "desc": "Italienische Musik von ihrer prachtvollen Seite. Erleben Sie die Meisterwerke von Verdi und Puccini mit voller Leidenschaft.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Theaterplatz",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -298,7 +298,7 @@
             "desc": "Mit vor Kraft strotzenden Songs stellt Andreas Bourani seine neueste Platte HEY! vor. Für Fans ein Pflichbesuch!",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Gothaer Straße 11",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -314,7 +314,7 @@
             "desc": "Kool Savas ist bekannt für seine knüppelharten Songs. Nun spielt er in der Reithalle und reißt Fans des Rap mit sich.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Werner-Hartmann-Strasse 2",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -330,7 +330,7 @@
             "desc": "ABBA mag nun schon 40 Jahre zählen, ist jedoch immer noch zeitlos. Nun machen sie sich erneut unvergessen. Mit ihren bekanntesten Hits lassen sie nun alte Zeiten wieder auferleben.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Gothaer Straße 11",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -346,7 +346,7 @@
             "desc": "Eisbrecher, mit Volldampf auf der Bühne.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Gothaer Straße 11",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
@@ -362,7 +362,7 @@
             "desc": "Die Gruppe, bekannt für einen der größten deutschen Kanäle auf YouTube, zieht nun quer durch Deutschland und stellt ihre abgefahrenen Songs vor.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Gothaer Straße 11",
-            "link": "https://www.youtube.com/watch?v=_5DqL5-izAY",
+            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
                 "beispiel",
                 "Example"
