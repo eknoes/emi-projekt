@@ -52,7 +52,7 @@ function reTooltipster()  {
                 }
             });        
 
-    $(".event_circle").tooltipster({
+    $(".event_circle:not(.help)").tooltipster({
         content: 'Loading...',
         theme: 'tooltipster-light',
         animation: 'grow',

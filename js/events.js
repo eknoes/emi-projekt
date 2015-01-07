@@ -198,8 +198,9 @@ var eventsHandler = function (path) {
 
         //$('#infos .accordion').attr( "class", "accordion" ); //Alle anderenKlassen entfernen
         $('#infos .accordion').html(output);
+        this.appendHelp();
         $(".accordion").accordion("refresh");
-
+        $('h1.detailInfo').html("Event&uuml;bersicht");
 
     }
 
@@ -318,6 +319,24 @@ var eventsHandler = function (path) {
         }
     }
 
+    this.appendHelp = function (argument) {
+        var text;
+        text = '<h3>Hilfe</h3>';
+        text = text + '<div>';
+        text = text + '<p>Um eine Übersicht über die jeweiligen Events eines Tages zu haben, fahren sie mit der Maus &uuml;ber den Kalendereintrag.';
+        text = text + 'Um ein Event zu &ouml;ffnen, klicken sie den kleinen, farbigen Kreis an.</p>';
+        text = text + '<p>Jede Farbe steht f&uuml;r eine andere Kategorie:';
+        text = text + '<div class="event_circle kultur help"></div> Kultur<br />';
+        text = text + '<div class="event_circle musik help"></div> Musik<br />';
+        text = text + '<div class="event_circle oeffentliches help"></div> &Ouml;ffentliches<br />';
+        text = text + '<div class="event_circle soiree help"></div> Soiree<br />';
+        text = text + '<div class="event_circle bildung help"></div> Bildung<br />';
+        text = text + '<div class="event_circle sonstige help"></div> Sonstige<br />';
+        text = text + '</p>';
+        text = text + '</div>';
+        $('#infos .accordion').append(text);
+    }
+
 }
 
 var EVENTS = new eventsHandler("resources/events.json");
@@ -330,6 +349,8 @@ EVENTS.init(function() {
     script.type = "text/javascript";
     script.src = "js/header.js";
     $("head").append(script);
+
+    EVENTS.appendHelp();
     $(".accordion").accordion({
         collapsible: true
     });
