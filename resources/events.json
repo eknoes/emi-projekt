@@ -26,7 +26,7 @@
             "desc": "Nicht für Leute, welche denken, dass unsere Welt ganz normal sei. Auf dieser Ausstellung haben etliche Karikaturisten ganze Arbeit getan, um den Wahnsinn unserer Welt humorvoll darzustellen.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Haus der Presse, Ostra-Allee 20, 01067 Dresden",
-            "link": ["Zur Seite des Veranstalters", "http://www.deutscherkarikaturenpreis.de/"],
+            "link": ["Veranstaltungswebsite", "http://www.deutscherkarikaturenpreis.de/"],
 			"admission": 1,
             "tags": [
                 "Ausstellung",
@@ -43,7 +43,7 @@
             "desc": "Kirsten Fuchs liest aus ihrem neuesten Buch (Kaum macht man mal was falsch, ist das auch wieder nicht richtig) und erklärt darin viele sinnlose und gleichzeitig praktische Tipps zum Alltag.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "HOLE OF FAME, Königsbrücker Straße 39, 01099 Dresden",
-            "link": ["Etwas mehr Informationen gibt es hier:", "http://holeoffame.blogspot.de/2014/12/v-literatursalon-mit-maik.html?view=flipcard"],
+            "link": ["Internetseite:", "http://holeoffame.blogspot.de/2014/12/v-literatursalon-mit-maik.html?view=flipcard"],
 			"admission": 4,
             "tags": [
                 "Lesung",
@@ -60,7 +60,7 @@
             "desc": "Kaum ein Comic aus der DDR dürfte so bekannt sein wie die Digedag-Reihe. Im Verkehrsmuseum Dresden wird nun die Entstehungsgeschichte sowie eine Art Make-Off dieser Reihe in einer Führung vorgestellt. Die Ausstellung selbst läuft noch bis zum 1. März.",
             "image": ["http://upload.wikimedia.org/wikipedia/commons/8/8e/Dresden_Johanneum_01.jpg", "http://commons.wikimedia.org/wiki/File:Dresden_Johanneum_01.jpg"],
             "adress": "Verkehrsmuseum Dresden, Augustusstraße 1, 01067 Dresden",
-            "link": ["Zur Seite des Museums", "http://www.verkehrsmuseum-dresden.de/de/fuehrungen.html"],
+            "link": ["Programm", "http://www.verkehrsmuseum-dresden.de/de/fuehrungen.html"],
 			"admission": 1,
             "tags": [
                 "Museumsführung",
@@ -77,7 +77,7 @@
             "desc": "Dresden, zu Unrecht bombardiert. Eine Stadt, die sich danach als Friedenszeichen offenbarte und nun gegen geschichtsrevisionistische Nazis vorgeht. Die Texte liefern dabei hauptsächlich Kritik an der deutschen Erinnerungspolitik.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
             "adress": "Projekttheater Dresden, Louisenstraße 47, 01099 Dresden",
-            "link": ["Hier geht es zur Theaterseite", "http://www.projekttheater.de/Spielplan/2015/Februar/GEDENKEN+ABSCHAFFEN.+-+Aktionswoche+Forum+13.+Februar_125.html"],
+            "link": ["Internetseite", "http://www.projekttheater.de/Spielplan/2015/Februar/GEDENKEN+ABSCHAFFEN.+-+Aktionswoche+Forum+13.+Februar_125.html"],
 			"admission": 5,
             "tags": [
                 "Lesung",
@@ -94,7 +94,7 @@
             "desc": "Kuba hat sich in den letzten Jahrzehnten sehr verändert. Was ist aus dem Land geworden? Tobias Hauser, seit 13 Jahren mit dem Land vertraut, erzählt im Globetrotter vom Wandel.",
             "image": ["http://upload.wikimedia.org/wikipedia/commons/d/d6/Trinidad_%28Kuba%29_04.jpg", "http://commons.wikimedia.org/wiki/File:Trinidad_%28Kuba%29_04.jpg"],
             "adress": "Globetrotter Ausrüstung GmbH, Prager Straße 10, 01069 Dresden",
-            "link": ["Wer Interesse hat, kann hier Tickets kaufen", "http://www.outdoor-ticket.net/tickets/details/highway-junkie-dirk-rohrbach-globetrotter-ausruestung-filiale-dresden-2014-11-12_20-30/"],
+            "link": ["Ticketshop", "http://www.outdoor-ticket.net/tickets/details/highway-junkie-dirk-rohrbach-globetrotter-ausruestung-filiale-dresden-2014-11-12_20-30/"],
 			"admission": 12,
             "tags": [
                 "Vortrag",
@@ -111,7 +111,7 @@
             "desc": "Bei dieser Ausstellung werden mehr als 50 verschiedene Saurier vorgestellt.",
             "image": ["http://upload.wikimedia.org/wikipedia/commons/1/1e/Field_fg05.jpg", "http://de.wikipedia.org/wiki/Sue_%28Dinosaurier%29"],
             "adress": "Japanisches Palais, Palaisplatz 11, 01097 Dresden",
-            "link": ["Hier gibt es mehr Informationen", "http://mobil.dresden.de/museen/detail/Kultur_146_18.2.2006"],
+            "link": ["Internetseite", "http://mobil.dresden.de/museen/detail/Kultur_146_18.2.2006"],
 			"admission": 3,
             "tags": [
                 "Ausstellung",
@@ -142,12 +142,13 @@
                 "2015/03/08 18:00:00"
             ],
             "desc": "Auf der Freizeit- und Outdoormesse können sich Bewegungsfreudigen und Naturliebhaber über alle möglichn Arten des Outdoor-Erlebnisses informieren.",
-            "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Messering 6",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "image": ["http://upload.wikimedia.org/wikipedia/commons/5/5a/Tour_to_the_Quebrada_de_las_Conchas.jpg", "http://de.wikipedia.org/wiki/Wandern"],
+            "adress": "Messe Dresden, Messering 6, 01067 Dresden",
+            "link": ["Programm", "http://www.messe-dresden.de/veranstaltungskalender/messe/abenteuer-outdoor/beschreibung.html"],
+			"admission": 3,
             "tags": [
-                "beispiel",
-                "Example"
+                "Messe",
+                "Messe Dresden"
             ],
             "categories": ["&Ouml;ffentliches"]
         },
@@ -159,11 +160,11 @@
             ],
             "desc": "Der Frühling- vorgestellt in 15 Sprachen von 15 Künstlern.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Obergraben 10",
+            "adress": "Galerie Sybille Nütt, Obergraben 10, 01097 Dresden",
             "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
-                "beispiel",
-                "Example"
+                "Galerie",
+                "Galerie Sybille Nütt"
             ],
             "categories": ["Kultur"]
         },
@@ -175,11 +176,11 @@
             ],
             "desc": "Anja Bogott zeigt die weibliche Person, wie man sie bisher noch nicht erlebt hat. Kaum Farben, nur Ausdruck, schwarz-weiß fast gänzlich.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Elisabeth-Boer-Straße 1",
+            "adress": "Stadtarchiv Dresden, Elisabeth-Boer-Straße 1, 01099 Dresden",
             "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
-                "beispiel",
-                "Example"
+                "Ausstellung",
+                "Stadtarchiv Dresden"
             ],
             "categories": ["Kultur"]
         },
@@ -191,11 +192,12 @@
             ],
             "desc": "Traditionell kurz vor Ostern lädt die Dresdner Ostern auf das Messegelände. Der Frühjahrsmarkt sowie ein vielfältiges Angebot bringen den Frühling ins Rollen.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Messering 6",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "adress": "Messe Dresden, Messering 6, 01067 Dresden",
+            "link": ["Programm", "http://www.messe-dresden.de/veranstaltungskalender/messe/dresdner-ostern/beschreibung.html"],
+			"admission": 3,
             "tags": [
-                "beispiel",
-                "Example"
+                "Messe",
+                "Messe Dresden"
             ],
             "categories": ["&Ouml;ffentliches"]
         },
@@ -207,11 +209,11 @@
             ],
             "desc": "Ein Abend mit lebender Musik, die HipHop und Reggae mit handgemachten Elementen vermischt. Erwähnenswert: Die Einnahmen werden an Dresden Nazifrei weitergegeben.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Brühlscher Garten 1",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "adress": "Studentenclub Bärenzwinger, Brühlscher Garten 1, 01067 Dresden",
+            "link": ["Veranstaltungswebsite", "https://diginights.com/event/2015-01-09-folk-pop-und-rock-weltoffen-und-bunt-studentenclub-baerenzwinger"],
             "tags": [
-                "beispiel",
-                "Example"
+                "Musikabend",
+                "Bärenzwinger"
             ],
             "categories": ["Musik"]
         },
@@ -222,12 +224,13 @@
                 "2014/01/11 04:00:00"
             ],
             "desc": "Jede Menge Tanz, Musik und natürlich Konfetti- diesmal begleitet von der Band Hochanständig.",
-            "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Wettiner Platz 7",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "image": ["http://upload.wikimedia.org/wikipedia/commons/5/5d/Konfetti.jpg", "http://commons.wikimedia.org/wiki/File:Konfetti.jpg"],
+            "adress": "Kraftwerk Mitte, Wettiner Platz 7, 01067 Dresden",
+            "link": ["Tickets", "http://www.kraftwerk-club.de/events/confetti-boom-w-hochanstaendig"],
+			"admission": 8,
             "tags": [
-                "beispiel",
-                "Example"
+                "Party",
+                "Kraftwerk Mitte"
             ],
             "categories": ["Musik"]
         },
@@ -239,11 +242,12 @@
             ],
             "desc": "Peter Kube erzählt, wie man dem Alltags-Stress am leichtesten entgehen könne, das natürlich mit viel Witz.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Hauptstraße 35",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "adress": "Hoftheater Dresden, Hauptstraße 35, 01328 Dresden",
+            "link": ["Theaterseite", "http://soekcms.de/hoftheater/index.php?action=entry|show&id=324"],
+			"admission": 17,
             "tags": [
-                "beispiel",
-                "Example"
+                "Komödie",
+                "Hoftheater Dresden"
             ],
             "categories": ["Sonstige"]
         },
@@ -254,12 +258,13 @@
                 "2015/03/11 22:00:00"
             ],
             "desc": "Ausbilder Schmidt erklärt, warum man einfach auch mal politisch unkorrekt agieren müsse. Schadenfreude und schwarzer Humor sind garantiert!",
-            "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Alaunstraße 36-40",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "image": ["http://upload.wikimedia.org/wikipedia/commons/f/f1/Ausbilder_Schmidt_%2810567043924%29.jpg", "http://commons.wikimedia.org/wiki/File:Ausbilder_Schmidt_%2810567043924%29.jpg"],
+            "adress": "Scheune, Alaunstraße 36-40, 01099 Dresden",
+            "link": ["Tickets", "http://www.eventim.de/ausbilder-schmidt-tickets.html?affiliate=EVE&doc=artistPages/tickets&fun=artist&action=tickets&kuid=945"],
+			"admission": 24,
             "tags": [
-                "beispiel",
-                "Example"
+                "Komödie",
+                "Scheune Kulturzentrum"
             ],
             "categories": ["Soiree"]
         },
@@ -271,11 +276,12 @@
             ],
             "desc": "Maxi Schafroth und Markus Schalk klären über das Allgäu auf- Allgäu-Versteher und Nicht-Versteher sind herzlich eingeladen.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Görlitzer Straße 6",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "adress": "Thalia - Cinema, Coffee and Cigarettes, Görlitzer Straße 6, 01099 Dresden",
+            "link": ["Tickets", "https://www.sz-ticketservice.de/maxi-schafroth-markus-schalk-faszination-allgaeu-humorzone-dresden.html"],
+			"admission": 17,
             "tags": [
-                "beispiel",
-                "Example"
+                "Komödie",
+                "Thalia Kino"
             ],
             "categories": ["Sonstige"]
         },
@@ -287,11 +293,12 @@
             ],
             "desc": "Italienische Musik von ihrer prachtvollen Seite. Erleben Sie die Meisterwerke von Verdi und Puccini mit voller Leidenschaft.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Theaterplatz",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "adress": "Dresdner Zwinger, Theaterplatz, 01067 Dresden",
+            "link": ["Tickets", "http://www.eventim.de/dresdner-residenz-konzerte-galakonzerte-im-marmorsaal-italienische-nacht-Tickets.html?affiliate=EVE&doc=artistPages%2Ftickets&fun=artist&action=tickets&erid=383582&xtcr=4&xtmc=Dresdner_Residenz_Konzerte&xtnp=1"],
+			"admission": 40,
             "tags": [
-                "beispiel",
-                "Example"
+                "Konzert",
+                "Marmorsaal im Dresdner Zwinger"
             ],
             "categories": ["Musik"]
         },
@@ -302,12 +309,13 @@
                 "2015/02/03 22:00:00"
             ],
             "desc": "Mit vor Kraft strotzenden Songs stellt Andreas Bourani seine neueste Platte HEY! vor. Für Fans ein Pflichbesuch!",
-            "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Gothaer Straße 11",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "image": ["http://upload.wikimedia.org/wikipedia/commons/8/82/2014-09-06_Andreas_Bourani_at_ENERGY_IN_THE_PARK_0709.JPG", "http://commons.wikimedia.org/wiki/File:2014-09-06_Andreas_Bourani_at_ENERGY_IN_THE_PARK_0709.JPG"],
+            "adress": "Alter Schlachthof, Gothaer Straße 11, 01097 Dresden",
+            "link": ["Tickets", "http://www.aust-konzerte.com/Konzerte/1990/ANDREAS-BOURANI.html"],
+			"admission": 29,
             "tags": [
-                "beispiel",
-                "Example"
+                "Konzert",
+                "Alter Schlachthof"
             ],
             "categories": ["Musik"]
         },
@@ -318,12 +326,13 @@
                 "2015/02/15 22:00:00"
             ],
             "desc": "Kool Savas ist bekannt für seine knüppelharten Songs. Nun spielt er in der Reithalle und reißt Fans des Rap mit sich.",
-            "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Werner-Hartmann-Strasse 2",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "image": ["http://upload.wikimedia.org/wikipedia/commons/c/c4/Aura_-_Cover.jpg", "http://de.wikipedia.org/wiki/Aura_%28Kool-Savas-Album%29"],
+            "adress": "Reithalle Strasse E, Werner-Hartmann-Strasse 2, 01099 Dresden",
+            "link": ["Tickets", "http://kool-savas.tickets.de/de/events/5182-Kool_Savas_%E2%80%9EMaertyrer_Tour_2015&quot;"],
+			"admission": 33,
             "tags": [
-                "beispiel",
-                "Example"
+                "Konzert",
+                "Reithalle"
             ],
             "categories": ["Musik"]
         },
@@ -335,11 +344,12 @@
             ],
             "desc": "ABBA mag nun schon 40 Jahre zählen, ist jedoch immer noch zeitlos. Nun machen sie sich erneut unvergessen. Mit ihren bekanntesten Hits lassen sie nun alte Zeiten wieder auferleben.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Gothaer Straße 11",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "adress": "Alter Schlachthof, Gothaer Straße 11, 01097 Dresden",
+            "link": ["Veranstaltungswebsite", "http://www.alter-schlachthof.de/index.php?id=5"],
+			"admission": 40,
             "tags": [
-                "beispiel",
-                "Example"
+                "Konzert",
+                "Alter Schlachthof"
             ],
             "categories": ["Musik"]
         },
@@ -351,11 +361,11 @@
             ],
             "desc": "Eisbrecher, mit Volldampf auf der Bühne.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Gothaer Straße 11",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "adress": "Alter Schlachthof, Gothaer Straße 11, 01097 Dresden",
+            "link": ["Tickets", "http://www.aust-konzerte.com/Konzerte.html"],
             "tags": [
-                "beispiel",
-                "Example"
+                "Konzert",
+                "Alter Schlachthof"
             ],
             "categories": ["Musik"]
         },
@@ -367,11 +377,12 @@
             ],
             "desc": "Die Gruppe, bekannt für einen der größten deutschen Kanäle auf YouTube, zieht nun quer durch Deutschland und stellt ihre abgefahrenen Songs vor.",
             "image": "http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg",
-            "adress": "Gothaer Straße 11",
-            "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
+            "adress": "Alter Schlachthof, Gothaer Straße 11, 01097 Dresden",
+            "link": ["Tickets", "http://www.eventim.de/ytitty-tickets.html?affiliate=GMD&includeOnlybookable=true&doc=artistPages/tickets&fun=artist&action=tickets&kuid=483726&xtor=SEC-2040-GOO-[Y-Titty]-[45272720422]-S-[%2By%20%2Btitty%20%2Btour]"],
+			"admission": 28,
             "tags": [
-                "beispiel",
-                "Example"
+                "Konzert",
+                "Alter Schlachthof"
             ],
             "categories": ["Sonstige"]
         }
