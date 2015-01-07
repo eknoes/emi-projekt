@@ -267,12 +267,9 @@ var eventsHandler = function (path) {
         tempResult.push('<div id="infoBlockDetailsText"><p>' + current.desc + '</p></div></div>');
 
         tempResult.push('<div class="infoBlock"><div class="title"><h3>Anfahrt </h3></div>');
-        tempResult.push('<iframe id="maps" width="600" height="300" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAVGVXDpzXDcLyZiPUDKdMliYsKFq55kxg&q=' + current.adress + '&language=de-DE" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>');
+        tempResult.push('<iframe id="maps" width="100%" height="300" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAVGVXDpzXDcLyZiPUDKdMliYsKFq55kxg&q=' + current.adress + '&language=de-DE" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>');
 
-        tempResult.push('<div id="infoBlockAnfahrtText"><h4>Adresse:</h4><p id ="anfahrtTextP">' + current.adress.replace(',', '<br />') + '<br></p>');
-        tempResult.push('<h4>Erreichbar über:</h4><p id ="anfahrtTextP">Linie 6, Haltestelle Musterhaltestelle<br>Linie 7, Haltestelle Musterhaltestelle<br>Bus 7, Haltestelle Marienhof</p>');
-
-        tempResult.push('</div></div></div>');
+        tempResult.push('</div></div>');
 
         for (var i = 0; tempResult.length - 1 >= i; i++) {
             result = result + tempResult[i];
@@ -292,7 +289,6 @@ var eventsHandler = function (path) {
         this.category = category;
 
         write();
-        console.log("cat");
     }
 
     function getExcerpt(text, keyword, makeLonger) {
