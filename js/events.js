@@ -34,6 +34,9 @@ var eventsHandler = function (path) {
         /* Gibt ein Array zurueck, dass alle Events enthält, welche an einem bestimmten Zeitpunkt stattfinden. day wird in ein JS-Date Objekt umgewandelt, sodass viele Datumsformatierungen unterstuetzt werden. */
         category = (typeof category === "undefined") ? this.category : category;
         category = (category === "oeffentliches") ? "&ouml;ffentliches" : category;
+        if(category != this.category && this.category != "all") {
+            return [];
+        }
         var result, eventStart, eventEnd, tempObject, i;
         result = [];
 
@@ -194,10 +197,8 @@ var eventsHandler = function (path) {
 
     this.loadEvents = function(id) {
         var output = '';
-        console.log(id);
         for (var i = id.length - 1; i >= 0; i--) {
             output = this.eventInfo(id[i]) + output;
-            console.log(output)
         }
         //$('#infos .accordion').attr( "class", "accordion" ); //Alle anderenKlassen entfernen
         $('#infos .accordion').html(output);
@@ -284,12 +285,14 @@ var eventsHandler = function (path) {
     this.setCategory= function(category) {
         $('a.current_cat').removeClass('current_cat');
         $('a#a_'+category).addClass('current_cat');
-
+ 
         if(category == "oeffentliches") {
             category = '&ouml;ffentliches';
         }
         this.category = category;
+
         write();
+        console.log("cat");
     }
 
     function getExcerpt(text, keyword, makeLonger) {
