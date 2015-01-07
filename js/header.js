@@ -32,7 +32,11 @@ $("#submit").click(function () {
 function reloadStuff () {
     /*smooth scroll to infos on table cell click*/
     $(".event_circle").click(function (event) {
-        EVENTS.loadEvents([event.target.id.split('-')[1]]);
+        var eventIDs = [];
+        for (var i = event.target.id.split('-').length - 1; i > 0; i--) {
+            eventIDs.push(event.target.id.split('-')[i])
+        };
+        EVENTS.loadEvents(eventIDs);
         infoscroll();
     });
 }

@@ -194,10 +194,11 @@ var eventsHandler = function (path) {
 
     this.loadEvents = function(id) {
         var output = '';
+        console.log(id);
         for (var i = id.length - 1; i >= 0; i--) {
             output = this.eventInfo(id[i]) + output;
+            console.log(output)
         }
-
         //$('#infos .accordion').attr( "class", "accordion" ); //Alle anderenKlassen entfernen
         $('#infos .accordion').html(output);
         this.appendHelp();
