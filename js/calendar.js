@@ -72,7 +72,8 @@ function write() {
             /* Circles werden generiert */
             var categories = ["kultur", "musik", "oeffentliches", "soiree", "bildung", "sonstige"];
             var onDayEvents = EVENTS.onDay(cal_sheet[count]); 
-            if(onDayEvents) { // Falls es Events an diesem Tag gibt, wird ein circles DIV gestartet und gefuellt
+            if(onDayEvents.length > 0) { // Falls es Events an diesem Tag gibt, wird ein circles DIV gestartet und gefuellt
+                console.log(onDayEvents);
                 var circles = '<div class="circles">';
                 for (var k = categories.length - 1; k >= 0; k--) { //Da pro Kategorie nur ein Circle enstehen soll, und nicht pro event
                     var categoryEvents = EVENTS.onDay(cal_sheet[count], categories[k]);
@@ -89,7 +90,11 @@ function write() {
                     }
 
                 }
+                var noEventCSS = "";
                 circles = circles + '</div>';
+            } else {
+                var noEventCSS = "no_event";
+                var circles = "";
             }
 
 
@@ -97,14 +102,14 @@ function write() {
                         + ("0" + (cal_sheet[count].getMonth() + 1)).slice(-2) + '-' + ("0" + cal_sheet[count].getDate()).slice(-2);
 
             if (cal_sheet[count].getMonth() !== date.getMonth()) {
-                text = text + '<td class="calendar_entry out_of_this_month" id="' + cssID + '">' + cal_sheet[count].getDate() + circles +
+                text = text + '<td class="calendar_entry ' + noEventCSS + ' out_of_this_month" id="' + cssID + '">' + cal_sheet[count].getDate() + circles +
                         '</div></td>';
             } else {
                 if (cal_sheet[count].getDate() === new Date().getDate() && cal_sheet[count].getMonth() === new Date().getMonth() && cal_sheet[count].getFullYear() === new Date().getFullYear()) {
-                    text = text + '<td class="calendar_entry current_day" id="' + cssID + '">' + cal_sheet[count].getDate() +circles +
+                    text = text + '<td class="calendar_entry ' + noEventCSS + ' current_day" id="' + cssID + '">' + cal_sheet[count].getDate() +circles +
                             ' </div></td>';
                 } else {
-                    text = text + '<td class="calendar_entry" id="' + cssID + '">' + cal_sheet[count].getDate() +circles +
+                    text = text + '<td class="calendar_entry ' + noEventCSS + '" id="' + cssID + '">' + cal_sheet[count].getDate() +circles +
                             '</div></td>';
                 }
             }
