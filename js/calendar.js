@@ -47,12 +47,16 @@ function generateMonth(month, year) {
 
 function nextMonth() {
     generateMonth(date.getMonth() + 1, date.getFullYear());
-    write();
+	setTimeout("write()",500);
+	$('#kalender').animate({'opacity': '0'}, 500);
+    $('#kalender').animate({'opacity': '1'}, 500);
 }
 
 function prevMonth() {
     generateMonth(date.getMonth() - 1, date.getFullYear());
-    write();
+    setTimeout("write()",500);
+	$('#kalender').animate({'opacity': '0'}, 500);
+    $('#kalender').animate({'opacity': '1'}, 500);
 }
 
 function write() {
