@@ -225,7 +225,7 @@ var eventsHandler = function (path) {
             wochentag = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
 
 
-        tempResult.push('<h3>' + current.name + '</h3>');
+        tempResult.push('<h3 id="event-' + id + '">' + current.name + '</h3>');
         tempResult.push('<div><div class="infoBlock" id="infoBlock1"><div class="title" id="titleQuickInfo"><h3>Auf einen Blick </h3></div>');
         tempResult.push('<table id="ContentsTable">');
 
@@ -274,8 +274,7 @@ var eventsHandler = function (path) {
         tempResult.push('<div id="infoBlockDetailsText"><p>' + current.desc + '</p></div></div>');
 
         tempResult.push('<div class="infoBlock"><div class="title"><h3>Anfahrt </h3></div>');
-        tempResult.push('<iframe id="maps" width="100%" height="300" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAVGVXDpzXDcLyZiPUDKdMliYsKFq55kxg&q=' + current.adress + '&language=de-DE" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>');
-
+        tempResult.push('<iframe id="' + id + '-maps" width="100%" height="300" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAVGVXDpzXDcLyZiPUDKdMliYsKFq55kxg&q=' + current.adress + '&language=de-DE&zoom=14" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>');
         tempResult.push('</div></div>');
 
         for (var i = 0; tempResult.length - 1 >= i; i++) {
@@ -362,6 +361,12 @@ EVENTS.init(function() {
     EVENTS.appendHelp();
     $(".accordion").accordion({
         collapsible: true,
-        heightStyle: "content"
+        heightStyle: "content",
+        beforeActivate: function(event, ui) {
+            if(event.originalEvent) {
+                $("#" + $(event.originalEvent.target).attr("id").split("-")[1] + "-maps").attr("src", $("#" + $(event.originalEvent.target).attr("id").split("-")[1] + "-maps").attr("src") );
+            }
+            //Maps wird neu geladen, da die Karte falsch zentriert wäre, wenn man mehr als ein Event aufruft, und ein zugeklapptes oeffnet. $(event.[...]) entspricht dabei der ID des Events.
+        }
     });
 });
