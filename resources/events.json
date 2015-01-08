@@ -1,6 +1,38 @@
 {
     "events":   [
         {
+            "name": " Tangoball im Tusculum",
+            "date": [
+                "2015/01/23 20:00:00",
+                "2015/01/24 03:00:00"
+            ],
+            "desc": "Am Freitag, 23. Januar, findet der traditionelle Tangoball im Studentenhaus TUSCULUM statt. Das Dresdner Tango-Septett „La Rosa Negra” läßt den Tango Argentino lebendig werden – von den großen Meistern des „Tango Nuevos”, wie Astor Piazolla oder Carlos Gardel, bis hin zu Yann Tiersen oder Tango-Elektronico. Vom Studentenclub WU5 zubereitete Cocktails lassen die winterlichen Außentemperaturen vergessen. Neben Live-Musik legen dj.töse.mk und DJ Andreas auf. Von 20 – 21 Uhr gibt es eine Übungsstunde („practica”) zum Eintanzen, um 21 Uhr beginnt der Ball.",
+            "image": ["http://upload.wikimedia.org/wikipedia/commons/1/18/Tango_pasi%C3%B3n_show.JPG", "http://commons.wikimedia.org/wiki/File:Tango_pasi%C3%B3n_show.JPG"],
+            "adress": "August-Bebel-Straße 12, 01219 Dresden",
+            "link": ["Veranstaltungswebsite", "http://www.studentenwerk-dresden.de/wirueberuns/spiegel-ei-artikel-1516.html"],
+            "tags": [
+                "Ball",
+                "Tango",
+                "Studentenwerk"
+            ],
+            "categories": ["Soiree"]
+        },
+        {
+            "name": "Vernissage zur Anja Ritter Ausstellung",
+            "date": [
+                "2015/01/08 19:00:00",
+                "2015/01/08 24:00:00"
+            ],
+            "desc": "Die Galerie im Studentenwerk zeigt ab 8. Januar 2015 eine Ausstellung mit Bildern von Anja Ritter.<br />Die geborene Berlinerin studiert in Dresden Kunstgeschichte und war im Sommersemester 2014 als Erasmus-Stipendiatin an der Universität Leiden (NL). Über die theoretische Auseinandersetzung mit Kunst und Kultur hinaus ist Anja Ritter selbst künstlerisch aktiv. Während sie in der Kunstgeschichte den Schwerpunkt „Alte Meister” hat, ist ihre eigene künstlerische Arbeit stark durch zeitgenössische Kunst beeinflusst. Viele ihrer Werke kreisen um den Begriff der „Interaktion”.<br />In den „RahmenBildern – Weltentore” werden z. B. „Bildflächen” teilweise zu transparenten Flächen innerhalb massiver Rahmen – „Bild-Raum” und „Betrachter-Raum” verschmelzen, interagieren miteinander. So wird aus Raum und Bild ein Wir – so wie in der heutigen Welt aus „du” und „ich” ein „wir” werden kann, ja muss, um in gemeinsamer Interaktion die Probleme der Gegenwart lösen zu können.",
+            "adress": "Fritz-Löffler-Straße 18, 01069 Dresden",
+            "link": ["Veranstaltungswebsite", "http://www.studentenwerk-dresden.de/wirueberuns/spiegel-ei-artikel-1517.html"],
+            "tags": [
+                "Vernissage",
+                "Anja Ritter"
+            ],
+            "categories": ["Kultur"]
+        },
+        {
             "name": "Vision Keramik 2015",
             "date": [
                 "2015/01/15 09:00:00",
