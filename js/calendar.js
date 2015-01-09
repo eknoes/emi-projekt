@@ -1,7 +1,7 @@
 /**
-* Autor: Carl-Lukas Pokoj
-* Dieses Script enthaelt Funktionen zur Erstellung und Manipulation des Kalenders
-*/
+ * Autor: Carl-Lukas Pokoj
+ * Dieses Script enthaelt Funktionen zur Erstellung und Manipulation des Kalenders
+ */
 
 var MONTH_NAME = new Array("Januar", "Februar", "M&auml;rz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember");
 
@@ -47,44 +47,43 @@ function generateMonth(month, year) {
 
 function nextMonth() {
     generateMonth(date.getMonth() + 1, date.getFullYear());
-	setTimeout("write()",500);
-	$('#kalender').animate({'opacity': '0'}, 500);
+    setTimeout("write()", 500);
+    $('#kalender').animate({'opacity': '0'}, 500);
     $('#kalender').animate({'opacity': '1'}, 500);
 }
 
 function prevMonth() {
     generateMonth(date.getMonth() - 1, date.getFullYear());
-    setTimeout("write()",500);
-	$('#kalender').animate({'opacity': '0'}, 500);
+    setTimeout("write()", 500);
+    $('#kalender').animate({'opacity': '0'}, 500);
     $('#kalender').animate({'opacity': '1'}, 500);
 }
 
 function write() {
 
     var count = 0;
-    
+
     text = ' <table id="calendar"><tr><td class="calendar_head"><a class="calendar_link" href="javascript:prevMonth()"> &laquo;</a></td><td colspan=5 class="calendar_head_month" id="calendar_month">'
             + MONTH_NAME[date.getMonth()] + ' ' + date.getFullYear()
             + '</td><td class="calendar_head"><a class="calendar_link" href="javascript:nextMonth()"> &raquo;</a></td>'
             + '</tr><tr><td class="calendar_day">Mo</td><td class="calendar_day">Di</td><td class="calendar_day">Mi</td>'
             + '<td class="calendar_day">Do</td><td class="calendar_day">Fr</td><td class="calendar_day">Sa</td><td class="calendar_day">So</td></tr>';
-            
+
     for (var i = 0; i < 6; i++) {
         text = text + '<tr>';
         for (var j = 0; j < 7; j++) {
 
             /* Circles werden generiert */
             var categories = ["kultur", "musik", "oeffentliches", "soiree", "bildung", "sonstige"];
-            var onDayEvents = EVENTS.onDay(cal_sheet[count]); 
-            if(onDayEvents.length > 0) { // Falls es Events an diesem Tag gibt, wird ein circles DIV gestartet und gefuellt
-                console.log(onDayEvents);
+            var onDayEvents = EVENTS.onDay(cal_sheet[count]);
+            if (onDayEvents.length > 0) { // Falls es Events an diesem Tag gibt, wird ein circles DIV gestartet und gefuellt
                 var circles = '<div class="circles">';
                 for (var k = categories.length - 1; k >= 0; k--) { //Da pro Kategorie nur ein Circle enstehen soll, und nicht pro event
                     var categoryEvents = EVENTS.onDay(cal_sheet[count], categories[k]);
                     for (var l = categoryEvents.length - 1; l >= 0; l--) { //Danach werden alle Events, die an diesem Tag in der Kategorie stattfinden, in einen circle gepackt
                         if (l == 0 && l == categoryEvents.length - 1) {
                             circles = circles + '<div class="event_circle ' + categories[k] + '" id="eventids-' + categoryEvents[l].id + '"></div>';
-                        } else if(l == categoryEvents.length - 1) {
+                        } else if (l == categoryEvents.length - 1) {
                             circles = circles + '<div class="event_circle ' + categories[k] + '" id="eventids-' + categoryEvents[l].id;
                         } else if (l == 0) {
                             circles = circles + '-' + categoryEvents[l].id + '"></div>';
@@ -101,19 +100,18 @@ function write() {
                 var circles = "";
             }
 
-
             var cssID = cal_sheet[count].getFullYear() + '-'
-                        + ("0" + (cal_sheet[count].getMonth() + 1)).slice(-2) + '-' + ("0" + cal_sheet[count].getDate()).slice(-2);
+                    + ("0" + (cal_sheet[count].getMonth() + 1)).slice(-2) + '-' + ("0" + cal_sheet[count].getDate()).slice(-2);
 
             if (cal_sheet[count].getMonth() !== date.getMonth()) {
                 text = text + '<td class="calendar_entry ' + noEventCSS + ' out_of_this_month" id="' + cssID + '">' + cal_sheet[count].getDate() + circles +
                         '</div></td>';
             } else {
                 if (cal_sheet[count].getDate() === new Date().getDate() && cal_sheet[count].getMonth() === new Date().getMonth() && cal_sheet[count].getFullYear() === new Date().getFullYear()) {
-                    text = text + '<td class="calendar_entry ' + noEventCSS + ' current_day" id="' + cssID + '">' + cal_sheet[count].getDate() +circles +
+                    text = text + '<td class="calendar_entry ' + noEventCSS + ' current_day" id="' + cssID + '">' + cal_sheet[count].getDate() + circles +
                             ' </div></td>';
                 } else {
-                    text = text + '<td class="calendar_entry ' + noEventCSS + '" id="' + cssID + '">' + cal_sheet[count].getDate() +circles +
+                    text = text + '<td class="calendar_entry ' + noEventCSS + '" id="' + cssID + '">' + cal_sheet[count].getDate() + circles +
                             '</div></td>';
                 }
             }
@@ -124,12 +122,26 @@ function write() {
     }
     text = text + '</table>';
     $("div#kalender").html(text);
-    
+
     reTooltipster();
-    if(typeof reloadStuff == 'function') {
+    if (typeof reloadStuff == 'function') {
         reloadStuff();
     }
 }
 
+/*Suchfunktionen*/
 
+function search(s_req) {
 
+    if (s_req.charAt(2) === "." && s_req.charAt(5) === ".") {
+        var day = s_req.substring(0, 2);
+        var month = s_req.substring(3, 5);
+        var year = s_req.substr(6);
+        generateMonth(parseInt(month) - 1, parseInt(year));
+        write();
+        var results =  EVENTS.onDay(day);
+
+    } else {
+
+    }
+}
