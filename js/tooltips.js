@@ -41,7 +41,7 @@ function reTooltipster()  {
                                 {
                                     if (eventsToday[n].categories == kategorien[i]) {
                                         /*...and adds them to content*/
-                                        infos = infos  + "<div class='tooltip-event'>" + eventsToday[n].name + "</div>";
+                                        infos = infos  + "<p>" + eventsToday[n].name + "</p>";
                                     }                        
                                 }                                   
                             }
@@ -75,7 +75,16 @@ function reTooltipster()  {
                 var infos = '<h3 class="tooltip-title ' + cssClass + '"">' + kategorie + '</h3>';
                 for (var i = origin.prop("id").split("-").length - 1; i > 0; i--) {
                     var currentEvent = EVENTS.getSingle(origin.prop("id").split("-")[i]);
-                    infos = infos + '<p>' + currentEvent.name + '</p>';
+                    var d = new Date(currentEvent.date[0]);
+                    var curr_date = d.getDate();
+                    var curr_month = d.getMonth() + 1; //Months are zero based
+                    var curr_year = d.getFullYear();
+                    var curr_hours = d.getHours();
+                    var curr_minutes = d.getMinutes();
+                    if (curr_minutes < 10) {
+                        curr_minutes = '0' + curr_minutes;
+                    }
+                    infos = infos + '<p>' + currentEvent.name + '<br><i>Beginn: ' + curr_date + '.' + curr_month + '.' + curr_year + '&nbsp;' + curr_hours + ':' + curr_minutes + ' Uhr</i></p>';
                 };
 
                 origin.tooltipster("content", infos);

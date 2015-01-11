@@ -4,15 +4,22 @@
         <title>Dresdens Veranstaltungen</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">       
-        <link rel="stylesheet" href="css/jquery-ui-1.8.16.custom.css">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <!-- Plugins -->
+        <link rel="stylesheet" href="css/jquery-ui-1.8.16.custom.css">        
         <link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
         <link rel="stylesheet" type="text/css" href="css/themes/tooltipster-light.css" />
+        <link rel="stylesheet" type="text/css" href="css/fancybox/jquery.fancybox.css" media="screen" />
+        <!-- Custom -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <!-- Plugins -->
         <script type="text/javascript" src="js/libs/jquery/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="js/libs/jqueryui/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/libs/jqueryui/jquery.ui.datepicker-de.js"></script>
         <script type="text/javascript" src="js/libs/jquery.stickyPanel.min.js"></script>
-        <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
+        <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>              
+	<script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+        <script type="text/javascript" src="js/fancybox/jquery.mousewheel-3.0.6.pack.js"></script>  
+        <!-- Custom -->
         <script type="text/javascript" src="js/events.js"></script>  
         <script type="text/javascript" src="js/calendar.js"></script>  
         <script type="text/javascript" src="js/tooltips.js"></script>  
@@ -86,7 +93,10 @@
                                     style="width:100%; height:500px;" frameborder="0"></iframe>
                         </div>
                         <div id="mockups">
-                            Mockups
+                            <a class="fancybox" id="bild" href="resources/mockups/cardsorting.jpg" data-fancybox-group="gallery" title="Cardsorting"><img src="resources/mockups/cardsorting.jpg" alt="" /></a>
+                            <a class="fancybox" href="resources/mockups/first-mockup.jpg" data-fancybox-group="gallery" title="Erstes Mockup"><img src="resources/mockups/first-mockup.jpg" alt="" /></a>
+                            <a class="fancybox" href="resources/mockups/second-mockup.jpg" data-fancybox-group="gallery" title="Zweites Mockup"><img src="resources/mockups/second-mockup.jpg" alt="" /></a>
+                            <a class="fancybox" href="resources/mockups/second-mockup-zoomed.jpg" data-fancybox-group="gallery" title="Zweites Mockup gro&szlig;"><img src="resources/mockups/second-mockup-zoomed.jpg" alt="" /></a>
                         </div>
                     </div>
                 </div>
