@@ -134,12 +134,20 @@ function write() {
 function search(s_req) {
 
     if (s_req.charAt(2) === "." && s_req.charAt(5) === ".") {
+
         var day = s_req.substring(0, 2);
         var month = s_req.substring(3, 5);
         var year = s_req.substr(6);
         generateMonth(parseInt(month) - 1, parseInt(year));
         write();
-        EVENTS.loadEvents(EVENTS.onDay(day), "Suchergebnisse f&uuml;r den " + day + "." + month + "." + year);
+        var foundEvents = EVENTS.onDay(year + '/' + month + '/' + day),
+            loadEvents = [];
+        if(foundEvents.length > 0) {
+            for (var i = foundEvents.length - 1; i >= 0; i--) {
+                loadEvents.push(foundEvents[i].id);
+            }
+        }
+        EVENTS.loadEvents(loadEvents, "Suchergebnisse f&uuml;r den " + day + "." + month + "." + year);
 
     } else {
         var foundEvents = EVENTS.search(s_req),

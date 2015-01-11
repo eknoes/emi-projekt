@@ -197,6 +197,7 @@ var eventsHandler = function (path) {
 
     this.loadEvents = function(id, headline) {
         /* Laedt alle Events nach unten in die Ausgabe Box. headline kann uebergeben werden, muss aber nicht. */
+        console.log(id);
         if(id.length > 0) {
             var output = '';
             for (var i = id.length - 1; i >= 0; i--) {
