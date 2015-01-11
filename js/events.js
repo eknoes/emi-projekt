@@ -196,6 +196,7 @@ var eventsHandler = function (path) {
     }
 
     this.loadEvents = function(id, headline) {
+        /* Laedt alle Events nach unten in die Ausgabe Box. headline kann uebergeben werden, muss aber nicht. */
         if(id.length > 0) {
             var output = '';
             for (var i = id.length - 1; i >= 0; i--) {
@@ -224,6 +225,7 @@ var eventsHandler = function (path) {
     }
 
     this.eventInfo = function(id) {
+        /* Erstellt eine Informationsseite fuer das gegebene Event und gibt das HTML zurueck. Wird nur von loadEvents genutzt, loadEvents ist zur Ausgabe gedacht. Es gibt hier ein Array, das wird gefuellt mit HTML Elementen, und dann als ganzes zurueckgegeben. array[0] entspricht dabei der ersten Zeile, usw. */
         var tempResult = Array(),
             when,
             current = this.data[id],
@@ -294,6 +296,7 @@ var eventsHandler = function (path) {
     }
 
     this.setCategory= function(category) {
+        /* Setzt den globalen Filter nach einer Kategorie */
         $('a.current_cat').removeClass('current_cat');
         $('a#a_'+category).addClass('current_cat');
  
@@ -336,6 +339,7 @@ var eventsHandler = function (path) {
     }
 
     this.appendHelp = function (argument) {
+        /* Um schnell und einfach den Hilfe-Tab hinzuzufuegen */
         var text;
         text = '<h3>Hilfe</h3>';
         text = text + '<div>';
