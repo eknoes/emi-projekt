@@ -139,9 +139,18 @@ function search(s_req) {
         var year = s_req.substr(6);
         generateMonth(parseInt(month) - 1, parseInt(year));
         write();
-        var results =  EVENTS.onDay(day);
+        EVENTS.loadEvents(EVENTS.onDay(day), "Suchergebnisse f&uuml;r den " + day + "." + month + "." + year);
 
     } else {
+        var foundEvents = EVENTS.search(s_req),
+            loadEvents = [];
 
+        if(foundEvents.length > 0) {
+            for (var i = foundEvents.length - 1; i >= 0; i--) {
+                loadEvents.push(foundEvents[i].event.id);
+            }
+        }
+
+        EVENTS.loadEvents(loadEvents, "Suchergebnisse");
     }
 }

@@ -196,22 +196,30 @@ var eventsHandler = function (path) {
     }
 
     this.loadEvents = function(id, headline) {
-        var output = '';
-        for (var i = id.length - 1; i >= 0; i--) {
-            output = this.eventInfo(id[i]) + output;
-        }
-        //$('#infos .accordion').attr( "class", "accordion" ); //Alle anderenKlassen entfernen
-        $('#infos .accordion').html(output);
-        this.appendHelp();
-        $(".accordion").accordion("refresh");
-        if(id.length > 1) {
-            $(".accordion").accordion("option", "active", false);
+        if(id.length > 0) {
+            var output = '';
+            for (var i = id.length - 1; i >= 0; i--) {
+                output = this.eventInfo(id[i]) + output;
+            }
+            //$('#infos .accordion').attr( "class", "accordion" ); //Alle anderenKlassen entfernen
+            $('#infos .accordion').html(output);
+            this.appendHelp();
+            $(".accordion").accordion("refresh");
+            if(id.length > 1) {
+                $(".accordion").accordion("option", "active", false);
+            } else {
+                $(".accordion").accordion("option", "active", 0);
+            }
+            headline = (typeof headline === "undefined") ? "Event&uuml;bersicht" : headline;
+            $('h1.detailInfo').html(headline);
         } else {
-            $(".accordion").accordion("option", "active", 0);
+            headline = (typeof headline === "undefined") ? "Event&uuml;bersicht" : headline;
+            $('h1.detailInfo').html(headline);
+            $('#infos .accordion').html("<h3>Keine Events gefunden</h3><div><p>Leider wurden zu ihrer Anfrage keine Events gefunden.</p></div>");
+            this.appendHelp();
+            $(".accordion").accordion("refresh");
+
         }
-        console.log(headline);
-        headline = (typeof headline === "undefined") ? "Event&uuml;bersicht" : headline;
-        $('h1.detailInfo').html(headline);
 
     }
 
