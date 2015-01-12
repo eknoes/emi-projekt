@@ -121,6 +121,9 @@ function resizenavi() {
         $("a.navbutton").css("min-width", 0.7 * breite / 7 - 1); /*adjust button size to window*/
         $("#navi").css("width", "100%");
         $(".navbuttonmobile").switchClass("navbuttonmobile", "navbutton");
+        /*Make search normal at resize*/
+        $("#datepicker").css("width", "100px");
+        $("#datepicker").css("font-size", "18px");
         /*show navigation bar in case it was hidden */
         $("#Navigation").show();
         /*Quickinfo Table full sized*/
@@ -146,6 +149,9 @@ function resizenavi() {
         $("#Navigation").css("margin-left", "0");
         $(".navbutton").switchClass("navbutton", "navbuttonmobile");
         $(".navbuttonmobile").css("font-size", "initial");
+        /*Make search smaller for smaller devices*/
+        $("#datepicker").css("width", "80px");
+        $("#datepicker").css("font-size", "15px");
         /*Quickinfo Table full sized*/
         $("#ContentsTable").css("width", "100%");
         /*Puts preview pictures below quick info text*/
@@ -177,10 +183,31 @@ $(window).resize(function () {
 /*initial resize of all objects to look good*/
 function ini() {
     resizenavi();
-    circlewrap();
+    circlewrap();  
 }
 /*Load ini on document load*/
-window.onload = ini();
+/*window.onload = ini();*/
+window.onload = function (){
+    ini();
+    /*var myImage = new Image(100, 200);
+    myImage.src = 'resources/mockups/cardsorting.jpg';
+    console.log(myImage);
+    $("#bild").append(myImage);*/
+    
+    $('.fancybox').fancybox({
+        transitionIn: 'elastic',
+	transitionOut: 'elastic',
+        helpers: {
+            title: {
+                type : 'inside'
+            }
+        },
+        arrows: true,
+        mouseWheel: true,
+        margin: [70, 20, 0, 20]
+                                
+    });
+};
 
 /*Impressum tab hide/show*/
 function details(info) {
