@@ -237,7 +237,7 @@ var eventsHandler = function (path) {
 
 
         tempResult.push('<h3 id="event-' + id + '">' + current.name + '</h3>');
-        tempResult.push('<div><div class="infoBlock" id="infoBlock1"><div class="title" id="titleQuickInfo"><h3>Auf einen Blick </h3></div>');
+        tempResult.push('<div><div class="infoBlock first"><div class="title" id="titleQuickInfo"><h3>Auf einen Blick </h3></div>');
         tempResult.push('<table id="ContentsTable">');
 
         if(current.tags) {
@@ -277,7 +277,7 @@ var eventsHandler = function (path) {
         }
 
         if(current.image && current.image[0] != '') {
-            tempResult.push('<div id ="infoPictures"><div id="infoPicturesBig"><img id="mainimage" src="' + current.image[0] + '"></div></div>');
+            tempResult.push('<div class="infoPictures"><div id="infoPicturesBig"><img id="mainimage" src="' + current.image[0] + '"></div><a class="source" href="' + current.image[1] + '">Quelle</a></div>');
         }
         tempResult.push('</div>');
 
@@ -343,9 +343,10 @@ var eventsHandler = function (path) {
         /* Um schnell und einfach den Hilfe-Tab hinzuzufuegen */
         var text;
         text = '<h3>Hilfe</h3>';
-        text = text + '<div>';
-        text = text + '<p>Um eine Übersicht über die jeweiligen Events eines Tages zu haben, fahren sie mit der Maus &uuml;ber den Kalendereintrag.';
-        text = text + 'Um ein Event zu &ouml;ffnen, klicken sie den kleinen, farbigen Kreis an.</p>';
+        text = text + '<div id="help">';
+        text = text + '<p>Um eine Übersicht über die jeweiligen Events eines Tages zu haben, fahren sie mit der Maus &uuml;ber den Kalendereintrag. ';
+        text = text + 'Um ein Event zu &ouml;ffnen, klicken sie den kleinen, farbigen Kreis an. ';
+		text = text + 'Sie k&ouml;nnen sowohl mit den Pfeilen jeweils oben links und rechts vom Kalender, als auch mit der linken und rechten Pfeiltaste zum vorherigen und n&auml;chsten Monat springen.</p>';
         text = text + '<p>Jede Farbe steht f&uuml;r eine andere Kategorie:';
         text = text + '<div class="event_circle kultur help"></div> Kultur<br />';
         text = text + '<div class="event_circle musik help"></div> Musik<br />';
@@ -368,7 +369,7 @@ EVENTS.init(function() {
     write();
     var script = document.createElement( "script" );
     script.type = "text/javascript";
-    script.src = "js/header.js";
+    script.src = "js/styling.js";
     $("head").append(script);
 
     EVENTS.appendHelp();

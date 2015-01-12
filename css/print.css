@@ -4,3 +4,37 @@ body{
 	background-color: #fff;
 }
 
+#header{
+
+	display: none;
+
+}
+
+#infos{
+
+	display: block;
+	fontsize: 12pt;
+	width: auto;
+	height: auto;
+
+}
+
+#kalender {
+
+	display: none;
+
+}
+
+#impressum{
+
+	display: none;
+
+}
+
+#accordion{
+	border: none;
+}
+
+.ui-accordion-header{
+	border: none;
+}

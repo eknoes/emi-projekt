@@ -63,7 +63,7 @@ function write() {
 
     var count = 0;
 
-    text = ' <table id="calendar"><tr><td class="calendar_head"><a class="calendar_link" href="javascript:prevMonth()"> &laquo;</a></td><td colspan=5 class="calendar_head_month" id="calendar_month">'
+    text = ' <table id="calendar"><tr><td class="calendar_head"><a class="calendar_link" href="javascript:prevMonth()">&laquo;</a></td><td colspan=5 class="calendar_head_month" id="calendar_month">'
             + MONTH_NAME[date.getMonth()] + ' ' + date.getFullYear()
             + '</td><td class="calendar_head"><a class="calendar_link" href="javascript:nextMonth()"> &raquo;</a></td>'
             + '</tr><tr><td class="calendar_day">Mo</td><td class="calendar_day">Di</td><td class="calendar_day">Mi</td>'

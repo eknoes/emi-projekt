@@ -129,11 +129,11 @@ function resizenavi() {
         /*Quickinfo Table full sized*/
         $("#ContentsTable").css("width", "50%");
         /*Puts preview pictures next to quick info text*/
-        $("#infoPictures").css("position", "absolute");
-        $("#infoBlock1").css("height", "250px");
-        $("#infoPictures").css("width", "39%");
+        $(".infoPictures").css("position", "absolute");
+        $(".infoBlock.first").css("height", "250px");
+        $(".infoPictures").css("width", "39%");
 
-        $("#infoPictures").css("height", "250px"); /*Set initial height*/
+        $(".infoPictures").css("height", "250px"); /*Set initial height*/
         $(".slider").css("height", "170px"); /*Set initial height*/
         $("#titleQuickInfo").css("width", "59%");
         /*Make content div smaller*/
@@ -155,11 +155,11 @@ function resizenavi() {
         /*Quickinfo Table full sized*/
         $("#ContentsTable").css("width", "100%");
         /*Puts preview pictures below quick info text*/
-        $("#infoPictures").css("position", "static");
-        $("#infoBlock1").css("height", "auto");
-        $("#infoPictures").css("width", "100%");
+        $(".infoPictures").css("position", "static");
+        $(".infoBlock.first").css("height", "auto");
+        $(".infoPictures").css("width", "100%");
 
-        $("#infoPictures").css("height", breite / 2); /*better aspect ratio on mobile devices*/
+        $(".infoPictures").css("height", breite / 2); /*better aspect ratio on mobile devices*/
         $(".slider").css("height", breite / 6); /*keeps slider aspect ratio*/
         $(".BoxGlow_Grey2").css("width", "100%"); /*fixes error in resizing sticky panel when scrolled down*/
 
@@ -204,8 +204,14 @@ window.onload = function (){
         },
         arrows: true,
         mouseWheel: true,
-        margin: [70, 20, 0, 20]
-                                
+        margin: [70, 20, 0, 20]                                
+    });
+    $.getJSON('resources/events.json', function(data) {
+      for (var i = 0; i < data.events.length; i++) {
+          if (data.events[i].image[1] !== "") {
+              $("#imagesources").append('<a href="' + data.events[i].image[1] + '">' + data.events[i].image[1] + '</a>' + '<br>');
+          }
+      }  
     });
 };
 
@@ -216,15 +222,24 @@ function details(info) {
             $("#team").toggle("fast");
             $("#styleguide").hide();
             $("#mockups").hide();
+            $("#imagesources").hide();
             break;
         case 'styleguide':
             $("#styleguide").toggle("fast");
             $("#mockups").hide();
             $("#team").hide();
+            $("#imagesources").hide();
             break;
         case 'mockups':
             $("#mockups").toggle("fast");
             $("#styleguide").hide();
+            $("#team").hide();
+            $("#imagesources").hide();
+            break;
+        case 'imagesources':
+            $("#imagesources").toggle("fast");
+            $("#styleguide").hide();
+            $("#mockups").hide();
             $("#team").hide();
             break;
     }
@@ -295,5 +310,13 @@ function circlewrap() {
             }
             break;
     }
-}
-;
+};
+$(function(){
+    /*Change calendar month with arrwo keys*/
+    $("html").keydown(function(e){
+       switch (e.which) {
+           case 37: prevMonth(); break;
+           case 39: nextMonth(); break;
+       }
+    });
+});
