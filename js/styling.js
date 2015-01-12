@@ -204,8 +204,14 @@ window.onload = function (){
         },
         arrows: true,
         mouseWheel: true,
-        margin: [70, 20, 0, 20]
-                                
+        margin: [70, 20, 0, 20]                                
+    });
+    $.getJSON('resources/events.json', function(data) {
+      for (var i = 0; i < data.events.length; i++) {
+          if (data.events[i].image[1] !== "") {
+              $("#imagesources").append('<a href="' + data.events[i].image[1] + '">' + data.events[i].image[1] + '</a>' + '<br>');
+          }
+      }  
     });
 };
 
@@ -216,15 +222,24 @@ function details(info) {
             $("#team").toggle("fast");
             $("#styleguide").hide();
             $("#mockups").hide();
+            $("#imagesources").hide();
             break;
         case 'styleguide':
             $("#styleguide").toggle("fast");
             $("#mockups").hide();
             $("#team").hide();
+            $("#imagesources").hide();
             break;
         case 'mockups':
             $("#mockups").toggle("fast");
             $("#styleguide").hide();
+            $("#team").hide();
+            $("#imagesources").hide();
+            break;
+        case 'imagesources':
+            $("#imagesources").toggle("fast");
+            $("#styleguide").hide();
+            $("#mockups").hide();
             $("#team").hide();
             break;
     }
@@ -295,5 +310,17 @@ function circlewrap() {
             }
             break;
     }
-}
-;
+};
+$(function(){
+    $("html").keydown(function(e){
+       switch (e.which) {
+           case 37: prevMonth(); break;
+           case 39: nextMonth(); break;
+       }
+    });
+    $("#datepicker").keydown(function(e) {
+        var searchquery = $("#datepicker").val();
+        console.log($("#datepicker").val());
+        if (e.which == 13) {eventsHandler.search(searchquery);}
+    });
+});

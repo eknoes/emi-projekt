@@ -329,6 +329,7 @@ div#kalender {
 .calendar_link {
     color: white;
     text-decoration: none;
+    display: block;
 }
 .calendar_entry {
     background-color: #ddd;
@@ -550,8 +551,11 @@ h4 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0px 5px 5px 0; 
 }
-#impressum a:hover {
+#impbuttons a:hover {
     color: #ccc;
+}
+#imagesources a:hover {
+    color: #7dd0d7;
 }
 #impdetails  {
     width: 98%;
@@ -561,7 +565,7 @@ h4 {
     margin: 5px 0;
     //display: none;
 }
-#team, #styleguide, #mockups {
+#team, #styleguide, #mockups, #imagesources {
     min-height: 20px;
     overflow: hidden;
     display: none;

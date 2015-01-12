@@ -6,7 +6,7 @@
                 "2015/01/23 20:00:00",
                 "2015/01/24 03:00:00"
             ],
-            "desc": "Am Freitag, 23. Januar, findet der traditionelle Tangoball im Studentenhaus TUSCULUM statt. Das Dresdner Tango-Septett „La Rosa Negra�? läßt den Tango Argentino lebendig werden – von den großen Meistern des „Tango Nuevos�?, wie Astor Piazolla oder Carlos Gardel, bis hin zu Yann Tiersen oder Tango-Elektronico. Vom Studentenclub WU5 zubereitete Cocktails lassen die winterlichen Außentemperaturen vergessen. Neben Live-Musik legen dj.töse.mk und DJ Andreas auf. Von 20 – 21 Uhr gibt es eine Übungsstunde („practica�?) zum Eintanzen, um 21 Uhr beginnt der Ball.",
+            "desc": "Am Freitag, 23. Januar, findet der traditionelle Tangoball im Studentenhaus TUSCULUM statt. Das Dresdner Tango-Septett &quot;La Rosa Negra&quot;? l&auml;&szlig;t den Tango Argentino lebendig werden - von den gro&szlig;en Meistern des &quot;Tango Nuevos&quot;?, wie Astor Piazolla oder Carlos Gardel, bis hin zu Yann Tiersen oder Tango-Elektronico. Vom Studentenclub WU5 zubereitete Cocktails lassen die winterlichen Au&szlig;entemperaturen vergessen. Neben Live-Musik legen dj.t&ouml;se.mk und DJ Andreas auf. Von 20 - 21 Uhr gibt es eine &Uuml;bungsstunde (&quot;practica&quot;?) zum Eintanzen, um 21 Uhr beginnt der Ball.",
             "image": ["http://upload.wikimedia.org/wikipedia/commons/1/18/Tango_pasi%C3%B3n_show.JPG", "http://commons.wikimedia.org/wiki/File:Tango_pasi%C3%B3n_show.JPG"],
             "adress": "August-Bebel-Straße 12, 01219 Dresden",
             "link": ["Veranstaltungswebsite", "http://www.studentenwerk-dresden.de/wirueberuns/spiegel-ei-artikel-1516.html"],
@@ -24,6 +24,7 @@
                 "2015/01/08 24:00:00"
             ],
             "desc": "Die Galerie im Studentenwerk zeigt ab 8. Januar 2015 eine Ausstellung mit Bildern von Anja Ritter.<br />Die geborene Berlinerin studiert in Dresden Kunstgeschichte und war im Sommersemester 2014 als Erasmus-Stipendiatin an der Universität Leiden (NL). Über die theoretische Auseinandersetzung mit Kunst und Kultur hinaus ist Anja Ritter selbst künstlerisch aktiv. Während sie in der Kunstgeschichte den Schwerpunkt „Alte Meister�? hat, ist ihre eigene künstlerische Arbeit stark durch zeitgenössische Kunst beeinflusst. Viele ihrer Werke kreisen um den Begriff der „Interaktion�?.<br />In den „RahmenBildern – Weltentore�? werden z. B. „Bildflächen�? teilweise zu transparenten Flächen innerhalb massiver Rahmen – „Bild-Raum�? und „Betrachter-Raum�? verschmelzen, interagieren miteinander. So wird aus Raum und Bild ein Wir – so wie in der heutigen Welt aus „du�? und „ich�? ein „wir�? werden kann, ja muss, um in gemeinsamer Interaktion die Probleme der Gegenwart lösen zu können.",
+            "image": ["",""],
             "adress": "Fritz-Löffler-Straße 18, 01069 Dresden",
             "link": ["Veranstaltungswebsite", "http://www.studentenwerk-dresden.de/wirueberuns/spiegel-ei-artikel-1517.html"],
             "tags": [
@@ -56,7 +57,7 @@
                 "2015/02/01 19:00:00"
             ],
             "desc": "Nicht für Leute, welche denken, dass unsere Welt ganz normal sei. Auf dieser Ausstellung haben etliche Karikaturisten ganze Arbeit getan, um den Wahnsinn unserer Welt humorvoll darzustellen.",
-            "image": "",
+            "image": ["",""],
             "adress": "Haus der Presse, Ostra-Allee 20, 01067 Dresden",
             "link": ["Veranstaltungswebsite", "http://www.deutscherkarikaturenpreis.de/"],
 			"admission": 1,
@@ -107,7 +108,7 @@
                 "2015/02/04 21:30:00"
             ],
             "desc": "Dresden, zu Unrecht bombardiert. Eine Stadt, die sich danach als Friedenszeichen offenbarte und nun gegen geschichtsrevisionistische Nazis vorgeht. Die Texte liefern dabei hauptsächlich Kritik an der deutschen Erinnerungspolitik.",
-            "image": "",
+            "image": ["",""],
             "adress": "Projekttheater Dresden, Louisenstraße 47, 01099 Dresden",
             "link": ["Internetseite", "http://www.projekttheater.de/Spielplan/2015/Februar/GEDENKEN+ABSCHAFFEN.+-+Aktionswoche+Forum+13.+Februar_125.html"],
 			"admission": 5,
@@ -158,7 +159,7 @@
                 "2015/04/03 20:00:00"
             ],
             "desc": "Ausstellung der Prüfungsarbeiten der IHK-Floristenabschlußprüfung Winter 2015 in der JohannStadthalle",
-            "image": "",
+            "image": ["",""],
             "adress": "JohannStadthalle, Holbeinstrasse 68, 01307 Dresden",
             "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
@@ -191,7 +192,7 @@
                 "2015/04/15 09:00:00"
             ],
             "desc": "Der Frühling- vorgestellt in 15 Sprachen von 15 Künstlern.",
-            "image": "",
+            "image": ["",""],
             "adress": "Galerie Sybille Nütt, Obergraben 10, 01097 Dresden",
             "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
@@ -207,7 +208,7 @@
                 "2015/05/01 15:00:00"
             ],
             "desc": "Anja Bogott zeigt die weibliche Person, wie man sie bisher noch nicht erlebt hat. Kaum Farben, nur Ausdruck, schwarz-weiß fast gänzlich.",
-            "image": "",
+            "image": ["",""],
             "adress": "Stadtarchiv Dresden, Elisabeth-Boer-Straße 1, 01099 Dresden",
             "link": ["Veranstaltungswebsite", "http://www.ikts.fraunhofer.de/de/veranstaltung/vision_keramik_2015.html"],
             "tags": [
@@ -223,7 +224,7 @@
                 "2015/03/29 18:00:00"
             ],
             "desc": "Traditionell kurz vor Ostern lädt die Dresdner Ostern auf das Messegelände. Der Frühjahrsmarkt sowie ein vielfältiges Angebot bringen den Frühling ins Rollen.",
-            "image": "",
+            "image": ["",""],
             "adress": "Messe Dresden, Messering 6, 01067 Dresden",
             "link": ["Programm", "http://www.messe-dresden.de/veranstaltungskalender/messe/dresdner-ostern/beschreibung.html"],
 			"admission": 3,
@@ -240,7 +241,7 @@
                 "2015/01/10 21:00:00"
             ],
             "desc": "Ein Abend mit lebender Musik, die HipHop und Reggae mit handgemachten Elementen vermischt. Erwähnenswert: Die Einnahmen werden an Dresden Nazifrei weitergegeben.",
-            "image": "",
+            "image": ["",""],
             "adress": "Studentenclub Bärenzwinger, Brühlscher Garten 1, 01067 Dresden",
             "link": ["Veranstaltungswebsite", "https://diginights.com/event/2015-01-09-folk-pop-und-rock-weltoffen-und-bunt-studentenclub-baerenzwinger"],
             "tags": [
@@ -273,10 +274,10 @@
                 "2015/02/01 18:00:00"
             ],
             "desc": "Peter Kube erzählt, wie man dem Alltags-Stress am leichtesten entgehen könne, das natürlich mit viel Witz.",
-            "image": "",
+            "image": ["",""],
             "adress": "Hoftheater Dresden, Hauptstraße 35, 01328 Dresden",
             "link": ["Theaterseite", "http://soekcms.de/hoftheater/index.php?action=entry|show&id=324"],
-			"admission": 17,
+            "admission": 17,
             "tags": [
                 "Komödie",
                 "Hoftheater Dresden"
@@ -307,7 +308,7 @@
                 "2015/03/19 23:00:00"
             ],
             "desc": "Maxi Schafroth und Markus Schalk klären über das Allgäu auf- Allgäu-Versteher und Nicht-Versteher sind herzlich eingeladen.",
-            "image": "",
+            "image": ["",""],
             "adress": "Thalia - Cinema, Coffee and Cigarettes, Görlitzer Straße 6, 01099 Dresden",
             "link": ["Tickets", "https://www.sz-ticketservice.de/maxi-schafroth-markus-schalk-faszination-allgaeu-humorzone-dresden.html"],
 			"admission": 17,
@@ -324,7 +325,7 @@
                 "2015/01/17 21:00:00"
             ],
             "desc": "Italienische Musik von ihrer prachtvollen Seite. Erleben Sie die Meisterwerke von Verdi und Puccini mit voller Leidenschaft.",
-            "image": "",
+            "image": ["",""],
             "adress": "Dresdner Zwinger, Theaterplatz, 01067 Dresden",
             "link": ["Tickets", "http://www.eventim.de/dresdner-residenz-konzerte-galakonzerte-im-marmorsaal-italienische-nacht-Tickets.html?affiliate=EVE&doc=artistPages%2Ftickets&fun=artist&action=tickets&erid=383582&xtcr=4&xtmc=Dresdner_Residenz_Konzerte&xtnp=1"],
 			"admission": 40,
@@ -375,7 +376,7 @@
                 "2015/02/18 22:00:00"
             ],
             "desc": "ABBA mag nun schon 40 Jahre zählen, ist jedoch immer noch zeitlos. Nun machen sie sich erneut unvergessen. Mit ihren bekanntesten Hits lassen sie nun alte Zeiten wieder auferleben.",
-            "image": "",
+            "image": ["",""],
             "adress": "Alter Schlachthof, Gothaer Straße 11, 01097 Dresden",
             "link": ["Veranstaltungswebsite", "http://www.alter-schlachthof.de/index.php?id=5"],
 			"admission": 40,
@@ -392,7 +393,7 @@
                 "2015/03/11 22:30:00"
             ],
             "desc": "Eisbrecher, mit Volldampf auf der Bühne.",
-            "image": "",
+            "image": ["",""],
             "adress": "Alter Schlachthof, Gothaer Straße 11, 01097 Dresden",
             "link": ["Tickets", "http://www.aust-konzerte.com/Konzerte.html"],
             "tags": [
@@ -408,7 +409,7 @@
                 "2015/03/27 22:00:00"
             ],
             "desc": "Die Gruppe, bekannt für einen der größten deutschen Kanäle auf YouTube, zieht nun quer durch Deutschland und stellt ihre abgefahrenen Songs vor.",
-            "image": "",
+            "image": ["",""],
             "adress": "Alter Schlachthof, Gothaer Straße 11, 01097 Dresden",
             "link": ["Tickets", "http://www.eventim.de/ytitty-tickets.html?affiliate=GMD&includeOnlybookable=true&doc=artistPages/tickets&fun=artist&action=tickets&kuid=483726&xtor=SEC-2040-GOO-[Y-Titty]-[45272720422]-S-[%2By%20%2Btitty%20%2Btour]"],
 			"admission": 28,

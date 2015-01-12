@@ -368,7 +368,7 @@ EVENTS.init(function() {
     write();
     var script = document.createElement( "script" );
     script.type = "text/javascript";
-    script.src = "js/header.js";
+    script.src = "js/styling.js";
     $("head").append(script);
 
     EVENTS.appendHelp();
