@@ -277,7 +277,7 @@ var eventsHandler = function (path) {
         }
 
         if(current.image && current.image[0] != '') {
-            tempResult.push('<div id ="infoPictures"><div id="infoPicturesBig"><img id="mainimage" src="' + current.image[0] + '"></div></div>');
+            tempResult.push('<div id ="infoPictures"><div id="infoPicturesBig"><img id="mainimage" src="' + current.image[0] + '"></div><a href="' + current.image[1] + '">Quelle</a></div>');
         }
         tempResult.push('</div>');
 
