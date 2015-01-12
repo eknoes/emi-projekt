@@ -346,7 +346,7 @@ var eventsHandler = function (path) {
         text = text + '<div>';
         text = text + '<p>Um eine Übersicht über die jeweiligen Events eines Tages zu haben, fahren sie mit der Maus &uuml;ber den Kalendereintrag. ';
         text = text + 'Um ein Event zu &ouml;ffnen, klicken sie den kleinen, farbigen Kreis an. ';
-		text = text + 'Sie können sowohl mit den Pfeilen jeweils oben links und rechts vom Kalender, als auch mit der linken und rechten Pfeiltaste zum vorherigen und nächsten Monat springen.</p>';
+		text = text + 'Sie k&ouml;nnen sowohl mit den Pfeilen jeweils oben links und rechts vom Kalender, als auch mit der linken und rechten Pfeiltaste zum vorherigen und n&auml;chsten Monat springen.</p>';
         text = text + '<p>Jede Farbe steht f&uuml;r eine andere Kategorie:';
         text = text + '<div class="event_circle kultur help"></div> Kultur<br />';
         text = text + '<div class="event_circle musik help"></div> Musik<br />';
