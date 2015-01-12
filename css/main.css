@@ -422,7 +422,7 @@ td.calendar_entry:not(.no_event) {
     width: 98%;
     position: relative;
 }
-#infoBlock1 {
+.infoBlock.first {
     height: 250px;
 }
 #titleQuickInfo {
@@ -431,7 +431,7 @@ td.calendar_entry:not(.no_event) {
 table#ContentsTable {
     width: 50%;
 }
-#infoPictures {
+.infoPictures {
     position: absolute; 
     top: 0px;
     right: 0px;
@@ -440,7 +440,7 @@ table#ContentsTable {
     text-align: justify; /*centers the small images with equal spacing*/
     overflow: hidden;
 }
-#infoPictures:after {
+.infoPictures:after {
     content: ''; /*centers the small images with equal spacing*/
     width: 100%;
     display: inline-block;
@@ -556,6 +556,9 @@ h4 {
 }
 #imagesources a:hover {
     color: #7dd0d7;
+}
+.source {
+    font-size: 10px;
 }
 #impdetails  {
     width: 98%;

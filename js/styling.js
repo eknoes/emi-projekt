@@ -129,11 +129,11 @@ function resizenavi() {
         /*Quickinfo Table full sized*/
         $("#ContentsTable").css("width", "50%");
         /*Puts preview pictures next to quick info text*/
-        $("#infoPictures").css("position", "absolute");
-        $("#infoBlock1").css("height", "250px");
-        $("#infoPictures").css("width", "39%");
+        $(".infoPictures").css("position", "absolute");
+        $(".infoBlock.first").css("height", "250px");
+        $(".infoPictures").css("width", "39%");
 
-        $("#infoPictures").css("height", "250px"); /*Set initial height*/
+        $(".infoPictures").css("height", "250px"); /*Set initial height*/
         $(".slider").css("height", "170px"); /*Set initial height*/
         $("#titleQuickInfo").css("width", "59%");
         /*Make content div smaller*/
@@ -155,11 +155,11 @@ function resizenavi() {
         /*Quickinfo Table full sized*/
         $("#ContentsTable").css("width", "100%");
         /*Puts preview pictures below quick info text*/
-        $("#infoPictures").css("position", "static");
-        $("#infoBlock1").css("height", "auto");
-        $("#infoPictures").css("width", "100%");
+        $(".infoPictures").css("position", "static");
+        $(".infoBlock.first").css("height", "auto");
+        $(".infoPictures").css("width", "100%");
 
-        $("#infoPictures").css("height", breite / 2); /*better aspect ratio on mobile devices*/
+        $(".infoPictures").css("height", breite / 2); /*better aspect ratio on mobile devices*/
         $(".slider").css("height", breite / 6); /*keeps slider aspect ratio*/
         $(".BoxGlow_Grey2").css("width", "100%"); /*fixes error in resizing sticky panel when scrolled down*/
 

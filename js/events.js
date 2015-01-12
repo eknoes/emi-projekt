@@ -237,7 +237,7 @@ var eventsHandler = function (path) {
 
 
         tempResult.push('<h3 id="event-' + id + '">' + current.name + '</h3>');
-        tempResult.push('<div><div class="infoBlock" id="infoBlock1"><div class="title" id="titleQuickInfo"><h3>Auf einen Blick </h3></div>');
+        tempResult.push('<div><div class="infoBlock first"><div class="title" id="titleQuickInfo"><h3>Auf einen Blick </h3></div>');
         tempResult.push('<table id="ContentsTable">');
 
         if(current.tags) {
@@ -277,7 +277,7 @@ var eventsHandler = function (path) {
         }
 
         if(current.image && current.image[0] != '') {
-            tempResult.push('<div id ="infoPictures"><div id="infoPicturesBig"><img id="mainimage" src="' + current.image[0] + '"></div><a href="' + current.image[1] + '">Quelle</a></div>');
+            tempResult.push('<div class="infoPictures"><div id="infoPicturesBig"><img id="mainimage" src="' + current.image[0] + '"></div><a class="source" href="' + current.image[1] + '">Quelle</a></div>');
         }
         tempResult.push('</div>');
 
