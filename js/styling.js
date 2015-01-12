@@ -312,15 +312,11 @@ function circlewrap() {
     }
 };
 $(function(){
+    /*Change calendar month with arrwo keys*/
     $("html").keydown(function(e){
        switch (e.which) {
            case 37: prevMonth(); break;
            case 39: nextMonth(); break;
        }
-    });
-    $("#datepicker").keydown(function(e) {
-        var searchquery = $("#datepicker").val();
-        console.log($("#datepicker").val());
-        if (e.which == 13) {eventsHandler.search(searchquery);}
     });
 });
