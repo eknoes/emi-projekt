@@ -344,7 +344,7 @@ var eventsHandler = function (path) {
         var text;
         text = '<h3>Hilfe</h3>';
         text = text + '<div>';
-        text = text + '<p>Um eine Übersicht über die jeweiligen Events eines Tages zu haben, fahren sie mit der Maus &uuml;ber den Kalendereintrag.';
+        text = text + '<p>Um eine Übersicht über die jeweiligen Events eines Tages zu haben, fahren sie mit der Maus &uuml;ber den Kalendereintrag. ';
         text = text + 'Um ein Event zu &ouml;ffnen, klicken sie den kleinen, farbigen Kreis an.</p>';
         text = text + '<p>Jede Farbe steht f&uuml;r eine andere Kategorie:';
         text = text + '<div class="event_circle kultur help"></div> Kultur<br />';
