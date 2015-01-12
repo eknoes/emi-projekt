@@ -10,13 +10,10 @@ and open the template in the editor.
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
 body {
     margin: 0px;
-    //height:1500px;
     font-family: Lato;
 }
 #header {
-    //border: 1px solid #666;
     width:100%;
-    //min-width: 1100px; 
     height: auto;
     z-index: 255;
 }
@@ -82,7 +79,6 @@ div#banner figure {
 }
 ul#Navigation {
     margin: 0; padding: 0;
-    //margin-left: -483px;
     text-align: center;
     height: 45px;
     position: absolute;
@@ -98,11 +94,8 @@ ul#Navigation li {
     margin-right: 1px;
 }
 ul#Navigation a {
-    //padding: 13px 20px;
     text-decoration: none;
-    //font-weight: bold;
     color: #FFFFFF; 
-    //background: #2f3036;
     background: -webkit-linear-gradient(#58595e, #2F3036);
     background: -o-linear-gradient(#58595e, #2F3036);
     background: -moz-linear-gradient(#58595e, #2F3036);
